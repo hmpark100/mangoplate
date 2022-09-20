@@ -6,7 +6,7 @@
 <jsp:useBean id="vo" class="com.mangoplate.vo.CgvMemberVO" />
 <jsp:setProperty property="*" name="vo"/>
 
-<%-- <%
+<%
 	CgvMemberDAO dao = new CgvMemberDAO();
 	int result = dao.select(vo);
 	if(result == 1){
@@ -16,4 +16,4 @@
 	}else{
 		response.sendRedirect("../errorPage.jsp");
 	}
-%> --%>
+%>
