@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.spring.mangoplate">
+	<logger name="com.team.mangoplate">
 		<level value="info" />
 	</logger>
 	

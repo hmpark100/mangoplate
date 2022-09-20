@@ -99,16 +99,20 @@ $(document).ready(function(){
 			alert("성명을 입력해주세요");
 			$("#name").focus();
 			return false;
-		}else if($("input[name='gender']:checked").length == 0){
-			alert("성별을 선택해주세요");
+		}else if($("#hp").val() == "default"){
+			alert("통신사를 선택해주세요");
+			return false;
+		}else if($("#pnum").val() == ""){
+			alert("전화번호를 입력해주세요");
+			$("#pnum").focus();
 			return false;
 		}else if($("#email1").val() == ""){
 			alert("이메일을 입력해주세요");
 			$("#email1").focus();
 			return false;
-		}else if($("#email2").val() == ""){
+		}else if($("#email2").val() == "default"){
 			alert("이메일 주소를 선택해주세요");
-			$("#email3").focus();
+			$("#email2").focus();
 			return false;
 		}else if($("#addr1").val() == ""){
 			alert("주소를 입력해주세요");
@@ -118,46 +122,12 @@ $(document).ready(function(){
 			alert("상세주소를 입력해주세요");
 			$("#addr2").focus();
 			return false;
-		}else if($("input[name='hp']:checked").length == 0){
-			alert("통신사를 선택해주세요");
-			return false;
-		}else if($("#pnum1").val() == "default"){
-			alert("폰번호를 선택해주세요");
-			$("#pnum1").focus();
-			return false;
-		}else if($("#pnum2").val() == ""){
-			alert("폰번호를 입력해주세요");
-			$("#pnum2").focus();
-			return false;
-		}else if($("#pnum3").val() == ""){
-			alert("마지막 폰번호를 입력해주세요");
-			$("#pnum3").focus();
-			return false;
-		}else if($("input[name='hobby']:checked").length == 0){
-			alert("취미를 선택해주세요");
-			return false;
 		}else{
 			//서버전송
 			joinForm.submit();
 		}
 		
 	});
-	
-	
-	/*********************
-		이메일 주소 선택
-	**********************/
-	$("#email3").change(()=>{
-		if($("#email3").val() == "default"){
-			alert("이메일 주소를 선택해주세요");
-			$("#email3").focus();
-			$("#email2").val("");
-		}else if($("#email3").val() == "self"){
-			$("#email2").val("").focus();
-		}else{
-			$("#email2").val($("#email3").val());
-		}	
-	});		
 	
 	
 	/*********************

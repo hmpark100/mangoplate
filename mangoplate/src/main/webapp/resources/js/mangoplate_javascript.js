@@ -67,14 +67,11 @@ joinCheck = () => {
 	const pass = document.getElementById("pass");
 	const cpass = document.getElementById("cpass");
 	const name = document.getElementById("name");
+	const pnum = document.getElementById("pnum");
 	const email1 = document.getElementById("email1");
 	const email2 = document.getElementById("email2");
-	const email3 = document.getElementById("email3");
 	const addr1 = document.getElementById("addr1");
 	const addr2 = document.getElementById("addr2");
-	const pnum1 = document.getElementById("pnum1");
-	const pnum2 = document.getElementById("pnum2");
-	const pnum3 = document.getElementById("pnum3");
 	
 	if(id.value == ""){
 		alert("아이디를 입력해주세요");
@@ -92,8 +89,12 @@ joinCheck = () => {
 		alert("성명을 입력해주세요");
 		name.focus();
 		return false;
-	}else if(checkCount("gender") == 0){
-		alert("성별을 선택해주세요");
+	}else if(checkCount("hp") == 0){
+		alert("통신사를 선택해주세요");
+		return false;
+	}else if(pnum.value == ""){
+		alert("전화번호를 입력해주세요");
+		pnum2.focus();
 		return false;
 	}else if(email1.value == ""){
 		alert("이메일을 입력해주세요");
@@ -110,24 +111,6 @@ joinCheck = () => {
 	}else if(addr2.value == ""){
 		alert("상세주소를 입력해주세요");
 		addr2.focus();
-		return false;
-	}else if(checkCount("hp") == 0){
-		alert("통신사를 선택해주세요");
-		return false;
-	}else if(pnum1.value == "default"){
-		alert("폰번호를 선택해주세요");
-		pnum1.focus();
-		return false;
-	}else if(pnum2.value == ""){
-		alert("폰번호를 입력해주세요");
-		pnum2.focus();
-		return false;
-	}else if(pnum3.value == ""){
-		alert("마지막 폰번호를 입력해주세요");
-		pnum3.focus();
-		return false;
-	}else if(checkCount("hobby") == 0){
-		alert("취미를 선택해주세요");
 		return false;
 	}else{
 		//서버전송
@@ -152,29 +135,6 @@ checkCount = (fname) => {
 	}
 	return count;
 }
-
-
-/*********************
-	이메일 주소 선택
-**********************/
-//function emailCheck(){
-emailCheck = () => {
-	const email2 = document.getElementById("email2");
-	const email3 = document.getElementById("email3");
-	
-	if(email3.value == "default"){
-		alert("이메일 주소를 선택해주세요");
-		email3.focus();
-		email2.value = "";
-	}else if(email3.value == "self"){
-		email2.value = "";
-		email2.focus();
-	}else{
-		email2.value = email3.value;
-	}	
-}
-
-
 
 
 /*********************
@@ -203,8 +163,6 @@ passCheck = () =>{
 		}
 	}//else{} --> 회원가입 폼의 유효성 체크로 진행됨
 }
-
-
 
 
 /*********************
