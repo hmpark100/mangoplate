@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "com.mycgv.dao.CgvBoardDAO" %>
+<%@ page import = "com.mangoplate.dao.CgvBoardDAO" %>
 <%
 	String bid = request.getParameter("bid");
 	CgvBoardDAO dao = new CgvBoardDAO();

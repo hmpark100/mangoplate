@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>MANGOPLATE</title>
-<link rel="stylesheet"  href="http://localhost:9000/mycgv/resources/css/mycgv.css">
+<title>CGV</title>
+<link rel="stylesheet"  href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
 <script>
 	let login_result = '${login_result}';
 	let logout_result = '${logout_result}';
@@ -36,27 +36,27 @@
 			<h1>무비차트 | 상영예정작</h1>
 			<div class="s1_article">
 				<article>
-					<img src="http://localhost:9000/mycgv/resources/images/82120_320.jpg">
+					<img src="http://localhost:9000/mangoplate/resources/images/82120_320.jpg">
 					<div>탑건-매버릭</div>
 					<div>99%  | 예매율 37.1%</div>
 				</article>
 				<article>
-					<img src="http://localhost:9000/mycgv/resources/images/82120_320.jpg">
+					<img src="http://localhost:9000/mangoplate/resources/images/82120_320.jpg">
 					<div>탑건-매버릭</div>
 					<div>99%  | 예매율 37.1%</div>
 				</article>
 				<article>
-					<img src="http://localhost:9000/mycgv/resources/images/82120_320.jpg">
+					<img src="http://localhost:9000/mangoplate/resources/images/82120_320.jpg">
 					<div>탑건-매버릭</div>
 					<div>99%  | 예매율 37.1%</div>
 				</article>
 				<article>
-					<img src="http://localhost:9000/mycgv/resources/images/82120_320.jpg">
+					<img src="http://localhost:9000/mangoplate/resources/images/82120_320.jpg">
 					<div>탑건-매버릭</div>
 					<div>99%  | 예매율 37.1%</div>
 				</article>
 				<article>
-					<img src="http://localhost:9000/mycgv/resources/images/82120_320.jpg">
+					<img src="http://localhost:9000/mangoplate/resources/images/82120_320.jpg">
 					<div>탑건-매버릭</div>
 					<div>99%  | 예매율 37.1%</div>
 				</article>
@@ -67,7 +67,7 @@
 			<h1>특별관</h1>
 			<div class="s2_article">
 				<div>
-					<img src="http://localhost:9000/mycgv/resources/images/16390080561620.png">
+					<img src="http://localhost:9000/mangoplate/resources/images/16390080561620.png">
 				</div>
 				<ul>
 					<li>
@@ -97,48 +97,21 @@
 					<button type="button">더보기</button>
 				</li>
 				<li>
-					<img src="http://localhost:9000/mycgv/resources/images/16094706927780.jpg">
+					<img src="http://localhost:9000/mangoplate/resources/images/16094706927780.jpg">
 					<div>
 						<label>CGV 영화관람권</label>
 						<label>12,000원</label>
 					</div>
 				</li>
 				<li>
-					<img src="http://localhost:9000/mycgv/resources/images/16094706927780.jpg">
+					<img src="http://localhost:9000/mangoplate/resources/images/16094706927780.jpg">
 					<div>
 						<label>CGV 영화관람권</label>
 						<label>12,000원</label>
 					</div>
 				</li>
 				<li>
-					<img src="http://localhost:9000/mycgv/resources/images/16094706927780.jpg">
-					<div>
-						<label>CGV 영화관람권</label>
-						<label>12,000원</label>
-					</div>
-				</li>
-			</ul>
-			<ul>
-				<li>
-					<h3>영화관람권</h3>
-					<button type="button">더보기</button>
-				</li>
-				<li >
-					<img src="http://localhost:9000/mycgv/resources/images/16094706927780.jpg">
-					<div>
-						<label>CGV 영화관람권</label>
-						<label>12,000원</label>
-					</div>
-				</li>
-				<li>
-					<img src="http://localhost:9000/mycgv/resources/images/16094706927780.jpg">
-					<div>
-						<label>CGV 영화관람권</label>
-						<label>12,000원</label>
-					</div>
-				</li>
-				<li>
-					<img src="http://localhost:9000/mycgv/resources/images/16094706927780.jpg">
+					<img src="http://localhost:9000/mangoplate/resources/images/16094706927780.jpg">
 					<div>
 						<label>CGV 영화관람권</label>
 						<label>12,000원</label>
@@ -151,21 +124,48 @@
 					<button type="button">더보기</button>
 				</li>
 				<li >
-					<img src="http://localhost:9000/mycgv/resources/images/16094706927780.jpg">
+					<img src="http://localhost:9000/mangoplate/resources/images/16094706927780.jpg">
 					<div>
 						<label>CGV 영화관람권</label>
 						<label>12,000원</label>
 					</div>
 				</li>
 				<li>
-					<img src="http://localhost:9000/mycgv/resources/images/16094706927780.jpg">
+					<img src="http://localhost:9000/mangoplate/resources/images/16094706927780.jpg">
 					<div>
 						<label>CGV 영화관람권</label>
 						<label>12,000원</label>
 					</div>
 				</li>
 				<li>
-					<img src="http://localhost:9000/mycgv/resources/images/16094706927780.jpg">
+					<img src="http://localhost:9000/mangoplate/resources/images/16094706927780.jpg">
+					<div>
+						<label>CGV 영화관람권</label>
+						<label>12,000원</label>
+					</div>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<h3>영화관람권</h3>
+					<button type="button">더보기</button>
+				</li>
+				<li >
+					<img src="http://localhost:9000/mangoplate/resources/images/16094706927780.jpg">
+					<div>
+						<label>CGV 영화관람권</label>
+						<label>12,000원</label>
+					</div>
+				</li>
+				<li>
+					<img src="http://localhost:9000/mangoplate/resources/images/16094706927780.jpg">
+					<div>
+						<label>CGV 영화관람권</label>
+						<label>12,000원</label>
+					</div>
+				</li>
+				<li>
+					<img src="http://localhost:9000/mangoplate/resources/images/16094706927780.jpg">
 					<div>
 						<label>CGV 영화관람권</label>
 						<label>12,000원</label>

@@ -16,7 +16,7 @@
 	</delete>
 		
 	<!-- board update -->
-	<update id="update" parameterType="com.mycgv.vo.CgvBoardVO">
+	<update id="update" parameterType="com.mangoplate.vo.CgvBoardVO">
 		update cgv_board set btitle=#{btitle}, bcontent=#{bcontent}, bfile=#{bfile}, bsfile=#{bsfile} 
 				 where bid=#{bid}	
 	</update>
@@ -28,14 +28,14 @@
 	</update>
 
 	<!-- board content -->
-	<select id="content" parameterType="java.lang.String" resultType="com.mycgv.vo.CgvBoardVO">
+	<select id="content" parameterType="java.lang.String" resultType="com.mangoplate.vo.CgvBoardVO">
 		select bid, btitle, bcontent,bhits, bdate, bfile, bsfile 
 				 from cgv_board  where bid=#{bid}
 	
 	</select>
 
 	<!-- board list -->
-	<select id="list" parameterType="map" resultType="com.mycgv.vo.CgvBoardVO">
+	<select id="list" parameterType="map" resultType="com.mangoplate.vo.CgvBoardVO">
 		select rno, bid, btitle, bhits, bdate 
 				  from (select rownum rno, bid, btitle, bhits, to_char(bdate, 'yyyy-mm-dd') bdate  
 			 from (select bid, btitle, bhits, bdate from cgv_board  
@@ -44,7 +44,7 @@
 	</select>
 	
 	<!-- board insert  -->
-	<insert id="insert" parameterType="com.mycgv.vo.CgvMemberVO" >
+	<insert id="insert" parameterType="com.mangoplate.vo.CgvMemberVO" >
 		insert into cgv_board 
 				 values('b_'||sequ_cgv_board.nextval, #{btitle}, #{bcontent}, #{bfile}, #{bsfile}, 0, sysdate)
 	</insert>

@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class MypageController {
 	/**
-	 * mycgv.do : 마이페이지 
+	 * mangoplate.do : 마이페이지 
 	 */
-	@RequestMapping(value="/mycgv.do", method=RequestMethod.GET)
-	public String mycgv() {
-		return "/mycgv/mycgv";
+	@RequestMapping(value="/mangoplate.do", method=RequestMethod.GET)
+	public String mangoplate() {
+		return "/mangoplate/mangoplate";
 	}
 }

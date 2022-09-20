@@ -5,11 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>CGV</title>
-<link rel="stylesheet"  href="http://localhost:9000/mycgv/resources/css/mycgv.css">
+<link rel="stylesheet"  href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
 </head>
 <body>
 	<!-- Header Include -->
-	<iframe src="http://localhost:9000/mycgv/header.do" width="100%" height="160px" scrolling="no" frameborder=0 ></iframe>
+	<iframe src="http://localhost:9000/mangoplate/header.do" width="100%" height="160px" scrolling="no" frameborder=0 ></iframe>
 	
 	
 	<!---------------------------------------------->
@@ -35,14 +35,14 @@
 			<tr>
 				<td colspan="4">					
 					<a href="notice_list.jsp"><button type="button" class="btn_style">리스트</button></a>
-					<a href="http://localhost:9000/mycgv/index.jsp"><button type="button" class="btn_style">홈으로</button></a>
+					<a href="http://localhost:9000/mangoplate/index.jsp"><button type="button" class="btn_style">홈으로</button></a>
 				</td>
 			</tr>			
 		</table>	
 	</div>
 	
 	<!-- footer Include -->
-	<iframe src="http://localhost:9000/mycgv/footer.do" width="100%" height="530px" scrolling="no" frameborder=0></iframe>
+	<iframe src="http://localhost:9000/mangoplate/footer.do" width="100%" height="530px" scrolling="no" frameborder=0></iframe>
 	
 </body>
 </html>

@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "com.mycgv.vo.CgvBoardVO" %>
-<%@ page import = "com.mycgv.dao.CgvBoardDAO" %>
-<jsp:useBean id="vo" class="com.mycgv.vo.CgvBoardVO"/>
+<%@ page import = "com.mangoplate.vo.CgvBoardVO" %>
+<%@ page import = "com.mangoplate.dao.CgvBoardDAO" %>
+<jsp:useBean id="vo" class="com.mangoplate.vo.CgvBoardVO"/>
 <jsp:setProperty name="vo" property="*" />
 
 <%

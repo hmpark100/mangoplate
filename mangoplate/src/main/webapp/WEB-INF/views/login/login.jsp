@@ -6,12 +6,17 @@
 <head>
 <meta charset="UTF-8">
 <title>CGV</title>
-<link rel="stylesheet"  href="http://localhost:9000/mycgv/resources/css/mycgv.css">
-<script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
-<script src="http://localhost:9000/mycgv/resources/js/mycgv_jquery.js"></script>
+<link rel="stylesheet"  href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
+<script src="http://localhost:9000/mangoplate/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mangoplate/resources/js/mangoplate_jquery.js"></script>
 <script>
 	let join_result = '${join_result}';
 	let login_result = '${login_result}';
+	let auth_result = '${auth}';
+	
+	if(auth_result == 'fail'){
+		alert("접근 권한이 없습니다. 로그인을 진행해 주세요.");	
+	}
 	
 	if(login_result == 'fail'){
 		alert("아이디 또는 패스워드가 다릅니다. 다시 로그인해주세요");	
@@ -25,7 +30,7 @@
 </head>
 <body>
 	<!-- Header Include -->
-	<iframe src="http://localhost:9000/mycgv/header.do" width="100%" height="160px" scrolling="no" frameborder=0 ></iframe>
+	<iframe src="http://localhost:9000/mangoplate/header.do" width="100%" height="160px" scrolling="no" frameborder=0 ></iframe>
 	
 	
 	<!---------------------------------------------->
@@ -52,7 +57,7 @@
 	</div>
 	
 	<!-- footer Include -->
-	<iframe src="http://localhost:9000/mycgv/footer.do" width="100%" height="530px" scrolling="no" frameborder=0></iframe>
+	<iframe src="http://localhost:9000/mangoplate/footer.do" width="100%" height="530px" scrolling="no" frameborder=0></iframe>
 	
 </body>
 </html>

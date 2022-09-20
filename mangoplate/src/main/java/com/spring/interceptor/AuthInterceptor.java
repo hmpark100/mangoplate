@@ -6,6 +6,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import com.mangoplate.vo.SessionVO;
+
 public class AuthInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
@@ -16,16 +18,17 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 		HttpSession session = request.getSession();
 		
 		//2. 로그인 성공 시 session에 로그인 인증키(sid) 담아 클라이언트에게 전송
-		String sid = (String)session.getAttribute("sid"); //로그인한 계정 : 자신의ID , 로그인하지 않은 사용자:null
-		if(sid == null) {
+		SessionVO svo = (SessionVO)session.getAttribute("svo"); //로그인한 계정 : 자신의ID , 로그인하지 않은 사용자:null
+		
+		if(svo == null) {
 			//로그인하지 않은 사용자 : null
-			response.sendRedirect("http://localhost:9000/mycgv/login.do");
+			response.sendRedirect("http://localhost:9000/mangoplate/login.do?auth=fail");
 			
 			return false;
 		}else {
 			//sid가 null이 아니고ㅡ admin 인 경우에만 접속
-			if(!sid.equals("admin")) {
-				response.sendRedirect("http://localhost:9000/mycgv/login.do");
+			if(!svo.getId().equals("admin")) {
+				response.sendRedirect("http://localhost:9000/mangoplate/login.do?auth=fail");
 				return false;
 			}
 		}

@@ -6,11 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>CGV</title>
-<link rel="stylesheet"  href="http://localhost:9000/mycgv/resources/css/mycgv.css">
+<link rel="stylesheet"  href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
 </head>
 <body>
 	<!-- Header Include -->
-	<iframe src="http://localhost:9000/mycgv/header.do" width="100%" height="160px" scrolling="no" frameborder=0 ></iframe>
+	<iframe src="http://localhost:9000/mangoplate/header.do" width="100%" height="160px" scrolling="no" frameborder=0 ></iframe>
 	
 	
 	<!---------------------------------------------->
@@ -22,7 +22,7 @@
 			<input type="hidden" name="bid" value="${bid}">
 			<ul>
 				<li>
-					<img src="http://localhost:9000/mycgv/resources/images/delete.jpg"> <!-- 휴지통 이미지 -->					
+					<img src="http://localhost:9000/mangoplate/resources/images/delete.jpg"> <!-- 휴지통 이미지 -->					
 				</li>				
 				<li>
 					<div>정말로 삭제하시겠습니까?</div>
@@ -38,7 +38,7 @@
 	</div>
 	
 	<!-- footer Include -->
-	<iframe src="http://localhost:9000/mycgv/footer.do" width="100%" height="530px" scrolling="no" frameborder=0></iframe>
+	<iframe src="http://localhost:9000/mangoplate/footer.do" width="100%" height="530px" scrolling="no" frameborder=0></iframe>
 	
 </body>
 </html>

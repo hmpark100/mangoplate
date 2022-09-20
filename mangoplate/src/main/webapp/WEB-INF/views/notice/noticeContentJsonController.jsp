@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.mycgv.vo.CgvNoticeVO"  %>
-<%@ page import="com.mycgv.dao.CgvNoticeDAO"  %>
+<%@ page import="com.mangoplate.vo.CgvNoticeVO"  %>
+<%@ page import="com.mangoplate.dao.CgvNoticeDAO"  %>
 <%@ page import="com.google.gson.*"  %>
 <%
 	String nid=request.getParameter("nid");

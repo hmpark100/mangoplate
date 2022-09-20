@@ -9,6 +9,6 @@
 
 <script>
 	alert("정상적으로 로그아웃 되었습니다.");
-	location.href = "http://localhost:9000/mycgv/index.jsp";
+	location.href = "http://localhost:9000/mangoplate/index.jsp";
 </script>
 

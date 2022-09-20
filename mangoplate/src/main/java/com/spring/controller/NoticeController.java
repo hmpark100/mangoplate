@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.mycgv.dao.CgvNoticeDAO;
-import com.mycgv.vo.CgvNoticeVO;
+import com.mangoplate.vo.CgvNoticeVO;
+import com.mangoplate.dao.CgvNoticeDAO;
 import com.spring.service.NoticeServiceImpl;
 import com.spring.service.PageServiceImpl;
 

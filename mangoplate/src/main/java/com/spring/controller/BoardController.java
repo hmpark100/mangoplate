@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mycgv.vo.CgvBoardVO;
+import com.mangoplate.vo.CgvBoardVO;
 import com.spring.service.BoardServiceImpl;
 import com.spring.service.FileServiceImpl;
 import com.spring.service.PageServiceImpl;

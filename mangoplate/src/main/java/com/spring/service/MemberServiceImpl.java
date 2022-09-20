@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.mycgv.dao.CgvMemberDAO;
-import com.mycgv.vo.CgvMemberVO;
+import com.mangoplate.vo.CgvMemberVO;
+import com.mangoplate.vo.SessionVO;
+import com.mangoplate.dao.CgvMemberDAO;
 
 public class MemberServiceImpl implements MemberService{
 	
@@ -56,7 +57,7 @@ public class MemberServiceImpl implements MemberService{
 	 * 로그인 처리
 	 */
 	@Override
-	public int getLoginResult(CgvMemberVO vo) {	
+	public SessionVO getLoginResult(CgvMemberVO vo) {	
 		return memberDao.select(vo);
 	}
 }

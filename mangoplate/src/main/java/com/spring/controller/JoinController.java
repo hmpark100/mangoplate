@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mycgv.vo.CgvMemberVO;
+import com.mangoplate.vo.CgvMemberVO;
 import com.spring.service.MemberServiceImpl;
 
 @Controller

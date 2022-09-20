@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mycgv.vo.CgvMemberVO;
-import com.mycgv.vo.CgvMovieVO;
-import com.mycgv.vo.CgvNoticeVO;
+import com.mangoplate.vo.CgvMemberVO;
+import com.mangoplate.vo.CgvMovieVO;
+import com.mangoplate.vo.CgvNoticeVO;
 import com.spring.service.FileServiceImpl;
 import com.spring.service.MemberServiceImpl;
 import com.spring.service.MovieServiceImpl;
