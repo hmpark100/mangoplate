@@ -15,220 +15,64 @@
 	<!---------------------------------------------->
 	<!--------------- Header ----------------------->
 	<!---------------------------------------------->
-	<header>
-		<div class="header_contents1">
-			<div>
-				<a href="http://localhost:9000/mangoplate/index.do" target="_parent">
-					<img src="http://localhost:9000/mangoplate/resources/images/logoRed.png"
-					width="150" height="70">
-				</a> <span>CULTURFLEX</span>
-			</div>
-			<c:if test="${sessionScope.svo != null }">
-				<span>[${sessionScope.svo.name }]님 반갑습니다.</span>
-			</c:if>
+	<header class="Header" data-page="home">
+		<a href="/" class="Header__Logo"
+			onclick="trackEvent('CLICK_HEADER_LOGO');"> <i
+			class="Header__LogoIcon"></i>
+		</a>
 
-			<c:choose>
-				<c:when test="${sessionScope.svo == null }">
-					<div>
-						<img src="http://localhost:9000/mangoplate/resources/images/hcard.png">
-						<a href="http://localhost:9000/mangoplate/login.do" target="_parent">
-							<img
-							src="http://localhost:9000/mangoplate/resources/images/loginPassword.png">
-							<span>로그인</span>
-						</a> <a href="http://localhost:9000/mangoplate/join.do" target="_parent">
-							<img
-							src="http://localhost:9000/mangoplate/resources/images/loginJoin.png">
-							<span>회원가입</span>
-						</a> <a href="http://localhost:9000/mangoplate/mangoplate.do" target="_parent">
-							<img
-							src="http://localhost:9000/mangoplate/resources/images/loginMember.png">
-							<span>MY CGV</span>
-						</a> <a href="http://localhost:9000/mangoplate/board_list.do"
-							target="_parent"> <img
-							src="http://localhost:9000/mangoplate/resources/images/loginCustomer.png">
-							<span>게시판</span>
-						</a> <a href="http://localhost:9000/mangoplate/notice_list.do"
-							target="_parent"> <img
-							src="http://localhost:9000/mangoplate/resources/images/loginCustomer.png">
-							<span>공지사항</span>
-						</a>
-						<%-- <a href="http://localhost:9000/mangoplate/admin.do" target="_parent" >
-					<img src="http://localhost:9000/mangoplate/resources/images/loginCustomer.png">
-					<span>Admin</span>
-				</a> --%>
-					</div>
-				</c:when>
+		<div class="Header__SearchBox">
+			<i class="Header__SearchIcon"></i> <label
+				class="Header__SearchInputWrap"> <input type="text"
+				class="Header__SearchInput" placeholder="지역, 식당 또는 음식" value=""
+				autocomplete="off" maxlength="50">
+			</label>
 
-				<c:otherwise>
-					<div>
-						<img src="http://localhost:9000/mangoplate/resources/images/hcard.png">
-						<a href="http://localhost:9000/mangoplate/logout.do" target="_parent">
-							<img
-							src="http://localhost:9000/mangoplate/resources/images/loginPassword.png">
-							<span>로그아웃</span>
-						</a> <a href="http://localhost:9000/mangoplate/join.do" target="_parent">
-							<img
-							src="http://localhost:9000/mangoplate/resources/images/loginJoin.png">
-							<span>회원가입</span>
-						</a> <a href="http://localhost:9000/mangoplate/mangoplate.do" target="_parent">
-							<img
-							src="http://localhost:9000/mangoplate/resources/images/loginMember.png">
-							<span>MY CGV</span>
-						</a> <a href="http://localhost:9000/mangoplate/board_list.do"
-							target="_parent"> <img
-							src="http://localhost:9000/mangoplate/resources/images/loginCustomer.png">
-							<span>게시판</span>
-						</a> <a href="http://localhost:9000/mangoplate/notice_list.do"
-							target="_parent"> <img
-							src="http://localhost:9000/mangoplate/resources/images/loginCustomer.png">
-							<span>공지사항</span>
-						</a>
-						<!-- 관리자 계정인 경우에만 admin 메뉴를 Open -->
-						<c:if test="${sessionScope.svo.id == 'admin' }">
-							<a href="http://localhost:9000/mangoplate/admin.do" target="_parent">
-								<img
-								src="http://localhost:9000/mangoplate/resources/images/loginCustomer.png">
-								<span>Admin</span>
-							</a>
-						</c:if>
-					</div>
-				</c:otherwise>
-
-			</c:choose>
-
+			<button class="Header__SearchInputClearButton">CLEAR</button>
 		</div>
-		<div class="header_contents2">
-			<nav>
-				<ul class="dropdown">
-					<li>
-						<h2>
-							<a href="#">영화</a>
-						</h2>
-						<dl class="dropdown-content">
-							<dt>
-								<h2>영화</h2>
-							</dt>
-							<dd>
-								<h3>무비차트</h3>
-							</dd>
-							<dd>
-								<h3>아트하우스</h3>
-							</dd>
-							<dd>
-								<h3>ICECON</h3>
-							</dd>
-						</dl>
-					</li>
-					<li>
-						<h2>
-							<a href="#">극장</a>
-						</h2>
-						<dl class="dropdown-content">
-							<dt>
-								<h2>극장</h2>
-							</dt>
-							<dd>
-								<h3>CGV 극장</h3>
-							</dd>
-							<dd>
-								<h3>특별관</h3>
-							</dd>
-						</dl>
-					</li>
-					<li>
-						<h2>
-							<a href="#">예매</a>
-						</h2>
-						<dl class="dropdown-content">
-							<dt>
-								<h2>예매</h2>
-							</dt>
-							<dd>
-								<h3>빠른예매</h3>
-							</dd>
-							<dd>
-								<h3>상영스케줄</h3>
-							</dd>
-							<dd>
-								<h3>English Ticketing</h3>
-							</dd>
-							<dd>
-								<h3>English Schedule</h3>
-							</dd>
-						</dl>
-					</li>
-					<li>
-						<h2>
-							<a href="#">스토어</a>
-						</h2>
-						<dl class="dropdown-content">
-							<dt>
-								<h2>영화관람권</h2>
-							</dt>
-							<dd>
-								<h3>기프트카드</h3>
-							</dd>
-							<dd>
-								<h3>콤보</h3>
-							</dd>
-							<dd>
-								<h3>팝콘</h3>
-							</dd>
-							<dd>
-								<h3>음료</h3>
-							</dd>
-							<dd>
-								<h3>스낵</h3>
-							</dd>
-							<dd>
-								<h3>플레이존</h3>
-							</dd>
-						</dl>
-					</li>
-					<li>
-						<h2>
-							<a href="#">이벤트</a>
-						</h2>
-						<dl class="dropdown-content">
-							<dt>
-								<h2>이벤트</h2>
-							</dt>
-							<dd>
-								<h3>SPECIAL</h3>
-							</dd>
-							<dd>
-								<h3>영화/예매</h3>
-							</dd>
-							<dd>
-								<h3>멤버십/CLUB</h3>
-							</dd>
-							<dd>
-								<h3>CGV 극장별</h3>
-							</dd>
-						</dl>
-					</li>
-					<li>
-						<h2>
-							<a href="#">혜택</a>
-						</h2>
-						<dl class="dropdown-content">
-							<dt>
-								<h2>혜택</h2>
-							</dt>
-							<dd>
-								<h3>CGV 할인정보</h3>
-							</dd>
-							<dd>
-								<h3>CLUB 서비스</h3>
-							</dd>
-							<dd>
-								<h3>VIP 라운지</h3>
-							</dd>
-						</dl>
-					</li>
-				</ul>
-			</nav>
-		</div>
+
+		<ul class="Header__MenuList">
+			<li class="Header__MenuItem Header__MenuItem--New"><a
+				href="/eat_deals" class="Header__MenuLink"
+				onclick="trackEvent('CLICK_EAT_DEALS')"> <span
+					class="Header__MenuText">EAT딜</span>
+			</a></li>
+
+			<li class="Header__MenuItem"><a href="/top_lists"
+				class="Header__MenuLink" onclick="trackEvent('CLICK_TOP_LIST')">
+					<span class="Header__MenuText">맛집 리스트</span>
+			</a></li>
+
+			<li class="Header__MenuItem"><a href="/mango_picks"
+				class="Header__MenuLink" onclick="trackEvent('CLICK_MANGO_PICK')" >
+					<span class="Header__MenuText">망고 스토리</span>
+			</a></li>
+		</ul>
+
+		<ul class="Header__IconButtonList">
+			<li
+				class="Header__IconButtonItem only-mobile Header__IconButtonItem--MenuButton MenuButton--New">
+				<button class="MenuButton" onclick="trackEvent('CLICK_MENU');">
+					<i class="MenuButton__Icon"></i>
+				</button>
+			</li>
+
+			<li
+				class="Header__IconButtonItem Header__IconButtonItem--UserRestaurantHistory">
+				<button class="UserProfileButton"
+					onclick="trackEvent('CLICK_PROFILE');">
+					<i class="UserProfileButton__Picture"
+						style="background-image: url(&quot;https://mp-seoul-image-production-s3.mangoplate.com/web/resources/fljgy-rm4b8v6vni.png&quot;), url(&quot;https://mp-seoul-image-production-s3.mangoplate.com/web/resources/fljgy-rm4b8v6vni.png&quot;);"></i>
+					<i class="UserProfileButton__PersonIcon"></i> <span
+						class="UserProfileButton__HistoryCount">0</span>
+				</button>
+			</li>
+
+			<li
+				class="Header__IconButtonItem Header__IconButtonItem--CloseButton Header__IconButtonItem--Hide">
+				<button class="Header__CloseButton"></button>
+			</li>
+		</ul>
 	</header>
 </body>
 </html>
