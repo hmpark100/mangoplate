@@ -9,15 +9,15 @@
 <link rel="stylesheet"
 	href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
 </head>
-<body>
+<body onunload="" ng-app="mp20App" class="ng-scope">
 	<!---------------------------------------------->
 	<!--------------- Header ----------------------->
 	<!---------------------------------------------->
-
 	<header class="Header " data-page="normal">
-		<a href="/" class="Header__Logo"
-			onclick="trackEvent('CLICK_HEADER_LOGO');"> <i
-			class="Header__LogoIcon"></i>
+
+		<a href="http://localhost:9000/mangoplate/index.do"
+			class="Header__Logo" onclick="trackEvent('CLICK_HEADER_LOGO');"
+			target=_parent> <i class="Header__LogoIcon"></i>
 		</a>
 
 		<div class="Header__SearchBox">
@@ -42,9 +42,10 @@
 					<span class="Header__MenuText">맛집 리스트</span>
 			</a></li>
 
-			<li class="Header__MenuItem"><a href="/mango_picks"
-				class="Header__MenuLink" onclick="trackEvent('CLICK_MANGO_PICK')">
-					<span class="Header__MenuText">망고 스토리</span>
+			<li class="Header__MenuItem"><a
+				href="http://localhost:9000/mangoplate/boardstory_list.do"
+				class="Header__MenuLink" onclick="trackEvent('CLICK_MANGO_PICK')"
+				target="_parent"> <span class="Header__MenuText">망고 스토리</span>
 			</a></li>
 		</ul>
 
@@ -73,8 +74,5 @@
 			</li>
 		</ul>
 	</header>
-
-
-
 </body>
 </html>
