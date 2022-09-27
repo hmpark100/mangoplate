@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>망고 스토리</title>
+<title>망고스토리 list</title>
 <link rel="stylesheet"
 	href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
 <link rel="stylesheet"
@@ -27,9 +27,20 @@
 	<!---------------------------------------------->
 	<main class="pg-all_picks">
 		<aside class="represented-picks">
+			<div class="content">
+				<table class="board">
+					<tr>
+						<td colspan="4"><a href="boardstory_write.do">
+								<button type="button" class="btn_style">글쓰기</button>
+						</a></td>
+					</tr>
+				</table>
+			</div>
 			<div class="slider-container">
 				<ul class="list-represented-picks">
-					<li><a href="/mango_picks/2516"
+					<li>
+						<%-- <a href="board_content.do?bid=${vo.bid}">${vo.btitle}</a> --%>
+						<a href="/mango_picks/2516"
 						onclick="trackEvent('CLICK_FEATUED_PICK', {&quot;position&quot;:0,&quot;story_id&quot;:2516})">
 							<figure class="mango-pick-item">
 								<div class="thumb"
@@ -40,7 +51,8 @@
 									<p class="desc">셰프의 소울을 담은 한우의 맛!</p>
 								</figcaption>
 							</figure>
-					</a></li>
+					</a>
+					</li>
 				</ul>
 			</div>
 		</aside>
@@ -51,7 +63,7 @@
 				<ul class="list-editors-pick">
 					<li class="mango-pick-item-content-wrap"><a
 						onclick="trackEvent('CLICK_STORY', {&quot;position&quot;:0,&quot;story_id&quot;:2549});"
-						href="/mango_picks/2549">
+						href="http://localhost:9000/mangoplate/boardstory_content.do">
 							<figure class="mango-pick-item">
 								<div class="thumb lazy"
 									data-original="https://mp-seoul-image-production-s3.mangoplate.com/mango_pick/full/aqoyibtnt4k7wi.png?fit=around|585:345&amp;crop=585:345;*,*&amp;output-format=jpg&amp;output-quality=80"
