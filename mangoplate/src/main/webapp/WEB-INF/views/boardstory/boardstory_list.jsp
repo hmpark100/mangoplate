@@ -62,32 +62,32 @@
 				<h1 class="title only-desktop">에디터 입맛별 맛집 매거진</h1>
 				<ul class="list-editors-pick">
 					<li class="mango-pick-item-content-wrap"><a
-						onclick="trackEvent('CLICK_STORY', {&quot;position&quot;:0,&quot;story_id&quot;:2549});"
+						onclick="trackEvent('CLICK_STORY', {&quot;position&quot;:7,&quot;story_id&quot;:2557});"
 						href="http://localhost:9000/mangoplate/boardstory_content.do">
 							<figure class="mango-pick-item">
 								<div class="thumb lazy"
-									data-original="https://mp-seoul-image-production-s3.mangoplate.com/mango_pick/full/aqoyibtnt4k7wi.png?fit=around|585:345&amp;crop=585:345;*,*&amp;output-format=jpg&amp;output-quality=80"
+									data-original="https://mp-seoul-image-production-s3.mangoplate.com/mango_pick/full/jinf88_y1yyjfo.jpg?fit=around|585:345&amp;crop=585:345;*,*&amp;output-format=jpg&amp;output-quality=80"
 									data-error="https://mp-seoul-image-production-s3.mangoplate.com/web/resources/kssf5eveeva_xlmy.jpg?fit=around|*:*&amp;crop=*:*;*,*&amp;output-format=jpg&amp;output-quality=80"
-									style="display: block; background-image: url(&quot;https://mp-seoul-image-production-s3.mangoplate.com/mango_pick/full/aqoyibtnt4k7wi.png?fit=around|585:345&amp;crop=585:345;*,*&amp;output-format=jpg&amp;output-quality=80&quot;);">
+									style="display: block; background-image: url(&quot;https://mp-seoul-image-production-s3.mangoplate.com/mango_pick/full/jinf88_y1yyjfo.jpg?fit=around|585:345&amp;crop=585:345;*,*&amp;output-format=jpg&amp;output-quality=80&quot;);">
 								</div>
 
 								<figcaption>
-									<strong class="title">아침을 여는 카페 BEST 9</strong>
+									<strong class="title">남한산성의 건강한 맛집 5곳</strong>
 
-									<p class="hash">일찍부터 카페로 향하는 아침형 인간들을 위하여</p>
+									<p class="hash">건강하고 맛도 좋은 그런 맛집!</p>
 
 									<figure class="editor only-mobile">
 										<span class="badge"></span>
 
 										<div class="thumb">
-											<img class="center-crop lazy" alt="뚜래블러"
-												data-original="https://s3-ap-northeast-2.amazonaws.com/mp-seoul-image-production/716698_1599309240834?fit=around|89:89&amp;crop=89:89;*,*&amp;output-format=jpg&amp;output-quality=80"
+											<img class="center-crop lazy" alt="배망고"
+												data-original="https://mp-seoul-image-production-s3.mangoplate.com/mango_pick_editor_pictures/pam0xg91t2pdskza.jpg?fit=around|89:89&amp;crop=89:89;*,*&amp;output-format=jpg&amp;output-quality=80"
 												data-error="https://mp-seoul-image-production-s3.mangoplate.com/web/resources/jmcmlp180qwkp1jj.png?fit=around|*:*&amp;crop=*:*;*,*&amp;output-format=jpg&amp;output-quality=80"
-												src="https://s3-ap-northeast-2.amazonaws.com/mp-seoul-image-production/716698_1599309240834?fit=around|89:89&amp;crop=89:89;*,*&amp;output-format=jpg&amp;output-quality=80"
+												src="https://mp-seoul-image-production-s3.mangoplate.com/mango_pick_editor_pictures/pam0xg91t2pdskza.jpg?fit=around|89:89&amp;crop=89:89;*,*&amp;output-format=jpg&amp;output-quality=80"
 												style="display: block;">
 										</div>
 
-										<figcaption>뚜래블러</figcaption>
+										<figcaption>배망고</figcaption>
 									</figure>
 								</figcaption>
 
@@ -95,24 +95,22 @@
 									<span class="badge"></span>
 
 									<div class="thumb">
-										<img class="center-crop lazy" alt="뚜래블러"
-											data-original="https://s3-ap-northeast-2.amazonaws.com/mp-seoul-image-production/716698_1599309240834?fit=around|89:89&amp;crop=89:89;*,*&amp;output-format=jpg&amp;output-quality=80"
+										<img class="center-crop lazy" alt="배망고"
+											data-original="https://mp-seoul-image-production-s3.mangoplate.com/mango_pick_editor_pictures/pam0xg91t2pdskza.jpg?fit=around|89:89&amp;crop=89:89;*,*&amp;output-format=jpg&amp;output-quality=80"
 											data-error="https://mp-seoul-image-production-s3.mangoplate.com/web/resources/jmcmlp180qwkp1jj.png?fit=around|*:*&amp;crop=*:*;*,*&amp;output-format=jpg&amp;output-quality=80"
-											src="https://s3-ap-northeast-2.amazonaws.com/mp-seoul-image-production/716698_1599309240834?fit=around|89:89&amp;crop=89:89;*,*&amp;output-format=jpg&amp;output-quality=80"
+											src="https://mp-seoul-image-production-s3.mangoplate.com/mango_pick_editor_pictures/pam0xg91t2pdskza.jpg?fit=around|89:89&amp;crop=89:89;*,*&amp;output-format=jpg&amp;output-quality=80"
 											style="display: block;">
 									</div>
 
-									<figcaption>뚜래블러</figcaption>
+									<figcaption>배망고</figcaption>
 								</figure>
 							</figure>
 
 							<div class="review-content">
 								<figure class="user">
-									<figcaption>뚜래블러</figcaption>
+									<figcaption>배망고</figcaption>
 								</figure>
-								<p>✔️ 오늘의 스토리텔러 소개 안녕하세요, 여행과 맛집을 좋아하는 뚜래블러입니다. 커피와 디저트를
-									좋아해서 인스타그램에 카페를 주로 소개하곤 하는데요. 가끔은 출근전에도 아침 일찍 일어나 카페투어를 하곤 합니다.
-									그렇게 찾아가 봤던 아침형 카페를 소개드려볼게요! - Instagram @jay_taster</p>
+								<p>오늘은 남한산성 근처의 건강한 맛집 5곳을 준비해보았습니다. 함께 보시죠!</p>
 							</div>
 					</a></li>
 				</ul>
