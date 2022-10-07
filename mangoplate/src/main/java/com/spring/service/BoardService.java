@@ -2,7 +2,7 @@ package com.spring.service;
 
 import java.util.ArrayList;
 
-import com.mangoplate.vo.CgvBoardVO;
+import com.mycgv.vo.CgvBoardVO;
 
 public interface BoardService {
 	int getTotalCount();	//게시글 전체수

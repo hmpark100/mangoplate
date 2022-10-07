@@ -2,7 +2,7 @@ package com.spring.service;
 
 import java.util.ArrayList;
 
-import com.mangoplate.vo.CgvMovieVO;
+import com.mycgv.vo.CgvMovieVO;
 
 public interface MovieService {
 	int getTotalCount();				//영화 전체 로우수

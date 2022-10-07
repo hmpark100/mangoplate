@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.mangoplate.vo.CgvMemberVO;
-import com.mangoplate.vo.SessionVO;
-import com.mangoplate.dao.CgvMemberDAO;
+import com.mycgv.dao.CgvMemberDAO;
+import com.mycgv.vo.CgvMemberVO;
+import com.mycgv.vo.SessionVO;
 
 public class MemberServiceImpl implements MemberService{
 	

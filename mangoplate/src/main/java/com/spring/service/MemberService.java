@@ -2,8 +2,8 @@ package com.spring.service;
 
 import java.util.ArrayList;
 
-import com.mangoplate.vo.CgvMemberVO;
-import com.mangoplate.vo.SessionVO;
+import com.mycgv.vo.CgvMemberVO;
+import com.mycgv.vo.SessionVO;
 
 public interface MemberService {	
 	SessionVO getLoginResult(CgvMemberVO vo);  //로그인 처리 메소드

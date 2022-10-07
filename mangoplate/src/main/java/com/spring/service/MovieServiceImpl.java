@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mangoplate.vo.CgvMovieVO;
-import com.mangoplate.dao.CgvMovieDAO;
+import com.mycgv.dao.CgvMovieDAO;
+import com.mycgv.vo.CgvMovieVO;
 
 @Service
 public class MovieServiceImpl implements MovieService{

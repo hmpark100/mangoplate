@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mangoplate.vo.CgvNoticeVO;
-import com.mangoplate.dao.CgvNoticeDAO;
+import com.mycgv.dao.CgvNoticeDAO;
+import com.mycgv.vo.CgvNoticeVO;
 
 @Service
 public class NoticeServiceImpl implements NoticeService{

@@ -29,5 +29,7 @@ public class BoardStoryController {
 	public String boardstory_list() {
 		return "/boardstory/boardstory_list";
 	}
+	
+	
 
 }
