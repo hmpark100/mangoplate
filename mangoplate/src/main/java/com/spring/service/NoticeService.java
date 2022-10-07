@@ -2,7 +2,7 @@ package com.spring.service;
 
 import java.util.ArrayList;
 
-import com.mycgv.vo.CgvNoticeVO;
+import com.mangoplate.vo.CgvNoticeVO;
 
 public interface NoticeService {
 	int getTotalCount();	//공지사항 전체 로우수

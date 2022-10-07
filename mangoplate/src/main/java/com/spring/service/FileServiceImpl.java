@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-import com.mycgv.vo.CgvBoardVO;
-import com.mycgv.vo.CgvMovieVO;
-import com.mycgv.vo.CgvNoticeVO;
+import com.mangoplate.vo.CgvBoardVO;
+import com.mangoplate.vo.CgvMovieVO;
+import com.mangoplate.vo.CgvNoticeVO;
 
 public class FileServiceImpl {
 	/**
