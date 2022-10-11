@@ -7,9 +7,8 @@
 <mapper namespace="mapper.boardstory">
 	<!-- board insert  -->
 	<insert id="insert" parameterType="com.mangoplate.vo.MangoBoardStoryVO" >
-		insert into mg_board_story
-				 values('b_'||sequ_mg_board_story.nextval, #{sname}, #{editer}, #{stitle}, #{sstitle}, 
-				 sysdate, 0, #{scontent}, #{simage1}, #{ssimage1}, #{simage2}, #{ssimage2})
+		insert into mg_board_story 
+			    values('b_' ||SEQU_mg_board_story.NEXTVAL , #{editer},#{stitile},#{sstitle}, sysdate,0,#{scontent})
 	</insert>
 </mapper>    
     

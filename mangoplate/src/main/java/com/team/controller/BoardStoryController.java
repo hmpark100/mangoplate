@@ -1,5 +1,6 @@
 package com.team.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -7,17 +8,20 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.mangoplate.dao.MangoBoardStoryDAO;
 import com.mangoplate.vo.MangoBoardStoryVO;
+import com.team.service.BoardStoryServiceImpl;
 
 @Controller
 public class BoardStoryController {
+	@Autowired
+	private BoardStoryServiceImpl boardStoryService;
 	/**
 	 * boardstory_write_check.do 호출
 	 */
 	@RequestMapping(value="/boardstory_write_check.do", method=RequestMethod.POST)
 	public ModelAndView boardstory_write_check(MangoBoardStoryVO vo) {
 		ModelAndView mv = new ModelAndView();
-		MangoBoardStoryDAO dao = new MangoBoardStoryDAO();
-		int result = dao.insert(vo);
+		//MangoBoardStoryDAO dao = new MangoBoardStoryDAO();
+		int result = boardStoryService.getWriteResult(vo);
 
 		if(result == 1){
 			//mv.setViewName("/board/board_list"); //에러X, 아무런 게시글 출력되지 X

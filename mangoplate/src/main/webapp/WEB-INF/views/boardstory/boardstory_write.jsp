@@ -6,10 +6,10 @@
 <meta charset="UTF-8">
 <title>망고스토리 write</title>
 <link rel="stylesheet"
-	href="http://localhost:9000/mycgv/resources/css/mycgv.css">
+	href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
 <script
-	src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
-<script src="http://localhost:9000/mycgv/resources/js/mycgv_jquery.js"></script>
+	src="http://localhost:9000/mangoplate/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mangoplate/resources/js/mangoplate_jquery.js"></script>
 </head>
 <body>
 	<!-- Header Include -->
@@ -25,6 +25,7 @@
 		<form name="boardWriteForm" action="boardstory_write_check.do"
 			  method="post">
 			<ul>
+				<li><label>작성자</label> <input type="text" name="stitle" id="stitle"></li>
 				<li><label>제목</label> <input type="text" name="stitle" id="stitle"></li>
 				<li><label>소제목</label> <input type="text" name="sstitle" id="sstitle"></li>
 				<li><label>내용</label> <textarea name="scontent"></textarea></li>

@@ -1,3 +1,168 @@
+/********************************************************
+	// content
+	********************************************************/
+div.content {
+	width: 980px;
+	margin: 0 auto; /* border:2px solid red; */
+}
+
+.carousel {
+	margin-top: 0px;
+	width: 100%;
+	background-color: powderblue;
+	height: 200px;
+	text-align: center;
+}
+
+/******** 버튼 공통 스타일  ******************/
+.btn_style {
+		font-size:12px;
+		width:100px;
+		padding:7px 8px;
+		background-color:coral;
+		color:#fff;
+		border:1px solid coral;
+		margin-right:5px;
+	}
+
+/***********************************
+ 		게시판
+***********************************/
+table.board, form[name='boardWriteForm'], table.boardContent, form[name='boardUpdateForm'],
+	form[name='boardDeleteForm'] {
+	/* border:1px solid red; */
+	width: 70%;
+	margin: 0 auto;
+	font-size: 13px;
+}
+
+table.board, table.board th, table.board td, table.boardContent, table.boardContent th,
+	table.boardContent td {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+}
+
+table.board th, table.boardContent th {
+	background-color: powderblue;
+}
+
+table.board th, table.board td, table.boardContent th, table.boardContent td
+	{
+	padding: 10px 0;
+}
+
+table.board td, table.boardContent {
+	text-align: center;
+}
+
+table.board tr:first-child td {
+	border: 1px solid #fff;
+	border-bottom: 1px solid #ccc;
+	text-align: right;
+}
+
+table.board tr:first-child td button {
+	/* border:1px solid blue; */
+	background-color: #ccc;
+	border-color: #ccc;
+	border-radius: 5px;
+}
+
+table.board tr:last-child td, table.boardContent tr:last-child td {
+	border: 1px solid #fff;
+	border-top: 1px solid #ccc;
+	padding-top: 20px;
+}
+
+table.board  td a {
+	text-decoration: none;
+	color: #000;
+}
+
+table.board  td a:hover {
+	text-decoration: underline;
+}
+
+form[name='boardWriteForm'] ul, form[name='boardUpdateForm'] ul, form[name='boardDeleteForm'] ul
+	{
+	border: 1px solid #e5e5e5;
+	list-style-type: none;
+	margin: 0;
+	padding: 20px;
+}
+
+form[name='boardWriteForm'] ul li, form[name='boardUpdateForm'] ul li,
+	form[name='boardDeleteForm'] ul li {
+	clear: left;
+	padding: 5px 0px;
+}
+
+form[name='boardWriteForm'] ul label, form[name='boardUpdateForm'] ul label
+	{
+	background-color: powderblue;
+	display: block;
+	float: left;
+	width: 120px;
+	padding: 8px 0px;
+	font-size: 12px;
+	color: #000;
+	text-indent: 25px;
+	margin-right: 10px;
+	margin-left: 50px;
+	font-weight: bold;
+	border: 1px solid powderblue;
+	border-radius: 5px;
+}
+
+form[name='boardWriteForm'] input, form[name='boardUpdateForm'] input {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 56%;
+	padding: 8px 10px;
+	font-size: 12px;
+}
+
+form[name='boardWriteForm'] textarea, form[name='boardUpdateForm'] textarea
+	{
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 56%;
+	padding: 8px 10px;
+	height: 100px;
+}
+
+form[name='boardWriteForm'] li:last-child, form[name='boardUpdateForm'] li:last-child,
+	form[name='boardDeleteForm'] li:last-child {
+	text-align: center;
+	padding-top: 20px;
+}
+
+table.boardContent tr:nth-child(2) td, table.boardContent tr:nth-child(3) td
+	{
+	/* border:1px solid blue; */
+	text-align: left;
+	text-indent: 10px;
+}
+
+form[name='boardDeleteForm'] li:first-child {
+	text-align: center;
+}
+
+form[name='boardDeleteForm'] li:first-child img {
+	width: 50%;
+}
+
+form[name='boardDeleteForm'] li:nth-child(2) div {
+	text-align: center;
+	font-size: 20px;
+	font-family: '함초롱바탕';
+	font-weight: bold;
+	padding: 10px 0;
+}
+
+/***********************************
+ 		따온것
+***********************************/
 @font-face {
 	font-family: 'SpoqaHanSans';
 	font-display: auto;
@@ -100,12 +265,22 @@
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -114,12 +289,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -128,12 +313,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 * {
@@ -294,12 +489,22 @@ img {
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -308,12 +513,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -322,12 +537,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 [data-simplebar] {
@@ -617,33 +842,94 @@ a:hover {
 }
 
 100
+
+
 %
 {
 -moz-transform
+
+
 :
-scale(
+
+
+scale
+(
+
+
 1
-);
--ms-transform
-:
-scale(
-1
-);
--o-transform
-:
-scale(
-1
-);
-transform
-:
-scale(
-1
-);
--webkit-transform
-:
-scale(
-1
+
+
 )
+;
+
+
+-ms-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+-o-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+-webkit-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+
+
 }
 }
 @
@@ -656,33 +942,94 @@ scale(
 }
 
 100
+
+
 %
 {
 -moz-transform
+
+
 :
-scale(
+
+
+scale
+(
+
+
 1
-);
--ms-transform
-:
-scale(
-1
-);
--o-transform
-:
-scale(
-1
-);
-transform
-:
-scale(
-1
-);
--webkit-transform
-:
-scale(
-1
+
+
 )
+;
+
+
+-ms-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+-o-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+-webkit-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+
+
 }
 }
 @
@@ -695,33 +1042,94 @@ keyframes ani_star { 30%{
 }
 
 100
+
+
 %
 {
 -moz-transform
+
+
 :
-scale(
+
+
+scale
+(
+
+
 1
-);
--ms-transform
-:
-scale(
-1
-);
--o-transform
-:
-scale(
-1
-);
-transform
-:
-scale(
-1
-);
--webkit-transform
-:
-scale(
-1
+
+
 )
+;
+
+
+-ms-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+-o-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+-webkit-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+
+
 }
 }
 .wannago_btn.selected {
@@ -962,12 +1370,22 @@ img.center-crop.round {
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -976,12 +1394,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -990,12 +1418,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 * {
@@ -1024,12 +1462,22 @@ body {
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -1038,12 +1486,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -1052,12 +1510,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .wannago_go_app_popup {
@@ -1159,12 +1627,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -1173,12 +1651,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -1187,12 +1675,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .wannago_login_popup {
@@ -1411,12 +1909,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -1425,12 +1933,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -1439,12 +1957,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .Menu {
@@ -1698,12 +2226,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -1712,12 +2250,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -1726,12 +2274,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .btn-login {
@@ -1923,12 +2481,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -1937,12 +2505,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -1951,12 +2529,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .btn-type-share {
@@ -2325,12 +2913,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -2339,12 +2937,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -2353,12 +2961,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .btn-type-round {
@@ -2516,12 +3134,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -2530,12 +3158,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -2544,12 +3182,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 html body .wannago_btn.not_wannago_btn {
@@ -2599,12 +3247,22 @@ html body .wannago_btn.not_wannago_btn {
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -2613,12 +3271,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -2627,12 +3295,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .shortcut-share {
@@ -2681,12 +3359,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -2695,12 +3383,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -2709,12 +3407,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .sns-shortcut .btn {
@@ -2866,12 +3574,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -2880,12 +3598,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -2894,12 +3622,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .pop-context {
@@ -3346,12 +4084,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -3360,12 +4108,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -3374,12 +4132,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -3388,12 +4156,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -3402,12 +4180,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -3416,12 +4204,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .KeywordSuggester {
@@ -3767,12 +4565,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -3781,12 +4589,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -3795,12 +4613,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .UserProfile {
@@ -4063,12 +4891,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -4077,12 +4915,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -4091,12 +4939,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -4105,12 +4963,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -4119,12 +4987,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -4133,12 +5011,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .PopupConfirmLayer {
@@ -4617,12 +5505,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -4631,12 +5529,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -4645,12 +5553,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .UserProfileButton {
@@ -4770,12 +5688,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -4784,12 +5712,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -4798,12 +5736,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .MenuButton {
@@ -4847,12 +5795,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -4861,12 +5819,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -4875,12 +5843,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -4889,12 +5867,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -4903,12 +5891,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -4917,12 +5915,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .RestaurantHorizontalItem {
@@ -5059,33 +6067,94 @@ background-position
 }
 
 100
+
+
 %
 {
 -moz-transform
+
+
 :
-scale(
+
+
+scale
+(
+
+
 1
-);
--ms-transform
-:
-scale(
-1
-);
--o-transform
-:
-scale(
-1
-);
-transform
-:
-scale(
-1
-);
--webkit-transform
-:
-scale(
-1
+
+
 )
+;
+
+
+-ms-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+-o-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+-webkit-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+
+
 }
 }
 @
@@ -5098,33 +6167,94 @@ scale(
 }
 
 100
+
+
 %
 {
 -moz-transform
+
+
 :
-scale(
+
+
+scale
+(
+
+
 1
-);
--ms-transform
-:
-scale(
-1
-);
--o-transform
-:
-scale(
-1
-);
-transform
-:
-scale(
-1
-);
--webkit-transform
-:
-scale(
-1
+
+
 )
+;
+
+
+-ms-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+-o-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+-webkit-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+
+
 }
 }
 @
@@ -5137,33 +6267,94 @@ keyframes ani_star { 30%{
 }
 
 100
+
+
 %
 {
 -moz-transform
+
+
 :
-scale(
+
+
+scale
+(
+
+
 1
-);
--ms-transform
-:
-scale(
-1
-);
--o-transform
-:
-scale(
-1
-);
-transform
-:
-scale(
-1
-);
--webkit-transform
-:
-scale(
-1
+
+
 )
+;
+
+
+-ms-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+-o-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+;
+
+
+-webkit-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+
+
+)
+
+
 }
 }
 .RestaurantHorizontalItem__WannagoButton {
@@ -5919,12 +7110,22 @@ scale(
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -5933,12 +7134,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -5947,12 +7158,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 footer.footer {
@@ -6251,12 +7472,22 @@ footer.footer small a {
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -6265,12 +7496,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -6279,12 +7520,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .dfp_ad_container {
@@ -6339,12 +7590,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -6353,12 +7614,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -6367,12 +7638,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .dfp_ad_front_popup {
@@ -6448,12 +7729,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -6462,12 +7753,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -6476,12 +7777,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -6490,12 +7801,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -6504,12 +7825,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -6518,12 +7849,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @media only screen and (min-width: 769px) {
@@ -6641,12 +7982,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -6655,12 +8006,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -6669,12 +8030,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -6689,33 +8060,99 @@ keyframes popup_animation {
 }
 
 60
+
+
 %
 {
 -webkit-transform
+
+
 :
-scale(
-1.1
-);
--moz-transform
-:
-scale(
-1.1
-);
--ms-transform
-:
-scale(
-1.1
-);
--o-transform
-:
-scale(
-1.1
-);
-transform
-:
-scale(
-1.1
+
+
+scale
+(
+
+
+1
+.1
+
+
 )
+;
+
+
+-moz-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+.1
+
+
+)
+;
+
+
+-ms-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+.1
+
+
+)
+;
+
+
+-o-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+.1
+
+
+)
+;
+
+
+transform
+
+
+:
+
+
+scale
+(
+
+
+1
+.1
+
+
+)
+
+
 }
 to {
 	-webkit-transform: scale(1);
@@ -6740,33 +8177,99 @@ to {
 }
 
 60
+
+
 %
 {
 -webkit-transform
+
+
 :
-scale(
-1.1
-);
--moz-transform
-:
-scale(
-1.1
-);
--ms-transform
-:
-scale(
-1.1
-);
--o-transform
-:
-scale(
-1.1
-);
-transform
-:
-scale(
-1.1
+
+
+scale
+(
+
+
+1
+.1
+
+
 )
+;
+
+
+-moz-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+.1
+
+
+)
+;
+
+
+-ms-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+.1
+
+
+)
+;
+
+
+-o-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+.1
+
+
+)
+;
+
+
+transform
+
+
+:
+
+
+scale
+(
+
+
+1
+.1
+
+
+)
+
+
 }
 to {
 	-webkit-transform: scale(1);
@@ -6791,33 +8294,99 @@ to {
 }
 
 60
+
+
 %
 {
 -webkit-transform
+
+
 :
-scale(
-1.1
-);
--moz-transform
-:
-scale(
-1.1
-);
--ms-transform
-:
-scale(
-1.1
-);
--o-transform
-:
-scale(
-1.1
-);
-transform
-:
-scale(
-1.1
+
+
+scale
+(
+
+
+1
+.1
+
+
 )
+;
+
+
+-moz-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+.1
+
+
+)
+;
+
+
+-ms-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+.1
+
+
+)
+;
+
+
+-o-transform
+
+
+:
+
+
+scale
+(
+
+
+1
+.1
+
+
+)
+;
+
+
+transform
+
+
+:
+
+
+scale
+(
+
+
+1
+.1
+
+
+)
+
+
 }
 to {
 	-webkit-transform: scale(1);
@@ -7010,12 +8579,22 @@ to {
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -7024,12 +8603,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -7038,12 +8627,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .review-content {
@@ -7783,12 +9382,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -7797,12 +9406,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -7811,12 +9430,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .tag-item {
@@ -7864,12 +9493,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -7878,12 +9517,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -7892,12 +9541,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .restaurant-item {
@@ -8718,12 +10377,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -8732,12 +10401,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -8746,12 +10425,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .ls-item {
@@ -9033,12 +10722,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -9047,12 +10746,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -9061,12 +10770,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .list-type-ls {
@@ -9124,12 +10843,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -9138,12 +10867,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -9152,12 +10891,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .editor {
@@ -9513,12 +11262,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -9527,12 +11286,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -9541,12 +11310,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .mango-pick-item {
@@ -9876,12 +11655,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -9890,12 +11679,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -9904,12 +11703,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .list-restaurants {
@@ -10164,12 +11973,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -10178,12 +11997,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -10192,12 +12021,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @media only screen and (min-width: 769px) {
@@ -10643,12 +12482,22 @@ div.rn-carousel-indicator span.active {
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -10657,12 +12506,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -10671,12 +12530,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -10685,12 +12554,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -10699,12 +12578,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -10713,12 +12602,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .PopupUseApp {
@@ -10887,12 +12786,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -10901,12 +12810,22 @@ background-position
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 @
@@ -10915,12 +12834,22 @@ keyframes placeholderAnimation { 0%{
 }
 
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 650px
+
+
 0
+
+
 }
 }
 .BottomBarUseApp {

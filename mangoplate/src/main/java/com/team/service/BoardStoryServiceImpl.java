@@ -9,7 +9,7 @@ import com.mangoplate.vo.MangoBoardStoryVO;
 @Service
 public class BoardStoryServiceImpl implements BoardStoryService{
 	@Autowired
-	private MangoBoardStoryDAO boardstoryDao;
+	private MangoBoardStoryDAO boardStoryDao;
 	
 	/**
 	 * 게시글 쓰기
@@ -18,7 +18,7 @@ public class BoardStoryServiceImpl implements BoardStoryService{
 	public int getWriteResult(MangoBoardStoryVO vo) {
 		//CgvBoardDAO dao = new CgvBoardDAO();
 		//int result = dao.insert(vo);
-		return boardstoryDao.insert(vo);
+		return boardStoryDao.insert(vo);
 	}
 	
 }
