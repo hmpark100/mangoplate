@@ -25,7 +25,7 @@
 		<form name="boardWriteForm" action="boardstory_write_check.do"
 			  method="post">
 			<ul>
-				<li><label>작성자</label> <input type="text" name="stitle" id="stitle"></li>
+				<li><label>작성자</label> <input type="text" name="editer" id="editer"></li>
 				<li><label>제목</label> <input type="text" name="stitle" id="stitle"></li>
 				<li><label>소제목</label> <input type="text" name="sstitle" id="sstitle"></li>
 				<li><label>내용</label> <textarea name="scontent"></textarea></li>

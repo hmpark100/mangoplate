@@ -12,4 +12,19 @@ public interface BoardStoryService {
 	 */
 	int getWriteResult(MangoBoardStoryVO vo);
 
+	/**
+	 * 게시글 전체 리스트
+	 */
+	ArrayList<MangoBoardStoryVO> getList(int startCount, int endCount);
+
+	/**
+	 * 조회수 업데이트
+	 */
+	void getUpdateHits(String sid);
+
+	/**
+	 * 게시글 상세보기
+	 */
+	MangoBoardStoryVO getContent(String sid);
+
 }
