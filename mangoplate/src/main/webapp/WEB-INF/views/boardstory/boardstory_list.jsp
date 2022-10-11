@@ -33,7 +33,7 @@
 		<h1>게시판-리스트</h1>
 		<table class="board">
 			<tr>
-				<td colspan="4"><a href="board_write.do">
+				<td colspan="4"><a href="boardstory_write.do">
 						<button type="button" class="btn_style">글쓰기</button>
 				</a></td>
 			</tr>

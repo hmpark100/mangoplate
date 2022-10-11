@@ -3,7 +3,7 @@ package com.mangoplate.dao;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.mangoplate.vo.MangoBoardVO;
+import com.mangoplate.vo.MangoBoardStoryVO;
 
 public class MangoBoardStoryDAO extends DBConn {
 	//sqlSession을 가져오세요.
@@ -11,9 +11,9 @@ public class MangoBoardStoryDAO extends DBConn {
 	private SqlSessionTemplate sqlSession;
 	
 	/**
-	 * insert : 게시글 등록 - mapper.board.insert
+	 * insert : 게시글 등록 - mapper.boardstory.insert
 	 */
-	public int insert(MangoBoardVO vo) {
+	public int insert(MangoBoardStoryVO vo) {
 		return sqlSession.insert("mapper.boardstory.insert", vo);
 	}
 }
