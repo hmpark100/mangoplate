@@ -33,4 +33,20 @@ public class AdminController {
 	public String admin() {
 		return "/admin/admin";
 	}
+	
+	
+	/////////////////////////////////////////////////////////////////////////
+	//            notice         /        eatdeal
+	/////////////////////////////////////////////////////////////////////////
+	
+	//admin_notice
+	/**
+	 * admin_notice_content.do
+	 */
+	@RequestMapping(value = "/admin_notice_content.do", method = RequestMethod.GET)
+	public String admin_notice_content() {
+		return "/admin/admin_notice/admin_notice_content";
+	}
+	
+	//admin_eatdeal
 }
