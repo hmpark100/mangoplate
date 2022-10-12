@@ -15,7 +15,7 @@ public interface BoardStoryService {
 	/**
 	 * 게시글 전체 리스트
 	 */
-	ArrayList<MangoBoardStoryVO> getList(int startCount, int endCount);
+	ArrayList<MangoBoardStoryVO> getList();
 
 	/**
 	 * 조회수 업데이트

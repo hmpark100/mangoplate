@@ -35,9 +35,9 @@ public class BoardStoryServiceImpl implements BoardStoryService{
 	 * 게시글 전체 리스트
 	 */
 	@Override
-	public ArrayList<MangoBoardStoryVO> getList(int startCount, int endCount){
+	public ArrayList<MangoBoardStoryVO> getList(){
 		//CgvBoardDAO dao = new CgvBoardDAO();
-		ArrayList<MangoBoardStoryVO> list = boardStoryDao.select(startCount, endCount);
+		ArrayList<MangoBoardStoryVO> list = boardStoryDao.select();
 		return list;
 	}
 	

@@ -47,9 +47,9 @@
 			<c:forEach var="vo" items="${list}">
 				<tr>
 					<td>${vo.rno}</td>
-					<td><a href="board_content.do?bid=${vo.bid}">${vo.btitle}</a></td>
-					<td>${vo.bdate }</td>
-					<td>${vo.bhits }</td>
+					<td><a href="board_content.do?bid=${vo.sid}">${vo.stitle}</a></td>
+					<td>${vo.sdate }</td>
+					<td>${vo.shits }</td>
 				</tr>
 			</c:forEach>
 

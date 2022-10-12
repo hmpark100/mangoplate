@@ -2,7 +2,8 @@ package com.mangoplate.vo;
 
 public class MangoBoardStoryVO {
 	int rno, shits;
-	String sid, sname, editer, stitle, sstitle, sdate, scontent, simage1, ssimage1, simage2, ssimage2;
+	String sid, editer, stitle, sstitle, sdate, scontent, simage, ssimage;
+	
 	public int getRno() {
 		return rno;
 	}
@@ -20,12 +21,6 @@ public class MangoBoardStoryVO {
 	}
 	public void setSid(String sid) {
 		this.sid = sid;
-	}
-	public String getSname() {
-		return sname;
-	}
-	public void setSname(String sname) {
-		this.sname = sname;
 	}
 	public String getEditer() {
 		return editer;
@@ -57,29 +52,17 @@ public class MangoBoardStoryVO {
 	public void setScontent(String scontent) {
 		this.scontent = scontent;
 	}
-	public String getSimage1() {
-		return simage1;
+	public String getSimage() {
+		return simage;
 	}
-	public void setSimage1(String simage1) {
-		this.simage1 = simage1;
+	public void setSimage(String simage) {
+		this.simage = simage;
 	}
-	public String getSsimage1() {
-		return ssimage1;
+	public String getSsimage() {
+		return ssimage;
 	}
-	public void setSsimage1(String ssimage1) {
-		this.ssimage1 = ssimage1;
-	}
-	public String getSimage2() {
-		return simage2;
-	}
-	public void setSimage2(String simage2) {
-		this.simage2 = simage2;
-	}
-	public String getSsimage2() {
-		return ssimage2;
-	}
-	public void setSsimage2(String ssimage2) {
-		this.ssimage2 = ssimage2;
+	public void setSsimage(String ssimage) {
+		this.ssimage = ssimage;
 	}
 	
 	

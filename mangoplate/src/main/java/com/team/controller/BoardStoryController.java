@@ -1,12 +1,13 @@
 package com.team.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mangoplate.dao.MangoBoardStoryDAO;
 import com.mangoplate.vo.MangoBoardStoryVO;
 import com.team.service.BoardStoryServiceImpl;
 
@@ -52,10 +53,17 @@ public class BoardStoryController {
 	 * boardstory_list.do »£√‚
 	 */
 	@RequestMapping(value = "/boardstory_list.do", method = RequestMethod.GET)
-	public String boardstory_list() {
-		return "/boardstory/boardstory_list";
+	public ModelAndView boardstory_list() {
+		ArrayList<MangoBoardStoryVO> list = boardStoryService.getList();
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("list", list);
+		mv.setViewName("/boardstory/boardstory_list");
+		return mv;
 	}
 	
+	@RequestMapping(value="/board_detail2.do", method = RequestMethod.GET)
+	public String footer2() {
+		return "/board/board_detail2";
+	}
 	
-
 }

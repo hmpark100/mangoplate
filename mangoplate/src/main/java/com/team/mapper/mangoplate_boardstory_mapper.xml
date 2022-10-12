@@ -19,18 +19,18 @@
 	</select>
 
 	<!-- board list -->
-	<select id="list" parameterType="map" resultType="com.mangoplate.vo.MangoBoardStoryVO">
-		select rno, bid, btitle, bhits, bdate 
-				  from (select rownum rno, sid, editer, stitle, sstitle to_char(sdate, 'yyyy-mm-dd') sdate  
-			 from (select sid, editer, stitle, sstitle, sdate from mg_board_story 
-			            order by sdate desc))
-			 where rno between #{start} and #{end}
+	<select id="list" resultType="com.mangoplate.vo.MangoBoardStoryVO">
+		select rno, sid, editer, stitle, shits, sdate 
+				  from (select rownum rno, sid, editer, stitle, sstitle, to_char(sdate, 'yyyy-mm-dd') sdate, shits 
+			            from (select sid, editer, stitle, sstitle, sdate, shits from mg_board_story order by sdate desc)
+                        )
+			 <!--where rno between #{start} and #{end}-->
 	</select>
 
 	<!-- board insert  -->
 	<insert id="insert" parameterType="com.mangoplate.vo.MangoBoardStoryVO" >
 		insert into mg_board_story 
-			    values('b_' ||SEQU_mg_board_story.nextval, #{editer},#{stitle},#{sstitle}, sysdate, 0, #{scontent})
+			    values('b_' ||SEQU_mg_board_story.nextval, #{editer},#{stitle},#{sstitle}, sysdate, 0, #{scontent}, '', '')
 	</insert>
 </mapper>    
     

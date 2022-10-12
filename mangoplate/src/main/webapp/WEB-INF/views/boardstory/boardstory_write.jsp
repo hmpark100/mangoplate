@@ -21,16 +21,15 @@
 	<!--------------- Content ----------------------->
 	<!---------------------------------------------->
 	<div class="content">
-		<h1>게시판-글쓰기</h1>
+		<h1>망고스토리 - 에디터등록</h1>
 		<form name="boardWriteForm" action="boardstory_write_check.do"
 			  method="post">
 			<ul>
-				<li><label>작성자</label> <input type="text" name="editer" id="editer"></li>
+				<li><label>Editer</label> <input type="text" name="editer" id="editer"></li>
 				<li><label>제목</label> <input type="text" name="stitle" id="stitle"></li>
 				<li><label>소제목</label> <input type="text" name="sstitle" id="sstitle"></li>
 				<li><label>내용</label> <textarea name="scontent"></textarea></li>
-				<!-- <li><label>파일첨부</label> <input type="file" name="file1">
-				</li> -->
+				<li><label>이미지</label> <input type="file" name="file1"></li>
 				<li>
 					<button type="button" class="btn_style" id="btnBoardStoryWrite">등록완료</button>
 					<button type="reset" class="btn_style">다시쓰기</button> <a

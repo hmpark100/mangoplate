@@ -1,94 +1,207 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CGV</title>
-<link rel="stylesheet"  href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
-<link rel="stylesheet"  href="http://localhost:9000/mangoplate/resources/css/am-pagination.css">
-<script src="http://localhost:9000/mangoplate/resources/js/jquery-3.6.0.min.js"></script>
-<script src="http://localhost:9000/mangoplate/resources/js/am-pagination.js"></script>
-<script>
-	$(document).ready(function(){
+<title>맛집리스트</title>
+<style>
+	* {
+		margin : 0px;
+		padding : 0px;
+	}
+	
+	body {
+		background-color : rgb(240,240,240);
+	}
+	
+	section.list {
+	/* 	border : 1px solid black; */
+		width : 1150px;
+		margin : auto;
+	}
+	
+	section.list h1 {
+	/* 	border : 1px solid yellow; */ 
+		color : #FF792A;
+		font-size : 20px;
+		margin : 40px 0px 0px 10px; 
+	}
+	
+	/* 상단 tag관련 css */
+	
+	
+	ul.tag {
+	/*  border : 1px solid red;  */
+		list-style-type : none;
+	}
+	
+	ul.tag li {
+		border : 1px solid gray;
+		background-color : white;
+		color : gray;
+		float : left;
+		border-radius : 20px;
+		margin : 15px 7.5px 20px 4px;
+		padding : 8px 15px;
+		font-size : 14px;
+		text-align : center;
+	}
+	
+	/* table.art tr td img {
+		border : 1px solid yellow;
+		width : 550px; height : 265px;
+		padding : 0px 12px 20px 10px;
+	} */
+	
+	table.art {
+		margin : auto;
+	}
+	
+	div.upper_tag {
+		margin : 0px 0px 0px 10px;
+	}
+	
+	table td  {
+	 	border : 10px solid rgb(240,240,240); 
+		width : 550px; height : 265px;
+		margin : 0px; padding : 0px;
+		font-size : 30px;
+		color : white;
+		text-align : center;
+		background-image : url("http://localhost:9000/mangoplate/resources/images/test1.jpg");
+		font-weight : normal;
+	}
+
+	/* 더보기 버튼 css */
+	
+	.more {
+		position : relative;
+	}
+	
+	.more div {
+	/* 	border : 1px solid black; */
+		width : 896px;
+		margin : 0 auto;
+		text-align : center;
+		height : 50px;
+		border-bottom : 1px solid #dbdbdb;
 		
-		//페이징 리스트 출력
-		var pager = jQuery('#ampaginationsm').pagination({
-		
-		    maxSize: 7,	    		// max page size
-		    totals: '${dbCount}',	// total rows	
-		    page: '${rpage}',		// initial page		
-		    pageSize: '${pageSize}',	// max number items per page
-		
-		    // custom labels		
-		    lastText: '&raquo;&raquo;', 		
-		    firstText: '&laquo;&laquo;',		
-		    prevText: '&laquo;',		
-		    nextText: '&raquo;',
-				     
-		    btnSize:'sm'	// 'sm'  or 'lg'		
-		});
-		
-		//페이징 번호 클릭 시 이벤트 처리
-		jQuery('#ampaginationsm').on('am.pagination.change',function(e){		
-			   jQuery('.showlabelsm').text('The selected page no: '+e.page);
-	           $(location).attr('href', "http://localhost:9000/mangoplate/board_list.do?rpage="+e.page);         
-	    });
-		
- 	});
-</script> 
+	}
+	
+	.more img {
+		position : absolute;
+		top : 3px;
+	}
+	
+	article.more span {
+		color : #FF792A;
+	}
+	
+</style>
 </head>
 <body>
-	<!-- Header Include -->
-	<iframe src="http://localhost:9000/mangoplate/header.do" width="100%" height="160px" scrolling="no" frameborder=0 ></iframe>
-	
-	
-	<!---------------------------------------------->
-	<!--------------- Content ----------------------->
-	<!---------------------------------------------->
-	<div class="content">
-		<h1>게시판-리스트</h1>
-		<table class="board">
-			<tr>
-				<td colspan="4">
-					<a href="board_write.do">
-					<button type="button" class="btn_style">글쓰기</button>
-					</a>
-				</td>
-			</tr>
-			<tr>
-				<th>번호</th>
-				<th>제목</th>
-				<th>등록날짜</th>
-				<th>조회수</th>
-			</tr>
-			
-			<c:forEach var="vo" items="${list}">
-			<tr>
-				<td>${vo.rno}</td>
-				<td><a href="board_content.do?bid=${vo.bid}">${vo.btitle}</a></td>
-				<td>${vo.bdate }</td>
-				<td>${vo.bhits }</td>
-			</tr>
-			</c:forEach>
-			
-			<tr>
-				<td colspan="4"><div id="ampaginationsm"></div></td>
-			</tr>
-		</table>	
+<!-- header -->
+<iframe src="header.do" width="100%" height="61px" scrolling="no" frameborder=0 ></iframe>
+
+<!-- content -->
+	<section class="list">
+	<h1>믿고 보는 맛집 리스트</h1>
+	<div class="upper_tag">
+		<ul class="tag">
+			<li># 전체</li>
+			<li># 파스타</li>
+			<li># 무한리필</li>
+			<li># 이태원</li>
+			<li># 고기</li>
+			<li># 데이트</li>
+			<li># 강남</li>
+			<li># 홍대</li>
+			<li># 스테이크</li>
+			<li># 가로수길</li>
+			<li># 디저트</li>
+		</ul>
 	</div>
-	
-	<!-- footer Include -->
-	<iframe src="http://localhost:9000/mangoplate/footer.do" width="100%" height="530px" scrolling="no" frameborder=0></iframe>
-	
+		<table class="art">
+		<tr>
+			<td>
+				<span>군자역 맛집 베스트 10곳</span><br>
+				<span>"군자역 우리 동네 핫플 총정리"</span>
+			</td>
+			<td>
+				<span>군자역 맛집 베스트 10곳</span><br>
+				<span>"군자역 우리 동네 핫플 총정리"</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			군자역 맛집 베스트 10곳
+			</td>
+			<td>
+			군자역 맛집 20곳
+			</td>
+		</tr>
+		<tr>
+			<td>
+			군자역 맛집 베스트 10곳
+			</td>
+			<td>
+			군자역 맛집 20곳
+			</td>
+		</tr>
+		<tr>
+			<td>
+			군자역 맛집 베스트 10곳
+			</td>
+			<td>
+			군자역 맛집 20곳
+			</td>
+		</tr>
+	</table>
+	<!-- <table class="art">
+		<tr>
+			<td>
+				<a href="#"><img src="http://localhost:9000/mangoplate/resources/images/test1.jpg"></a>
+			</td>
+			<td>
+			<a href="#"><img src="http://localhost:9000/mangoplate/resources/images/test1.jpg"></a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<a href="#"><img src="http://localhost:9000/mangoplate/resources/images/test1.jpg"></a>
+			</td>
+			<td>
+			<a href="#"><img src="http://localhost:9000/mangoplate/resources/images/test1.jpg"></a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<a href="#"><img src="http://localhost:9000/mangoplate/resources/images/test1.jpg"></a>
+			</td>
+			<td>
+			<a href="#"><img src="http://localhost:9000/mangoplate/resources/images/test1.jpg"></a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<a href="#"><img src="http://localhost:9000/mangoplate/resources/images/test1.jpg"></a>
+			</td>
+			<td>
+			<a href="#"><img src="http://localhost:9000/mangoplate/resources/images/test1.jpg"></a>
+			</td>
+		</tr>
+	</table> -->
+		<article class="more">
+			<div>
+				<img src="http://localhost:9000/mangoplate/resources/images/12323.png" width="25px"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				<span>더보기</span>
+				<span>&nbsp;<img src="http://localhost:9000/mangoplate/resources/images/12323.png" width="25px"></span>
+			</div>
+		</article>
+	</section>
+<!-- footer Include -->
+   <iframe src="footer.do" width="100%" height="750px" scrolling="no" frameborder=0></iframe>	
+
 </body>
 </html>
-
-
-
-
-
-
-
