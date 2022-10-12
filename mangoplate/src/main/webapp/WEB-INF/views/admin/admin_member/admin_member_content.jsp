@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Mango Plate</title>
+<title>Mangoplate</title>
 </head>
 <body>
 	<!-- Header Include -->

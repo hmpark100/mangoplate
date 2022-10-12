@@ -27,12 +27,12 @@
 						if(result == 1){
 							$("#idCheckMsg").text("사용중인 아이디입니다. 다시 입력해주세요~")
 								.css("color","red").css("font-size","8px")
-								.css("margin","5px 0 0 156px");
+								/* .css("margin","5px 0 0 156px") */;
 							$("#id").val("").focus();							
 						}else{
 							$("#idCheckMsg").text("사용 가능한 아이디입니다.")
 							.css("color","blue").css("font-size","8px")
-							.css("margin","5px 0 0 156px");
+							/* .css("margin","5px 0 0 156px") */;
 							$("#pass").focus();
 						}
 						
@@ -40,9 +40,17 @@
 					
 				});//ajax
 			}
-		});//ready
+		});
 	});
 </script>
+
+<script>
+      function closeModal(){
+    	  history.back();
+    	 /*  location.href  ="index.do"; */
+      }
+</script>
+
 <style>
 	form[name='joinForm'] div.join_logo {
  		/* border:1px solid blue; */
@@ -258,14 +266,14 @@
 	<!---------------------------------------------->
 	<div class="content">
 		<form name="joinForm"  action="joinCheck.do"  method="post">
-			 <button class="btn-nav-close" onclick="mp_login_layer.close_layer();">닫기</button>
+			 <button type="button" class="btn-nav-close"  data-dismiss="modal" onclick="closeModal()">닫기</button>
 			 <div class="join_logo">	
 			 	<img alt="" src="https://mp-seoul-image-production-s3.mangoplate.com/web/resources/mangoplate-logo-horizontal.svg">
 			 </div>
 			 <p>가입을 통해 더 다양한 서비스를 만나보세요!</p>
 			 <div id="join_textbutton">
-				<input type="text" name="id" id="id" placeholder="아이디 입력">
-				<button type="button" class="btn_style" id="idCheck">중복확인</button>
+					<input type="text" name="id" id="id" placeholder="아이디 입력">
+					<button type="button" class="btn_style" id="idCheck">중복확인</button>
 				<div id="idCheckMsg"></div>
 			 </div>
 			 <input type="password" name="pass" id="pass" placeholder="패스워드 입력">

@@ -9,6 +9,7 @@
 <link rel="stylesheet"  href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
 <script src="http://localhost:9000/mangoplate/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/mangoplate/resources/js/mangoplate_jquery.js"></script>
+
 <script>
 	let join_result = '${join_result}';
 	let login_result = '${login_result}';
@@ -22,7 +23,19 @@
 	}
 	
 </script>
+
+<script>
+      function closeModal(){
+    	  history.back();
+    	 /*  location.href  ="index.do"; */
+      }
+</script>
+
 <style>
+	.content.CloseModal{
+         display:none;
+    }
+
 	form[name='loginForm'] div {
  		/* border:1px solid blue; */
  		display: block;
@@ -137,7 +150,7 @@
 	<!---------------------------------------------->
 	<div class="content">
 		<form name="loginForm" action="loginCheck.do" method="post">
-			 <button class="btn-nav-close" onclick="mp_login_layer.close_layer();">닫기</button>
+			 <button type="button" class="btn-nav-close"  data-dismiss="modal" onclick="closeModal()">닫기</button>
 			 <div>	
 			 	<img alt="" src="https://mp-seoul-image-production-s3.mangoplate.com/web/resources/mangoplate-logo-horizontal.svg">
 			 </div>

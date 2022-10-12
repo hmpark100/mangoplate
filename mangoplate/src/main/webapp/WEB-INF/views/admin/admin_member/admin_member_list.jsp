@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CGV</title>
+<title>Mangoplate</title>
 <link rel="stylesheet"  href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
 <link rel="stylesheet"  href="http://localhost:9000/mangoplate/resources/css/am-pagination.css">
 <script src="http://localhost:9000/mangoplate/resources/js/jquery-3.6.0.min.js"></script>
@@ -42,14 +42,14 @@
 </head>
 <body>
 	<!-- Header Include -->
-	<iframe src="http://localhost:9000/mangoplate/header.do" width="100%" height="160px" scrolling="no" frameborder=0 ></iframe>
+	<jsp:include page="../../header.jsp"></jsp:include>
 	
 	
 	<!---------------------------------------------->
 	<!--------------- Content ----------------------->
 	<!---------------------------------------------->
 	<div class="content">
-		<h1>회원관리-리스트</h1>
+		<h1>회원정보 리스트</h1>
 		<table class="board">			
 			<tr>
 				<th>번호</th>
@@ -76,7 +76,7 @@
 	</div>
 	
 	<!-- footer Include -->
-	<iframe src="http://localhost:9000/mangoplate/footer.do" width="100%" height="530px" scrolling="no" frameborder=0></iframe>
+	<iframe src="footer.do" width="100%" height="750px" scrolling="no" frameborder=0></iframe>
 	
 </body>
 </html>
