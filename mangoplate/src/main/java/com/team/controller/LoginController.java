@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.mangoplate.vo.MangoMemberVO;
 import com.mangoplate.vo.SessionVO;
-import com.spring.service.MemberServiceImpl;
+import com.team.service.MemberServiceImpl;
 
 @Controller
 public class LoginController {

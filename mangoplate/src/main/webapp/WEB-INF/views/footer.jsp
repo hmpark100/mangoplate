@@ -12,7 +12,8 @@
 	<footer class="footer">
 		<div class="inner">
 			<div class="mp_logo">
-				<a href="/" class="btn-mp"> <img class="mp_logo_img"
+				<a href="index.do" class="btn-mp" target="_parent"> 
+					<img class="mp_logo_img"
 					src="https://mp-seoul-image-production-s3.mangoplate.com/web/resources/mangoplate-gray-logo.svg"
 					alt="mangoplate logo">
 				</a>
@@ -35,14 +36,14 @@
 
 			<nav class="links-external">
 				<ul class="list-links">
-					<li><a href="/company"> 회사소개 </a></li>
+					<li><a href="/company" target="_parent"> 회사소개 </a></li>
 
-					<li><a href="/careers"> 망고플레이트 채용 </a></li>
+					<li><a href="/" target="_parent"> 망고플레이트 채용 </a></li>
 
-					<li><a href="/investment"> 투자 정보 </a></li>
+					<li><a href="/" target="_parent"> 투자 정보 </a></li>
 
-					<li class="only-desktop"><a href="/etc/download_company_ci"
-						target="_blank"> 브랜드 가이드라인 </a></li>
+					<li class="only-desktop"><a href="/"
+						target="_parent"> 브랜드 가이드라인 </a></li>
 
 					<li><a
 						href="https://www.mangoforbiz.com/?utm_campaign=main_bottom_business&amp;utm_medium=bizhome&amp;utm_source=web"
@@ -55,7 +56,7 @@
 				</ul>
 
 				<ul class="list-links">
-					<li><a href="/notice" target="_blank"> 공지사항 </a></li>
+					<li><a href="/notice" target="_parent"> 공지사항 </a></li>
 
 					<li><a class="" href="/terms/contract"
 						onclick="trackEvent('CLICK_TERMS', 'contract')" target="_blank">

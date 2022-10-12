@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.mangoplate.vo.MangoMemberVO;
-import com.spring.service.MemberServiceImpl;
+import com.team.service.MemberServiceImpl;
 
 @Controller
 public class JoinController {
 	
 	@Autowired
 	private MemberServiceImpl memberService;
-	
+		
 	/**
 	 * id_check.do : 아이디 중복체크 처리 - Ajax 호출
 	 */
