@@ -37,7 +37,7 @@ public class JoinController {
 		
 		if(result == 1){
 			mv.addObject("join_result","ok");
-			mv.setViewName("/login/login");
+			mv.setViewName("index");
 		}else{
 			mv.setViewName("error_page");
 		}

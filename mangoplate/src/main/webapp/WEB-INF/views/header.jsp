@@ -30,21 +30,6 @@
 <!-- 로그인 script & style -->
 <script>
 	$(document).ready(function() {
-		let join_result = '${join_result}';
-		let login_result = '${login_result}';
-		let auth_result = '${auth}';
-
-		if (auth_result == 'fail') {
-			alert("접근권한이 없습니다. 로그인을 진행해주세요.");
-		}
-
-		if (login_result == 'fail') {
-			alert("아이디 또는 패스워드가 다릅니다. 다시 로그인해주세요.");
-		}
-
-		if (join_result == 'ok') {
-			alert("회원가입에 성공하셨습니다.");
-		}
 
 		$("#joinmodal").click(function() {
 			/* $("body").css("background-color","yellow"); rgba(76, 76, 76, 0.7)*/

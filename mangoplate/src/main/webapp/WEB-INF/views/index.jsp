@@ -10,16 +10,19 @@
 <!-- css -->
 <link rel="stylesheet"
 	href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
-<!-- <link rel="stylesheet" media="screen" href="https://www.mangoplate.com/assets/dist/home-cc0b8af0c9ad32f34e28c70162caf8a05a5ac4b1756a43825d6ce8cf94693e6a.css"> -->
-<script
-	src="http://localhost:9000/mangoplate/resources/js/mangoplate_jquery.js"></script>
 <script
 	src="http://localhost:9000/mangoplate/resources/js/jquery-3.6.0.min.js"></script>
 <script
+	src="http://localhost:9000/mangoplate/resources/js/mangoplate_jquery.js"></script>
+<script
 	src="http://localhost:9000/mangoplate/resources/js/mangoplate_index.js"></script>
 <script>
+$(document).ready(function() {
 	let login_result = '${login_result}';
 	let logout_result = '${logout_result}';
+	let join_result = '${join_result}';
+	let auth_result = '${auth}';
+	
 	
 	if(logout_result == 'ok'){
 		alert("로그아웃에 성공하셨습니다");
@@ -27,12 +30,6 @@
 	if(login_result == 'ok'){
 		alert("로그인에 성공하셨습니다");
 	}
-</script>
-
-<!-- <script>
-	let join_result = '${join_result}';
-	let login_result = '${login_result}';
-	let auth_result = '${auth}';
 	
 	if(auth_result == 'fail'){
 		alert("접근권한이 없습니다. 로그인을 진행해주세요.");
@@ -40,13 +37,14 @@
 	
 	if(login_result == 'fail'){
 		alert("아이디 또는 패스워드가 다릅니다. 다시 로그인해주세요.");
-		modal('myModal');
+		/* $("#myModal").click(); */
 	}
 	
 	if(join_result == 'ok'){
 		alert("회원가입에 성공하셨습니다.");
 	}
-</script> -->
+});
+</script>
 
 <style>
 .main-header {

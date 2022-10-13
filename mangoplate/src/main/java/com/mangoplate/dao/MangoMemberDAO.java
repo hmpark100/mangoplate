@@ -66,9 +66,6 @@ public class MangoMemberDAO {
 	 * insert : 회원가입 
 	 */
 	public int insert(MangoMemberVO vo) {
-		System.out.println(vo.getId());
-		System.out.println(vo.getPnumber());
-		System.out.println(vo.getEmail());
 		//sqlSession 객체의 메소드를 호출하여 실행결과를 가져옴
 		return sqlSession.insert("mapper.member.join", vo);
 	}

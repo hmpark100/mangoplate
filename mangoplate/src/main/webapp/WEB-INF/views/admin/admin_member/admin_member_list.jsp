@@ -39,6 +39,20 @@
 		
  	});
 </script> 
+<style>
+	.content{
+		margin-top: 61px;
+	}
+	
+	.u1{
+		border: 5px soild red;
+		float: left;
+	}
+	
+	.board{
+		clear:both;
+	}
+</style>
 </head>
 <body>
 	<!-- Header Include -->
@@ -50,6 +64,14 @@
 	<!---------------------------------------------->
 	<div class="content">
 		<h1>회원정보 리스트</h1>
+		
+	<ul class="u1">
+		<li><a href="admin.do" class="active">Admin</a></li>
+		<li><a href="admin_member_list.do">회원정보관리</a></li>
+		<li><a href="contact.asp">공지사항 관리</a></li>
+		<li><a href="about.asp">eatdeal 관리</a></li>
+	</ul>
+		
 		<table class="board">			
 			<tr>
 				<th>번호</th>
