@@ -449,7 +449,7 @@ form[name='joinForm'] #join_textbutton button {
 
 		<c:choose>
 
-			<c:when test="${sessionscope.sid == null}">
+			<c:when test="${sessionScope.svo == null}">
 
 				<ul class="Header__MenuList">
 					<li class="Header__MenuItem Header__MenuItem--New"><a
@@ -479,10 +479,10 @@ form[name='joinForm'] #join_textbutton button {
 						class="Header__MenuLink" onclick="trackEvent('CLICK_LOGIN')"
 						target="_parent"> <span class="Header__MenuText">마이페이지</span>
 					</a></li>
-					<li class="Header__MenuItem"><a href="admin.do"
+					<!-- <li class="Header__MenuItem"><a href="admin.do"
 						class="Header__MenuLink" target="_parent"> <span
 							class="Header__MenuText">admin</span>
-					</a></li>
+					</a></li> -->
 				</ul>
 			</c:when>
 

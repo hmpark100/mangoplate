@@ -126,6 +126,7 @@ $(document).ready(function() {
 	<!-- ------------ Content finish -------------- -->
 	<!-- ------------------------------------------ -->
 sid ===> ${sessionScope.sid}  <!-- el태그로 넘어온 sid를 출력하여 잘 넘어오는지 확인 -->
+svo ===> ${sessionScope.svo}  <!-- el태그로 넘어온 sid를 출력하여 잘 넘어오는지 확인 -->
 
 	<!-- footer Include -->
 	<iframe src="footer.do" width="100%" height="750px" scrolling="no"
