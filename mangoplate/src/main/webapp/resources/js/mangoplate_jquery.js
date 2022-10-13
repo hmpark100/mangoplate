@@ -39,6 +39,38 @@ $(document).ready(function(){
 			loginForm.submit();
 		}
 	});
+
+
+	/*********************
+		공지사항 등록폼 유효성 체크
+	**********************/
+	$("#btnNoticeWrite").click(()=>{
+	
+		if($("#ntitle").val() == ""){
+			alert("제목을 입력해주세요");
+			$("#ntitle").focus();
+			return false;
+		}else{
+			//서버전송
+			boardWriteForm.submit();
+		}
+	});
+		
+	
+	/*********************
+		공지사항 수정폼 유효성 체크
+	**********************/
+	$("#btnNoticeUpdate").click(()=>{
+		if($("#ntitle").val() == ""){
+			alert("제목을 입력해주세요");
+			$("#ntitle").focus();
+			return false;
+		}else{
+			//서버전송
+			boardUpdateForm.submit();
+		}
+	});
+	
 	
 	/*********************
 		회원가입 - 주소찾기
