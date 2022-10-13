@@ -50,7 +50,7 @@ public class LoginController {
 		if(svo != null) {
 			if(svo.getLoginresult() == 1){
 				//로그인 성공 --> session객체에 key(sid),value(로그인 계정) 추가 후 index 페이지로 이동
-				//session.setAttribute("sid", vo.getId());
+				session.setAttribute("sid", vo.getId());
 				session.setAttribute("svo", svo);
 				mv.addObject("login_result","ok");
 				mv.setViewName("index");

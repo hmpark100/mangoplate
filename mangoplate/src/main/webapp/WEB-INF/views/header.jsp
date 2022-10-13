@@ -515,7 +515,7 @@ form[name='joinForm'] #join_textbutton button {
 					</a></li>
 
 					<!-- 관리자 계정인 경우에만 admin 메뉴를 open -->
-					<c:if test="${sessionScope.svo == 'admin'}">
+					<c:if test="${sessionScope.sid == 'admin'}">
 						<li class="Header__MenuItem"><a href="admin.do"
 							class="Header__MenuLink" target="_parent"> <span
 								class="Header__MenuText">admin</span>
