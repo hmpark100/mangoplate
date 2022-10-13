@@ -45,12 +45,16 @@
 	}
 	
 	.u1{
-		border: 5px soild red;
 		float: left;
+		margin-right: 30px;
 	}
 	
 	.board{
 		clear:both;
+	}
+	
+	h3 {
+		border: 1px solid red;
 	}
 </style>
 </head>
@@ -63,7 +67,7 @@
 	<!--------------- Content ----------------------->
 	<!---------------------------------------------->
 	<div class="content">
-		<h1>회원정보 리스트</h1>
+		<h1>관리자 페이지</h1>	
 		
 	<ul class="u1">
 		<li><a href="admin.do" class="active">Admin</a></li>
@@ -72,6 +76,7 @@
 		<li><a href="about.asp">eatdeal 관리</a></li>
 	</ul>
 		
+		<h3>회원정보 리스트</h3>
 		<table class="board">			
 			<tr>
 				<th>번호</th>

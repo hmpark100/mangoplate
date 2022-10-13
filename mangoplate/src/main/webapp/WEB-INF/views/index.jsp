@@ -18,6 +18,9 @@
 	src="http://localhost:9000/mangoplate/resources/js/mangoplate_index.js"></script>
 <script>
 $(document).ready(function() {
+	/* alert("1234");
+	$("#myModal").trigger('click'); */
+	
 	let login_result = '${login_result}';
 	let logout_result = '${logout_result}';
 	let join_result = '${join_result}';
@@ -37,11 +40,11 @@ $(document).ready(function() {
 	
 	if(login_result == 'fail'){
 		alert("아이디 또는 패스워드가 다릅니다. 다시 로그인해주세요.");
-		/* $("#myModal").click(); */
+		$("#myModal").click();
 	}
 	
 	if(join_result == 'ok'){
-		alert("회원가입에 성공하셨습니다.");
+		alert("회원가입에 성공하셨습니다. 로그인을 진행해주세요.");
 	}
 });
 </script>
@@ -122,6 +125,7 @@ $(document).ready(function() {
 	<!-- ------------------------------------------ -->
 	<!-- ------------ Content finish -------------- -->
 	<!-- ------------------------------------------ -->
+sid ===> ${sessionScope.sid}  <!-- el태그로 넘어온 sid를 출력하여 잘 넘어오는지 확인 -->
 
 	<!-- footer Include -->
 	<iframe src="footer.do" width="100%" height="750px" scrolling="no"
