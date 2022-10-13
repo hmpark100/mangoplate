@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CGV</title>
+<title>망고플레이트 - 공지사항</title>
 <link rel="stylesheet"  href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
 <style>
 table.board, form[name='boardWriteForm'], 

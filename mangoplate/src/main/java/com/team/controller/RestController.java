@@ -22,14 +22,19 @@ public class RestController {
 		return "/restaurant/restaurant_detail";
 	}
 	
-	@RequestMapping(value="/review.do", method = RequestMethod.GET)
-	public String review2() {
-		return "/restaurant/review";
+	@RequestMapping(value="/review_write.do", method = RequestMethod.GET)
+	public String review_write() {
+		return "/restaurant/review_write";
 	}
 	
 	@RequestMapping(value="/company.do", method = RequestMethod.GET)
 	public String company() {
 		return "/company/company";
+	}
+	
+	@RequestMapping(value="/review_content.do", method = RequestMethod.GET)
+	public String review_content() {
+		return "/restaurant/review_content";
 	}
 	
 }
