@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>망고스토리 content</title>
 <link rel="stylesheet"
-	href="http://localhost:9000/mangoplate/resources/css/mangostory_content.css">
+	href="http://localhost:9000/mangoplate/resources/css/mangstory_boardstory_content.css">
 </head>
 <body onunload="" class="StoryDetailBody">
 	<!-- Header Include -->
