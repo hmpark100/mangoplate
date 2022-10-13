@@ -11,10 +11,6 @@
 	href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
 <link rel="stylesheet"
 	href="http://localhost:9000/mangoplate/resources/css/am-pagination.css">
-<link rel="stylesheet"
-	href="http://localhost:9000/mycgv/resources/css/mycgv.css">
-<link rel="stylesheet"
-	href="http://localhost:9000/mycgv/resources/css/am-pagination.css">
 <script
 	src="http://localhost:9000/mangoplate/resources/js/jquery-3.6.0.min.js"></script>
 <script
@@ -22,8 +18,9 @@
 </head>
 <body>
 	<!-- Header Include -->
-	<iframe src="http://localhost:9000/mangoplate/header.do" width="100%"
-		height="61px" scrolling="no" frameborder=0></iframe>
+	<!-- <iframe src="http://localhost:9000/mangoplate/header.do" width="100%"
+		height="61px" scrolling="no" frameborder=0></iframe> -->
+	<jsp:include page="../header.jsp"></jsp:include>
 
 
 	<!---------------------------------------------->
