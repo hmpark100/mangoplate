@@ -429,7 +429,7 @@ form[name='joinForm'] #join_textbutton button {
 </style>
 
 </head>
-<body>
+<body class="home_page" onunload="">
 	<header class="Header " data-page="normal">
 		<a href="index.do" class="Header__Logo"
 			onclick="trackEvent('CLICK_HEADER_LOGO');" target="_parent"> <i
