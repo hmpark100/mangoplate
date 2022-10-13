@@ -20,7 +20,7 @@
 	/* 가운데 흰 부분 관련 css */
 	
 	.review_content {
-		width : 630px;
+		width : 610px;
 		height : 486px;
 		background-color : #ffffff;
 		margin : 7px auto;

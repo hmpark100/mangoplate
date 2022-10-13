@@ -30,6 +30,7 @@
 <!-- 로그인 script & style -->
 <script>
 	$(document).ready(function() {
+		$("#myModal").trigger('click');
 
 		$("#joinmodal").click(function() {
 			/* $("body").css("background-color","yellow"); rgba(76, 76, 76, 0.7)*/

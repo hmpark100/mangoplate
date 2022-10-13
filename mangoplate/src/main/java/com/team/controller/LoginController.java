@@ -26,7 +26,7 @@ public class LoginController {
 		ModelAndView mv = new ModelAndView();
 		
 		//세션정보를 가져와서 sid 값이 null이 아니면 session.invalidation 메소드 호출
-		//String sid = (String)session.getAttribute("sid");
+		String sid = (String)session.getAttribute("sid");
 		SessionVO svo = (SessionVO)session.getAttribute("svo");
 		
 		if(svo != null) {
@@ -50,7 +50,7 @@ public class LoginController {
 		if(svo != null) {
 			if(svo.getLoginresult() == 1){
 				//로그인 성공 --> session객체에 key(sid),value(로그인 계정) 추가 후 index 페이지로 이동
-				//session.setAttribute("sid", vo.getId());
+				session.setAttribute("sid", vo.getId());
 				session.setAttribute("svo", svo);
 				mv.addObject("login_result","ok");
 				mv.setViewName("index");
