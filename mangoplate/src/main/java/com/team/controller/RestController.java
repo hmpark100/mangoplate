@@ -8,22 +8,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class RestController {
 
 	@RequestMapping(value="/restaurant_list.do", method = RequestMethod.GET)
-	public String list() {
+	public String restaurant_list() {
 		return "/restaurant/restaurant_list";
 	}
 	
 	@RequestMapping(value="/restaurant_content.do", method = RequestMethod.GET)
-	public String content() {
+	public String restaurant_content() {
 		return "/restaurant/restaurant_content";
 	}
 	
 	@RequestMapping(value="/restaurant_detail.do", method = RequestMethod.GET)
-	public String content3() {
+	public String restaurant_detail() {
 		return "/restaurant/restaurant_detail";
 	}
 	
 	@RequestMapping(value="/review.do", method = RequestMethod.GET)
-	public String company3() {
+	public String review2() {
 		return "/restaurant/review";
 	}
 	
