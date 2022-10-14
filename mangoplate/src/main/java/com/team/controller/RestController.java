@@ -36,5 +36,4 @@ public class RestController {
 	public String review_content() {
 		return "/restaurant/review_content";
 	}
-	
 }
