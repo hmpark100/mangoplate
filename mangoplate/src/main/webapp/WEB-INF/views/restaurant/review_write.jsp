@@ -233,11 +233,11 @@ $(document).ready(function(){
 				<div>
 					<ul>
 						<li>
-							<input type="radio" name="rating" class="super-happy" id="super-happy" value="super-happy" /><img src="http://localhost:9000/mangoplate/resources/images/tttest1.png">
+							<input type="radio" name="rating" class="super-happy" id="super-happy" value="super-happy" checked /><img src="http://localhost:9000/mangoplate/resources/images/delicious_checked.png">
 							<span>맛있다</span>
-							<input type="radio" name="rating" class="happy" id="happy" value="happy" checked /><img src="http://localhost:9000/mangoplate/resources/images/tttest1.png">
+							<input type="radio" name="rating" class="happy" id="happy" value="happy" /><img src="http://localhost:9000/mangoplate/resources/images/NotBad_unchecked.png">
 							<span>괜찮다</span>
-							<input type="radio" name="rating" class="sad" id="sad" value="sad" /><img src="http://localhost:9000/mangoplate/resources/images/tttest1.png">
+							<input type="radio" name="rating" class="sad" id="sad" value="sad" /><img src="http://localhost:9000/mangoplate/resources/images/bad_unchecked.png">
 							<span>별로</span>
 						</li>
 						<li>
