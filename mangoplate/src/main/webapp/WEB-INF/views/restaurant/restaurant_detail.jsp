@@ -35,12 +35,12 @@
 									</span>
 
 									<div class="restaurant_action_button_wrap">
-
-										<button class="review_writing_button"
-											data-restaurant_key="onGDjypuMJMF">
+										
+										<a href="http://localhost:9000/mangoplate/review_write.do">
+										<button class="review_writing_button" data-restaurant_key="onGDjypuMJMF">
 											<i class="review_writing_button_icon"></i> <span
 												class="review_writing_button_text">리뷰쓰기</span>
-										</button>
+										</button></a>
 
 										<div class="wannago_wrap">
 											<button class="btn-type-icon favorite wannago_btn "
