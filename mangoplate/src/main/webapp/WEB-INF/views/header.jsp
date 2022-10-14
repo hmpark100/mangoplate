@@ -30,6 +30,7 @@
 <!-- 로그인 script & style -->
 <script>
 	$(document).ready(function() {
+		$("#myModal").trigger('click');
 
 		$("#joinmodal").click(function() {
 			/* $("body").css("background-color","yellow"); rgba(76, 76, 76, 0.7)*/
@@ -429,7 +430,7 @@ form[name='joinForm'] #join_textbutton button {
 </style>
 
 </head>
-<body>
+<body class="home_page" onunload="">
 	<header class="Header " data-page="normal">
 		<a href="index.do" class="Header__Logo"
 			onclick="trackEvent('CLICK_HEADER_LOGO');" target="_parent"> <i
@@ -448,7 +449,7 @@ form[name='joinForm'] #join_textbutton button {
 
 		<c:choose>
 
-			<c:when test="${sessionscope.sid == null}">
+			<c:when test="${sessionScope.svo == null}">
 
 				<ul class="Header__MenuList">
 					<li class="Header__MenuItem Header__MenuItem--New"><a
@@ -478,10 +479,10 @@ form[name='joinForm'] #join_textbutton button {
 						class="Header__MenuLink" onclick="trackEvent('CLICK_LOGIN')"
 						target="_parent"> <span class="Header__MenuText">마이페이지</span>
 					</a></li>
-					<li class="Header__MenuItem"><a href="admin.do"
+					<!-- <li class="Header__MenuItem"><a href="admin.do"
 						class="Header__MenuLink" target="_parent"> <span
 							class="Header__MenuText">admin</span>
-					</a></li>
+					</a></li> -->
 				</ul>
 			</c:when>
 
