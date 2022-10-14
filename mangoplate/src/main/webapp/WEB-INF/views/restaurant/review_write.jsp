@@ -68,9 +68,9 @@
 		list-style-type : none;
 	}
 	
-	.review_content article div li:nth-child(1) {
-	/* 	border : 1px solid black; */
-		margin-bottom : 10px;
+	.review_content article div li:nth-child(2) {
+	 /* border : 1px solid black; */
+		margin-bottom: 10px;
 	}
 	
 	.review_content article div li textarea {
@@ -92,23 +92,12 @@
 		word-spacing : -5px;
 	}
 	
-	.upload ul:nth-child(1) li button{
-		margin-top : 23px;
-		border : 1px dashed #dbdbdb;
-		width : 89px;
-		height : 89px;
-		background-color : transparent;
-		background-image : url("https://mp-seoul-image-production-s3.mangoplate.com/web/resources/plus_icon.svg");
-		background-size : 27px;
-		
-	}
-	
 	/* 감정표현 관련 css */
 	
 	.first li img {
 	/* 	border : 1px solid black; */
-		width : 36px;
-		height : 36px;
+		width : 44px;
+		height : 44px;
 	}
 	
 	input[class="super-happy"]:hover + img,
@@ -116,6 +105,23 @@
 	input[class="super-happy"]:focus + img {
 	  fill: rgb(0, 109, 217);
 	}
+	
+	
+	.emotion ul li:nth-child(1) input {
+		visibility : hidden;
+	}
+	
+	.emotion ul li:nth-child(1) {
+	/* 	border : 1px solid blue; */
+	}
+	
+	.emotion ul li:nth-child(1) span {
+	/* 	border : 1px solid blue; */
+		color : #ff7100;
+		font-size : 14px;
+		margin : auto 0px;
+	}
+	
 	
 	/* 글자수 세기 css */
 	
@@ -139,9 +145,6 @@
 		color : #7f7f7f;
 	}
 	
-	
-	
-	
 	/* 하단 버튼 관련 css */
 	
 	.upload ul:nth-child(1) li button{
@@ -150,8 +153,10 @@
 		width : 89px;
 		height : 89px;
 		background-color : transparent;
-		background-image : url("https://mp-seoul-image-production-s3.mangoplate.com/web/resources/plus_icon.svg");
-		background-size : 27px;
+		background-image : url("http://localhost:9000/mangoplate/resources/images/add.png"); 
+		background-size : 30px;
+		background-repeat: no-repeat;
+		background-position: center;
 	}
 	
 	.upload ul li {
@@ -230,7 +235,7 @@ $(document).ready(function(){
 	<section class="review_content">
 		<article class="first">
 			<form name="#" action="#" method="#">
-				<div>
+				<div class="emotion">
 					<ul>
 						<li>
 							<input type="radio" name="rating" class="super-happy" id="super-happy" value="super-happy" checked /><img src="http://localhost:9000/mangoplate/resources/images/delicious_checked.png">
