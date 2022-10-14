@@ -94,7 +94,7 @@
 		margin-bottom : 4px;
 	}
 	
- 	 .push {
+ 	.push {
  	 	/* border : 1px solid red; */
  		float : right;
  		display : inline-block;
@@ -109,7 +109,7 @@
 		font-size : 10px;
 		text-align : center;
 		position : absolute;
-		left : 7px;
+		left : 3px;
 		top : 47px;
 		color : rgb(155,155,155);
 		
@@ -117,7 +117,7 @@
 	
 	
 	.contents2 li:nth-child(1) {
-	  border : 1px solid red;  
+	/*   border : 1px solid red;   */
 	/*  width : 100px; */
 		height : 100px;
 	}
@@ -184,20 +184,26 @@
 		width : 120px;
 		position : absolute;
 		top : 19px;
-		left : 227px;
+		left : 228px;
 		border-radius : 50px;
 		padding : 6px 0px 1px 0px;
+	}
+	
+	.share div ul:nth-child(2) li {
+		list-style-type : none;
+		font-size : 15px;
+		margin-left : 12px;
+		color : #FF792A;
 	}
 	
 	.share div ul:nth-child(2) li:nth-child(1) {
 		float : left;
 	}
 	
-	.share div ul:nth-child(2) li {
-		list-style-type : none;
-		font-size : 15px;
-		margin-left : 10px;
-		color : #FF792A;
+	.share div ul:nth-child(2) li:nth-child(1) img {
+	/*	border : 1px solid black; */
+		width : 28px;
+		height : 28px;
 	}
 	
 	.share div ul:nth-child(2) li:nth-child(2) {
@@ -210,8 +216,9 @@
 	.share div ul:nth-child(3) li {
 		list-style-type : none;
 		position : absolute;
-		top : 9px;
-		left : 780px;
+		top : 8px;
+		left : 768px;
+	/* 	border : 1px solid black; */
 	}
 	
 	/* map 관련 css  */
@@ -371,196 +378,7 @@
 						<li style="color:grey;">서울특별시 강남구 도산대로 53길 30</li>
 					</ul>
 					<div class="push">
-						<img src="http://localhost:9000/mangoplate/resources/images/star.png" width="58px" height="45px">
-						<span>가고싶다</span>
-					</div>
-				</div>
-				<div class="contents2">
-					<ul>
-						<li>리뷰</li>
-						<li style="color:rgb(85,85,85);">소이연남마오 더보기 ></li>
-					</ul>
-				</div>
-			</div>
-		</article>
-		<article class="second">
-			<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg" width="230px">
-			<div class="bundle">
-				<div class="pull">
-					<ul class="restaurant_name">
-						<li style="color:rgb(85,85,85);">1. 소이연남마오 <span style="color:coral;">4.7</span></li>
-						<li style="color:grey;">서울특별시 강남구 도산대로 53길 30</li>
-					</ul>
-					<div class="push">
-						<img src="http://localhost:9000/mangoplate/resources/images/star.png" width="58px" height="45px">
-						<span>가고싶다</span>
-					</div>
-				</div>
-				<div class="contents2">
-					<ul>
-						<li>리뷰</li>
-						<li style="color:rgb(85,85,85);">소이연남마오 더보기 ></li>
-					</ul>
-				</div>
-			</div>
-		</article>
-		<article class="second">
-			<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg" width="230px">
-			<div class="bundle">
-				<div class="pull">
-					<ul class="restaurant_name">
-						<li style="color:rgb(85,85,85);">1. 소이연남마오 <span style="color:coral;">4.7</span></li>
-						<li style="color:grey;">서울특별시 강남구 도산대로 53길 30</li>
-					</ul>
-					<div class="push">
-						<img src="http://localhost:9000/mangoplate/resources/images/star.png" width="58px" height="45px">
-						<span>가고싶다</span>
-					</div>
-				</div>
-				<div class="contents2">
-					<ul>
-						<li>리뷰</li>
-						<li style="color:rgb(85,85,85);">소이연남마오 더보기 ></li>
-					</ul>
-				</div>
-			</div>
-		</article>
-		<article class="second">
-			<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg" width="230px">
-			<div class="bundle">
-				<div class="pull">
-					<ul class="restaurant_name">
-						<li style="color:rgb(85,85,85);">1. 소이연남마오 <span style="color:coral;">4.7</span></li>
-						<li style="color:grey;">서울특별시 강남구 도산대로 53길 30</li>
-					</ul>
-					<div class="push">
-						<img src="http://localhost:9000/mangoplate/resources/images/star.png" width="58px" height="45px">
-						<span>가고싶다</span>
-					</div>
-				</div>
-				<div class="contents2">
-					<ul>
-						<li>리뷰</li>
-						<li style="color:rgb(85,85,85);">소이연남마오 더보기 ></li>
-					</ul>
-				</div>
-			</div>
-		</article>
-		<article class="second">
-			<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg" width="230px">
-			<div class="bundle">
-				<div class="pull">
-					<ul class="restaurant_name">
-						<li style="color:rgb(85,85,85);">1. 소이연남마오 <span style="color:coral;">4.7</span></li>
-						<li style="color:grey;">서울특별시 강남구 도산대로 53길 30</li>
-					</ul>
-					<div class="push">
-						<img src="http://localhost:9000/mangoplate/resources/images/star.png" width="58px" height="45px">
-						<span>가고싶다</span>
-					</div>
-				</div>
-				<div class="contents2">
-					<ul>
-						<li>리뷰</li>
-						<li style="color:rgb(85,85,85);">소이연남마오 더보기 ></li>
-					</ul>
-				</div>
-			</div>
-		</article>
-		<article class="second">
-			<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg" width="230px">
-			<div class="bundle">
-				<div class="pull">
-					<ul class="restaurant_name">
-						<li style="color:rgb(85,85,85);">1. 소이연남마오 <span style="color:coral;">4.7</span></li>
-						<li style="color:grey;">서울특별시 강남구 도산대로 53길 30</li>
-					</ul>
-					<div class="push">
-						<img src="http://localhost:9000/mangoplate/resources/images/star.png" width="58px" height="45px">
-						<span>가고싶다</span>
-					</div>
-				</div>
-				<div class="contents2">
-					<ul>
-						<li>리뷰</li>
-						<li style="color:rgb(85,85,85);">소이연남마오 더보기 ></li>
-					</ul>
-				</div>
-			</div>
-		</article>
-		<article class="second">
-			<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg" width="230px">
-			<div class="bundle">
-				<div class="pull">
-					<ul class="restaurant_name">
-						<li style="color:rgb(85,85,85);">1. 소이연남마오 <span style="color:coral;">4.7</span></li>
-						<li style="color:grey;">서울특별시 강남구 도산대로 53길 30</li>
-					</ul>
-					<div class="push">
-						<img src="http://localhost:9000/mangoplate/resources/images/star.png" width="58px" height="45px">
-						<span>가고싶다</span>
-					</div>
-				</div>
-				<div class="contents2">
-					<ul>
-						<li>리뷰</li>
-						<li style="color:rgb(85,85,85);">소이연남마오 더보기 ></li>
-					</ul>
-				</div>
-			</div>
-		</article>
-		<article class="second">
-			<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg" width="230px">
-			<div class="bundle">
-				<div class="pull">
-					<ul class="restaurant_name">
-						<li style="color:rgb(85,85,85);">1. 소이연남마오 <span style="color:coral;">4.7</span></li>
-						<li style="color:grey;">서울특별시 강남구 도산대로 53길 30</li>
-					</ul>
-					<div class="push">
-						<img src="http://localhost:9000/mangoplate/resources/images/star.png" width="58px" height="45px">
-						<span>가고싶다</span>
-					</div>
-				</div>
-				<div class="contents2">
-					<ul>
-						<li>리뷰</li>
-						<li style="color:rgb(85,85,85);">소이연남마오 더보기 ></li>
-					</ul>
-				</div>
-			</div>
-		</article>
-		<article class="second">
-			<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg" width="230px">
-			<div class="bundle">
-				<div class="pull">
-					<ul class="restaurant_name">
-						<li style="color:rgb(85,85,85);">1. 소이연남마오 <span style="color:coral;">4.7</span></li>
-						<li style="color:grey;">서울특별시 강남구 도산대로 53길 30</li>
-					</ul>
-					<div class="push">
-						<img src="http://localhost:9000/mangoplate/resources/images/star.png" width="58px" height="45px">
-						<span>가고싶다</span>
-					</div>
-				</div>
-				<div class="contents2">
-					<ul>
-						<li>리뷰</li>
-						<li style="color:rgb(85,85,85);">소이연남마오 더보기 ></li>
-					</ul>
-				</div>
-			</div>
-		</article>
-		<article class="second">
-			<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg" width="230px">
-			<div class="bundle">
-				<div class="pull">
-					<ul class="restaurant_name">
-						<li style="color:rgb(85,85,85);">1. 소이연남마오 <span style="color:coral;">4.7</span></li>
-						<li style="color:grey;">서울특별시 강남구 도산대로 53길 30</li>
-					</ul>
-					<div class="push">
-						<img src="http://localhost:9000/mangoplate/resources/images/star.png" width="58px" height="45px">
+						<img src="http://localhost:9000/mangoplate/resources/images/star.png" width="47px" height="45px">
 						<span>가고싶다</span>
 					</div>
 				</div>
@@ -585,7 +403,7 @@
 					<li>http://localhost:9000/man...</li>
 				</ul>
 				<ul>
-					<li><img src="http://localhost:9000/mangoplate/resources/images/share.png"></li>
+					<li><img src="http://localhost:9000/mangoplate/resources/images/share.jpg"></li>
 					<li>공유하기</li>
 				</ul>
 				<ul>
