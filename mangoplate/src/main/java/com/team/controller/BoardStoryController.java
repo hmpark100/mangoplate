@@ -18,81 +18,133 @@ import com.team.service.FileServiceImpl;
 public class BoardStoryController {
 	@Autowired
 	private BoardStoryServiceImpl boardStoryService;
-	
+
 	@Autowired
 	private FileServiceImpl fileService;
-	
+
+	/**
+	 * board_delete_check.do : 게시판 삭제 처리
+	 */
+	@RequestMapping(value = "/boardstory_delete_check.do", method = RequestMethod.POST)
+	public ModelAndView boardstory_delete_check(String sid, HttpServletRequest request) throws Exception {
+		ModelAndView mv = new ModelAndView();
+
+		MangoBoardStoryVO vo = boardStoryService.getContent(sid);
+		int result = boardStoryService.getDelete(sid);
+
+		if (result == 1) {
+			fileService.fileDelete(vo, request);
+			mv.setViewName("redirect:/boardstory_list.do");
+		} else {
+			mv.setViewName("error_page");
+		}
+
+		return mv;
+	}
+
 	/**
 	 * board_update_check.do : 게시판 수정 처리
 	 */
-	/*
-	 * @RequestMapping(value="/board_update_check.do", method=RequestMethod.POST)
-	 * public ModelAndView board_update_check(MangoBoardStoryVO vo,
-	 * HttpServletRequest request) throws Exception { ModelAndView mv = new
-	 * ModelAndView();
-	 * 
-	 * //기존 파일이 존재하는 경우 이름을 변수로 저장 String old_filename = vo.getSsimage();
-	 * 
-	 * //수정시 새로운 파일을 선택했는지 확인 vo = fileService.update_fileCheck(vo); int result =
-	 * boardStoryService.getUpdate(vo);
-	 * 
-	 * if(result == 1){ //새로운 파일을 upload 폴더에 저장 fileService.update_filesave(vo,
-	 * request, old_filename); mv.setViewName("redirect:/board_list.do"); }else{
-	 * mv.setViewName("error_page"); }
-	 * 
-	 * return mv; }
-	 */
-	
+	@RequestMapping(value = "/boardstory_update_check.do", method = RequestMethod.POST)
+	public ModelAndView boardstory_update_check(MangoBoardStoryVO vo, HttpServletRequest request) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		String old_filename = vo.getSsimage();
+
+		vo = fileService.update_fileCheck(vo);
+		int result = boardStoryService.getUpdate(vo);
+
+		if (result == 1) {
+			fileService.update_filesave(vo, request, old_filename);
+			mv.setViewName("redirect:/boardstory_list.do");
+		} else {
+			mv.setViewName("error_page");
+		}
+
+		return mv;
+	}
+
 	/**
 	 * boardstory_write_check.do 호출
 	 */
-	@RequestMapping(value="/boardstory_write_check.do", method=RequestMethod.POST)
+	@RequestMapping(value = "/boardstory_write_check.do", method = RequestMethod.POST)
 	public ModelAndView boardstory_write_check(MangoBoardStoryVO vo, HttpServletRequest request) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		//MangoBoardStoryDAO dao = new MangoBoardStoryDAO();
+		// MangoBoardStoryDAO dao = new MangoBoardStoryDAO();
 		vo = fileService.fileCheck(vo);
 		int result = boardStoryService.getWriteResult(vo);
 
-		if(result == 1){
+		if (result == 1) {
 			fileService.fileSave(vo, request);
-			mv.setViewName("redirect:/boardstory_list.do"); //DB연동을 Controller에서 진행하므로, 새로운 연결을 수행!!
-		}else{
+			mv.setViewName("redirect:/boardstory_list.do"); // DB연동을 Controller에서 진행하므로, 새로운 연결을 수행!!
+		} else {
 			mv.setViewName("error_page");
 		}
 		return mv;
 	}
-	
+
 	/**
 	 * boardstory_write.do 호출
 	 */
-	@RequestMapping(value="/boardstory_write.do", method=RequestMethod.GET)
+	@RequestMapping(value = "/boardstory_write.do", method = RequestMethod.GET)
 	public String boardstory_write() {
 		return "/boardstory/boardstory_write";
 	}
-	
+
+	/**
+	 * board_delete.do : 게시판 삭제 화면
+	 */
+	@RequestMapping(value = "/boardstory_delete.do", method = RequestMethod.GET)
+	public ModelAndView board_delete(String sid) {
+		ModelAndView mv = new ModelAndView();
+
+		mv.addObject("sid", sid);
+		mv.setViewName("/boardstory/boardstory_delete");
+
+		return mv;
+	}
+
+	/**
+	 * board_update.do : 게시판 수정 화면
+	 */
+	@RequestMapping(value = "/boardstory_update.do", method = RequestMethod.GET)
+	public ModelAndView boardstory_update(String sid) {
+		ModelAndView mv = new ModelAndView();
+
+		MangoBoardStoryVO vo = boardStoryService.getContent(sid);
+
+		mv.addObject("vo", vo);
+		mv.setViewName("/boardstory/boardstory_update");
+
+		return mv;
+	}
+
 	/**
 	 * boardstory_content.do 호출
 	 */
 	@RequestMapping(value = "/boardstory_content.do", method = RequestMethod.GET)
-	public String boardstory_content() {
-		return "/boardstory/boardstory_content";
+	public ModelAndView boardstory_content(String sid) {
+		ModelAndView mv = new ModelAndView();
+
+		MangoBoardStoryVO vo = boardStoryService.getContent(sid);
+		if (vo != null) {
+			mv.addObject("vo", vo);
+		}
+
+		mv.setViewName("/boardstory/boardstory_content");
+
+		return mv;
 	}
-	
+
 	/**
 	 * boardstory_list.do 호출
 	 */
 	@RequestMapping(value = "/boardstory_list.do", method = RequestMethod.GET)
 	public ModelAndView boardstory_list() {
-		ArrayList<MangoBoardStoryVO> list = boardStoryService.getList();
 		ModelAndView mv = new ModelAndView();
+		ArrayList<MangoBoardStoryVO> list = boardStoryService.getList();
 		mv.addObject("list", list);
 		mv.setViewName("/boardstory/boardstory_list");
 		return mv;
 	}
-	
-	@RequestMapping(value="/board_detail2.do", method = RequestMethod.GET)
-	public String footer2() {
-		return "/board/board_detail2";
-	}
-	
+
 }

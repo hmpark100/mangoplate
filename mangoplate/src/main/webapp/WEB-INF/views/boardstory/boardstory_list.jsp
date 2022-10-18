@@ -43,7 +43,7 @@
 								href="boardstory_content.do?sid=${vo.sid }">
 									<figure class="mango-pick-item">
 										<div class="thumb lazy"
-											style="display: block; background-image: url(&quot;https://mp-seoul-image-production-s3.mangoplate.com/mango_pick/full/s2mxs9-qbwpdjq.jpg?fit=around|585:345&amp;crop=585:345;*,*&amp;output-format=jpg&amp;output-quality=80&quot;);">
+											style="display: block; background-image: url(&quot;http://localhost:9000/mangoplate/resources/upload/${vo.ssimage}?fit=around|585:345&amp;crop=585:345;*,*&amp;output-format=jpg&amp;output-quality=80&quot;);">
 										</div>
 										<figcaption>
 											<strong class="title">${vo.stitle }</strong>

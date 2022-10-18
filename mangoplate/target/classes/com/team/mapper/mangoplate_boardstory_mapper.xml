@@ -7,19 +7,24 @@
 <mapper namespace="mapper.boardstory">
 	<!-- board totalcount -->
 	<select id="totalcount" resultType="int">
-		select count(*) from mg_board_story
+		select count(*) from
+		mg_board_story
 	</select>
 
 	<!-- board delete -->
 	<delete id="delete" parameterType="java.lang.String">
-		delete from mg_board_story where sid=#{sid}
+		delete from mg_board_story
+		where sid=#{sid}
 	</delete>
 
 	<!-- board update -->
-	<!-- <update id="update" parameterType="com.mangoplate.vo.MangoBoardStoryVO">
-		update mg_board_story set stitle=#{stitle}, scontent=#{scontent}, simage=#{simage}, ssimage=#{ssimage} 
-				 where sid=#{sid}	
-	</update> -->
+	<update id="update"
+		parameterType="com.mangoplate.vo.MangoBoardStoryVO">
+		update mg_board_story set editer=#{editer},
+		stitle=#{stitle}, sstitle=#{sstitle}, scontent=#{scontent},
+		simage=#{simage}, ssimage=#{ssimage}
+		where sid=#{sid}
+	</update>
 
 	<!-- board updatehits -->
 	<update id="updatehits" parameterType="java.lang.String">
@@ -31,7 +36,8 @@
 	<!-- board content -->
 	<select id="content" parameterType="java.lang.String"
 		resultType="com.mangoplate.vo.MangoBoardStoryVO">
-		select sid, editer, stitle, sstitle, sdate, shits, scontent, simage, ssimage
+		select sid, editer, stitle, sstitle,
+		to_char(sdate,'yyyy-mm-dd') sdate, shits, scontent, simage, ssimage
 		from
 		mg_board_story where sid=#{sid}
 	</select>
@@ -39,16 +45,18 @@
 	<!-- board list -->
 	<select id="list"
 		resultType="com.mangoplate.vo.MangoBoardStoryVO">
-		select rno, sid, editer, stitle, sstitle, sdate, shits, scontent
+		select rno, sid, editer, stitle, sstitle, sdate, shits, scontent,
+		simage, ssimage
 		from
-		(select rownum rno, sid, editer, stitle, sstitle, to_char(sdate,
-		'yyyy-mm-dd') sdate, shits, scontent
+		(select rownum rno, sid, editer, stitle, sstitle,
+		to_char(sdate,
+		'yyyy-mm-dd') sdate, shits, scontent, simage, ssimage
 		from (select sid, editer, stitle,
 		sstitle,
-		sdate, shits, scontent from
+		sdate, shits, scontent,
+		simage, ssimage from
 		mg_board_story order by sdate desc)
 		)
-		<!--where rno between #{start} and #{end} -->
 	</select>
 
 	<!-- board insert -->

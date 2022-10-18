@@ -13,15 +13,15 @@
 </head>
 <body>
 	<!-- Header Include -->
-	<iframe src="http://localhost:9000/mangoplate/header.do" width="100%"
-		height="61px" scrolling="no" frameborder=0></iframe>
-
+	<!-- <iframe src="http://localhost:9000/mangoplate/header.do" width="100%"
+		height="61px" scrolling="no" frameborder=0></iframe> -->
+	<jsp:include page="../header.jsp"></jsp:include>
 
 	<!---------------------------------------------->
 	<!--------------- Content ----------------------->
 	<!---------------------------------------------->
 	<div class="content">
-		<h1>망고스토리 - 에디터등록</h1>
+		<h1>망고스토리 - 스토리등록</h1>
 		<form name="boardWriteForm" action="boardstory_write_check.do"
 			  enctype="multipart/form-data" method="post">
 			<ul>

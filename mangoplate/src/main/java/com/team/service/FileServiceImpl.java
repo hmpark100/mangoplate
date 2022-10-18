@@ -71,7 +71,6 @@ public class FileServiceImpl {
 	 * 망고 스토리 게시판 : 파일 upload 폴더에 저장
 	 */
 	public void fileSave(MangoBoardStoryVO vo, HttpServletRequest request) throws Exception {
-		//2. upload 폴더에 bsfile 명으로 실제 파일 업로드 처리
 		if(!vo.getFile1().getOriginalFilename().equals("")) {
 			String path = request.getSession().getServletContext().getRealPath("/");
 			path += "\\resources\\upload\\";

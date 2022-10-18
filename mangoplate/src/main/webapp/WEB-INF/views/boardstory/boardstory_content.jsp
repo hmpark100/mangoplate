@@ -19,34 +19,16 @@
 	<!---------------------------------------------->
 	<!--------------- Content ----------------------->
 	<!---------------------------------------------->
+	<a href="boardstory_delete.do?sid=${vo.sid }">
+		<button type="button" class="btn_style">삭제하기</button>
+	</a>
+	<a href="boardstory_update.do?sid=${vo.sid }">
+		<button type="button" class="btn_style">수정하기</button>
+	</a>
 	<main class="Story">
 		<div class="Story__BaseInfoContainer">
 			<header class="StoryHeader"
-				style="background-image: url('https://mp-seoul-image-production-s3.mangoplate.com/mango_pick/full/jinf88_y1yyjfo.jpg?fit=around|*:*&amp;crop=*:*;*,*&amp;output-format=jpg&amp;output-quality=80')">
-				<div class="StoryContent__Source StoryContent__Source--Header">
-					<span class="StoryContent__SourceText"></span>
-				</div>
-
-				<div class="StoryHeader__Deem only-mobile">
-					<div class="StoryHeader__ActiveButtons">
-						<button
-							class="StoryHeader__ActiveButton StoryHeader__BookmarkButton ">
-							<i class="StoryHeader__BookmarkButtonIcon"></i>
-						</button>
-						<button class="StoryHeader__ActiveButton StoryHeader__ShareButton">
-							<i class="StoryHeader__ShareButtonIcon"></i>
-						</button>
-					</div>
-				</div>
-
-
-				<div class="StoryHeader__Info DateAndView only-mobile">
-					<span class="DateAndView__Time">2022-09-27</span> <span
-						class="DateAndView__ViewCountWrap"> <i
-						class="DateAndView__ViewCountIcon"></i> <span
-						class="DateAndView__ViewCount">268</span>
-					</span>
-				</div>
+				style="background-image: url('http://localhost:9000/mangoplate/resources/upload/${vo.ssimage}?fit=around|*:*&amp;crop=*:*;*,*&amp;output-format=jpg&amp;output-quality=80')">
 			</header>
 
 			<section class="Story__BaseInfo">
@@ -63,18 +45,18 @@
 
 				<i class="Story__Icon only-mobile"></i>
 				<div class="StoryEditor">
-					<i class="StoryEditor__EditorMark"></i> <span
-						class="StoryEditor__EditorName">배망고</span>
+					<i class="StoryEditor__EditorMark"></i><span
+						class="StoryEditor__EditorName">${vo.editer }</span>
 				</div>
 
-				<h1 class="Story__Title">남한산성의 건강한 맛집 5곳</h1>
-				<p class="Story__Description">건강하고 맛도 좋은 그런 맛집!</p>
+				<h1 class="Story__Title">${vo.stitle }</h1>
+				<p class="Story__Description">${vo.sstitle }</p>
 
 				<div class="DateAndView only-desktop">
-					<span class="DateAndView__Time">2022-09-27</span> <span
+					<span class="DateAndView__Time">${vo.sdate }</span> <span
 						class="DateAndView__ViewCountWrap"> <i
 						class="DateAndView__ViewCountIcon"></i> <span
-						class="DateAndView__ViewCount">268</span>
+						class="DateAndView__ViewCount">${vo.shits }</span>
 					</span>
 				</div>
 
@@ -86,9 +68,9 @@
 			<div class="Story__ContentList">
 				<div class="Story__Content Story__CardContent StoryContent">
 					<div class="StoryContent__PictureWrap">
-						<img src="https://media.giphy.com/media/118p3q768COZhu/giphy.gif"
+						<img
+							src="http://localhost:9000/mangoplate/resources/upload/${vo.ssimage }"
 							alt=" 사진" class="StoryContent__Picture">
-
 						<div class="StoryContent__Source">
 							<a href="GIPHY.COM"
 								onclick="trackEvent('CLICK_AFFILIATE_LINK', {&quot;url&quot;:&quot;GIPHY.COM&quot;})"
@@ -97,6 +79,7 @@
 							</a>
 						</div>
 					</div>
+					<p class="StoryContent__Caption">${vo.scontent }</p>
 					<section
 						class="Story__Content Story__RestaurantContent StoryRestaurantContent"
 						data-key="3Bs8ZNgdzo">

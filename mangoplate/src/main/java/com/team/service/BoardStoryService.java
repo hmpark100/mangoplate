@@ -36,4 +36,9 @@ public interface BoardStoryService {
 	 */
 	int getTotalCount();
 
+	/**
+	 * 수정처리
+	 */
+	int getUpdate(MangoBoardStoryVO vo);
+
 }
