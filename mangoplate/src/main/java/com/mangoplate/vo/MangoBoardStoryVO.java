@@ -1,9 +1,11 @@
 package com.mangoplate.vo;
 
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
 public class MangoBoardStoryVO {
 	int rno, shits;
 	String sid, editer, stitle, sstitle, sdate, scontent, simage, ssimage;
-	
+	CommonsMultipartFile file1;
 	public int getRno() {
 		return rno;
 	}
@@ -64,7 +66,12 @@ public class MangoBoardStoryVO {
 	public void setSsimage(String ssimage) {
 		this.ssimage = ssimage;
 	}
-	
+	public CommonsMultipartFile getFile1() {
+		return file1;
+	}
+	public void setFile1(CommonsMultipartFile file1) {
+		this.file1 = file1;
+	}
 	
 	
 }

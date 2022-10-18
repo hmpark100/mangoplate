@@ -8,11 +8,95 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import com.mangoplate.vo.MangoBoardStoryVO;
 import com.mangoplate.vo.MangoEatdealVO;
 import com.mangoplate.vo.MangoNoticeVO;
 
 @Service
 public class FileServiceImpl {
+	/**
+	 * 망고스토리 게시판 : 망고스토리 게시글 삭세 시 파일이 존재하면 삭제하기
+	 */
+	public void fileDelete(MangoBoardStoryVO vo, HttpServletRequest request) throws Exception{
+		if(vo.getSsimage() != null) {
+			String path=request.getSession().getServletContext().getRealPath("/");
+			path += "\\resources\\upload\\";
+			
+			File old_file = new File(path+vo.getSsimage());
+			if(old_file.exists()) {
+				old_file.delete();
+			}
+		}
+	}
+	
+	/**
+	 * 망고 스토라 게시판 : 파일이 있는 경우 update시 파일저장
+	 */
+	public void update_filesave(MangoBoardStoryVO vo, HttpServletRequest request, String old_filename) 
+														throws Exception {
+		//새로운 파일을 upload 폴더에 저장
+		if(!vo.getFile1().getOriginalFilename().equals("")) { //새로운 파일선택 O
+			String path = request.getSession().getServletContext().getRealPath("/");
+			path += "\\resources\\upload\\";
+			System.out.println(path);
+			
+			File file = new File(path+vo.getSsimage());
+			vo.getFile1().transferTo(file);
+		
+			//기존파일이 있는 경우에는 파일 삭제
+			File ofile = new File(path+old_filename);
+			if(ofile.exists()) {
+				ofile.delete();
+			}
+		}
+	}
+	
+	/**
+	 * 망고스토리 게시판 : 파일이 있는 경우 update시 파일체크
+	 */
+	public MangoBoardStoryVO update_fileCheck(MangoBoardStoryVO vo) {
+		if(vo.getFile1() != null) {
+			if(!vo.getFile1().getOriginalFilename().equals("")) { //새로운 파일선택 O	
+
+				UUID uuid = UUID.randomUUID();
+
+				vo.setSimage(vo.getFile1().getOriginalFilename());
+				vo.setSsimage(uuid+"_"+vo.getFile1().getOriginalFilename());
+			}
+		}
+		return vo;
+	}
+	
+	/**
+	 * 망고 스토리 게시판 : 파일 upload 폴더에 저장
+	 */
+	public void fileSave(MangoBoardStoryVO vo, HttpServletRequest request) throws Exception {
+		//2. upload 폴더에 bsfile 명으로 실제 파일 업로드 처리
+		if(!vo.getFile1().getOriginalFilename().equals("")) {
+			String path = request.getSession().getServletContext().getRealPath("/");
+			path += "\\resources\\upload\\";
+			
+			File file = new File(path+vo.getSsimage());
+			vo.getFile1().transferTo(file);
+		}
+	}
+	
+	/**
+	 * 망고스토리 게시판 : 파일 체크 후 simage, ssimage 생성
+	 */
+	public MangoBoardStoryVO fileCheck(MangoBoardStoryVO vo) {
+		//1. vo객체의 파일체크 후 simage, ssimage에 저장되는 이름 생성
+		if(vo.getFile1().getOriginalFilename().equals("")) {
+			vo.setSimage("");
+			vo.setSsimage("");
+		}else {
+			UUID uuid = UUID.randomUUID();
+			vo.setSimage(vo.getFile1().getOriginalFilename());
+			vo.setSsimage(uuid + "_" + vo.getFile1().getOriginalFilename());
+		}
+		
+		return  vo;
+	}//fileCheck
 	
 	/**
 	 * 공지사항: 파일 체크 후, nfile, nsfile 생성(메소드 오버로딩)
