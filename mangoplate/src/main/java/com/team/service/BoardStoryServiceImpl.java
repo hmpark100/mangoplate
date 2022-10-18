@@ -13,11 +13,35 @@ public class BoardStoryServiceImpl implements BoardStoryService{
 	@Autowired
 	private MangoBoardStoryDAO boardStoryDao;
 	/**
+	 * 게시글 전체 로우
+	 */
+	@Override
+	public int getTotalCount() {
+		return boardStoryDao.totalCount();
+	}
+	
+	/**
+	 * 수정처리
+	 */
+	/*
+	 * @Override public int getUpdate(MangoBoardStoryVO vo) { return
+	 * boardStoryDao.update(vo); }
+	 */
+	 
+	
+	/**
+	 * 삭제 처리
+	 */
+	@Override
+	public int getDelete(String sid) {
+		return boardStoryDao.delete(sid);
+	}
+	
+	/**
 	 * 조회수 업데이트
 	 */
 	@Override
 	public void getUpdateHits(String sid) {
-		//CgvBoardDAO dao = new CgvBoardDAO();
 		boardStoryDao.updateHits(sid);
 	}
 	
@@ -26,8 +50,6 @@ public class BoardStoryServiceImpl implements BoardStoryService{
 	 */
 	@Override
 	public MangoBoardStoryVO getContent(String sid) {
-		//CgvBoardDAO dao = new CgvBoardDAO();
-		//CgvBoardVO vo = boardDao.select(bid);
 		return boardStoryDao.select(sid);
 	}
 	
@@ -36,7 +58,6 @@ public class BoardStoryServiceImpl implements BoardStoryService{
 	 */
 	@Override
 	public ArrayList<MangoBoardStoryVO> getList(){
-		//CgvBoardDAO dao = new CgvBoardDAO();
 		ArrayList<MangoBoardStoryVO> list = boardStoryDao.select();
 		return list;
 	}
@@ -46,8 +67,6 @@ public class BoardStoryServiceImpl implements BoardStoryService{
 	 */
 	@Override
 	public int getWriteResult(MangoBoardStoryVO vo) {
-		//CgvBoardDAO dao = new CgvBoardDAO();
-		//int result = dao.insert(vo);
 		return boardStoryDao.insert(vo);
 	}
 }

@@ -23,7 +23,7 @@
 	<div class="content">
 		<h1>망고스토리 - 에디터등록</h1>
 		<form name="boardWriteForm" action="boardstory_write_check.do"
-			  method="post">
+			  enctype="multipart/form-data" method="post">
 			<ul>
 				<li><label>Editer</label> <input type="text" name="editer" id="editer"></li>
 				<li><label>제목</label> <input type="text" name="stitle" id="stitle"></li>

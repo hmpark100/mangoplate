@@ -26,4 +26,14 @@ public interface BoardStoryService {
 	 */
 	MangoBoardStoryVO getContent(String sid);
 
+	/**
+	 * 삭제 처리
+	 */
+	int getDelete(String sid);
+
+	/**
+	 * 게시글 전체 로우
+	 */
+	int getTotalCount();
+
 }

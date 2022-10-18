@@ -34,7 +34,7 @@
 </head>
 <body>
 	<!-- Header Include -->
-	<iframe src="http://localhost:9000/mycgv/header.do" width="100%" height="160px" scrolling="no" frameborder=0 ></iframe>
+	<iframe src="http://localhost:9000/mangoplate/header.do" width="100%" height="160px" scrolling="no" frameborder=0 ></iframe>
 	
 	
 	<!---------------------------------------------->

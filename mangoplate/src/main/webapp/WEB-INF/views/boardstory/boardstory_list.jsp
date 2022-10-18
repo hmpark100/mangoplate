@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>망고스토리 list</title>
 <link rel="stylesheet"
-	href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
+	href="http://localhost:9000/mangoplate/resources/css/mangoplate_boardstory.css">
 <link rel="stylesheet"
 	href="http://localhost:9000/mangoplate/resources/css/am-pagination.css">
 <script
@@ -30,66 +30,60 @@
 		<article class="contents">
 			<section class="module editors-pick">
 				<div class="inner">
-					<h1 class="title only-desktop">에디터 입맛별 맛집 매거진</h1>
 					<tr>
 						<td colspan="4"><a href="boardstory_write.do">
 								<button type="button" class="btn_style">글쓰기</button>
 						</a></td>
 					</tr>
+					<h1 class="title only-desktop">에디터 입맛별 맛집 매거진</h1>
 					<ul class="list-editors-pick">
-						<li class="mango-pick-item-content-wrap"><a
-							onclick="trackEvent('CLICK_STORY', {&quot;position&quot;:0,&quot;story_id&quot;:2571});"
-							href="/mango_picks/2571">
-								<figure class="mango-pick-item">
-									<div class="thumb lazy"
-										data-original="https://mp-seoul-image-production-s3.mangoplate.com/mango_pick/full/wy9jn1uiuln9u-.png?fit=around|585:345&amp;crop=585:345;*,*&amp;output-format=jpg&amp;output-quality=80"
-										data-error="https://mp-seoul-image-production-s3.mangoplate.com/web/resources/kssf5eveeva_xlmy.jpg?fit=around|*:*&amp;crop=*:*;*,*&amp;output-format=jpg&amp;output-quality=80"
-										style="display: block; background-image: url(&quot;https://mp-seoul-image-production-s3.mangoplate.com/mango_pick/full/wy9jn1uiuln9u-.png?fit=around|585:345&amp;crop=585:345;*,*&amp;output-format=jpg&amp;output-quality=80&quot;);">
-									</div>
+						<c:forEach var="vo" items="${list}">
+							<li class="mango-pick-item-content-wrap"><a
+								onclick="trackEvent('CLICK_STORY', {&quot;position&quot;:0,&quot;story_id&quot;:2571});"
+								href="boardstory_content.do?sid=${vo.sid }">
+									<figure class="mango-pick-item">
+										<div class="thumb lazy"
+											style="display: block; background-image: url(&quot;https://mp-seoul-image-production-s3.mangoplate.com/mango_pick/full/s2mxs9-qbwpdjq.jpg?fit=around|585:345&amp;crop=585:345;*,*&amp;output-format=jpg&amp;output-quality=80&quot;);">
+										</div>
+										<figcaption>
+											<strong class="title">${vo.stitle }</strong>
+											<p class="hash">${vo.sstitle }</p>
 
-									<figcaption>
-										<strong class="title">ASDASD</strong>
+											<figure class="editor only-mobile">
+												<span class="badge"></span>
 
-										<p class="hash">부산 가야하는 이유: BTS 그리고 떡볶이</p>
+												<div class="thumb">
+													<img class="center-crop lazy" alt=${vo.editer }>
 
-										<figure class="editor only-mobile">
+												</div>
+
+												<figcaption>${vo.editer }</figcaption>
+											</figure>
+										</figcaption>
+
+										<figure class="editor only-desktop">
 											<span class="badge"></span>
 
 											<div class="thumb">
-												<img class="center-crop lazy" alt="망고소녀"
+												<img class="center-crop lazy" alt=${vo.editer }
 													data-original="https://mp-seoul-image-production-s3.mangoplate.com/mango_pick/fmsvfia71h84uy.jpg?fit=around|89:89&amp;crop=89:89;*,*&amp;output-format=jpg&amp;output-quality=80"
 													data-error="https://mp-seoul-image-production-s3.mangoplate.com/web/resources/jmcmlp180qwkp1jj.png?fit=around|*:*&amp;crop=*:*;*,*&amp;output-format=jpg&amp;output-quality=80"
 													src="https://mp-seoul-image-production-s3.mangoplate.com/mango_pick/fmsvfia71h84uy.jpg?fit=around|89:89&amp;crop=89:89;*,*&amp;output-format=jpg&amp;output-quality=80"
 													style="display: block;">
 											</div>
 
-											<figcaption>망고소녀</figcaption>
+											<figcaption>${vo.editer }</figcaption>
 										</figure>
-									</figcaption>
-
-									<figure class="editor only-desktop">
-										<span class="badge"></span>
-
-										<div class="thumb">
-											<img class="center-crop lazy" alt="망고소녀"
-												data-original="https://mp-seoul-image-production-s3.mangoplate.com/mango_pick/fmsvfia71h84uy.jpg?fit=around|89:89&amp;crop=89:89;*,*&amp;output-format=jpg&amp;output-quality=80"
-												data-error="https://mp-seoul-image-production-s3.mangoplate.com/web/resources/jmcmlp180qwkp1jj.png?fit=around|*:*&amp;crop=*:*;*,*&amp;output-format=jpg&amp;output-quality=80"
-												src="https://mp-seoul-image-production-s3.mangoplate.com/mango_pick/fmsvfia71h84uy.jpg?fit=around|89:89&amp;crop=89:89;*,*&amp;output-format=jpg&amp;output-quality=80"
-												style="display: block;">
-										</div>
-
-										<figcaption>망고소녀</figcaption>
 									</figure>
-								</figure>
 
-								<div class="review-content">
-									<figure class="user">
-										<figcaption>망고소녀</figcaption>
-									</figure>
-									<p>방탄소년단의 부산 콘서트 기념, 부산에 가시는 수많은 아미분들을 위해 맛집을 소개합니다. 부산 떡볶이
-										맛집 8곳으로 고고!</p>
-								</div>
-						</a></li>
+									<div class="review-content">
+										<figure class="user">
+											<figcaption>${vo.editer }</figcaption>
+										</figure>
+										<p>${vo.scontent }</p>
+									</div>
+							</a></li>
+						</c:forEach>
 					</ul>
 				</div>
 			</section>

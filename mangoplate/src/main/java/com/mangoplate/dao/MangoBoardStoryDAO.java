@@ -5,14 +5,34 @@ import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.mangoplate.vo.MangoBoardStoryVO;
 
-public class MangoBoardStoryDAO extends DBConn {
-	//sqlSession을 가져오세요.
-	//private 데이터타입 객체명
+@Repository
+public class MangoBoardStoryDAO{
 	@Autowired
 	private SqlSessionTemplate sqlSession;
+	/**
+	 * update : 게시글 수정 - mapper.board.update
+	 */
+	public int update(MangoBoardStoryVO vo) {
+		return sqlSession.update("mapper.boardstory.update", vo);
+	}
+	
+	/**
+	 * delete : 게시글 삭제 - mapper.board.delete
+	 */
+	public int delete(String sid) {
+		return sqlSession.delete("mapper.boardstory.delete", sid);
+	}
+	
+	/**
+	 * totalCount : 전체 로우수 출력 - mapper.board.totalcount
+	 */
+	public int totalCount() {
+		return sqlSession.selectOne("mapper.boardstory.totalcount");
+	}
 
 	/**
 	 * updateHits : 조회수 업데이트 - mapper.board.updatehits
