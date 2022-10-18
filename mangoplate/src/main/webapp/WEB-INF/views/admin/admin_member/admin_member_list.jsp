@@ -40,21 +40,46 @@
  	});
 </script> 
 <style>
-	.content{
-		margin-top: 61px;
+	* {
+			margin: 0px;
+			padding: 0px;
+		}
+		
+		.content {
+		/* 	border: 1px solid red; */
+			width: 100%;
+		/* 	height: auto; */
+			margin-top: 61px;
+		}
+	
+	.admin_head {
+		/* border: 1px solid blue; */
+		width: 100%;
+		height: 300px;
+		background-color: coral;
 	}
 	
-	.u1{
-		float: left;
-		margin-right: 30px;
+	.admin_head h1 {
+		/* border: 1px solid blue;  */
+		color: white;
+		font-weight:bold;
+		font-size: 50px;
+		font-family: "SpoqaHanSans", "Noto Sans SC", "APPLE SD Gothic NEO","sans-serif";
+		/* display: inline-block; */
+		display: block;
+		padding-top:30px;
+		margin-top: 30px;
+		margin-left: 30px;
 	}
 	
-	.board{
-		clear:both;
+	ul.h2 li:nth-child(2) a {
+		background-color: coral;
+		color:#fff;
 	}
 	
-	h3 {
+	h2 {
 		border: 1px solid red;
+		margin: 50px;
 	}
 </style>
 </head>
@@ -67,16 +92,17 @@
 	<!--------------- Content ----------------------->
 	<!---------------------------------------------->
 	<div class="content">
-		<h1>관리자 페이지</h1>	
-		
-	<ul class="u1">
-		<li><a href="admin.do" class="active">Admin</a></li>
-		<li><a href="admin_member_list.do">회원정보관리</a></li>
+		<div class="admin_head">
+			<h1>관리자 페이지</h1>	
+		</div>
+	<ul class="h2">
+		<li><a href="admin.do">Admin</a></li>
+		<li><a href="admin_member_list.do" class="active">회원정보관리</a></li>
 		<li><a href="contact.asp">공지사항 관리</a></li>
 		<li><a href="about.asp">eatdeal 관리</a></li>
 	</ul>
 		
-		<h3>회원정보 리스트</h3>
+		<h2>회원정보-리스트</h2>
 		<table class="board">			
 			<tr>
 				<th>번호</th>
@@ -86,13 +112,13 @@
 				<th>가입날짜</th>
 			</tr>
 			
-			<c:forEach var="vo"  items="${list}">
+			<c:forEach var="vo" items="${list}">
 			<tr>
 				<td>${vo.rno }</td>
 				<td><a href="admin_member_content.do?id=${vo.id }">${vo.id }</a></td>
-				<td>${vo.name }</td>
-				<td>${vo.pnumber }</td>
-				<td>${vo.mdate }</td>
+				<td>${vo.name}</td>
+				<td>${vo.pnumber}</td>
+				<td>${vo.mdate}</td>
 			</tr>			
 			</c:forEach>
 			
