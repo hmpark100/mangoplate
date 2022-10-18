@@ -113,8 +113,9 @@
 </style>
 </head>
 <body>
-	<!-- header -->
-	<iframe src="header.do" width="100%" height="61px" scrolling="no" frameborder=0 ></iframe>
+<!-- header -->
+<!-- <iframe src="header.do" width="100%" height="61px" scrolling="no" frameborder=0 ></iframe> -->
+<jsp:include page="../header.jsp"></jsp:include>
 	<article class="review_content">
 		<section class="real_content">
 			<div class="first_div">

@@ -9,9 +9,9 @@
 	href="http://localhost:9000/mangoplate/resources/css/restaurant_detail.css">
 </head>
 <body>
-	<!-- header -->
-	<!-- <iframe src="header.do" width="100%" height="61px" scrolling="no" frameborder=0 ></iframe> -->
-	<jsp:include page="../header.jsp"></jsp:include>
+<!-- header -->
+<!-- <iframe src="header.do" width="100%" height="61px" scrolling="no" frameborder=0 ></iframe> -->
+<jsp:include page="../header.jsp"></jsp:include>
 	<!-- content -->
 	<main class="pg-restaurant have-share-sns-another ng-scope"
 		ng-controller="mp20_restaurant_controller"

@@ -15,7 +15,7 @@
 	
 	/* top 관련 css */
 	.company_top {
-		border : 1px solid black;
+	/* 	border : 1px solid black; */
 		width : 100%;
 		height : 400px;
 		background-image : url("http://localhost:9000/mangoplate/resources/images/company.jpg");

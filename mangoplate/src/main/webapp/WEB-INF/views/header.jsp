@@ -458,7 +458,7 @@ form[name='joinForm'] #join_textbutton button {
 							class="Header__MenuText">EAT딜</span>
 					</a></li>
 
-					<li class="Header__MenuItem"><a href="/top_lists"
+					<li class="Header__MenuItem"><a href="http://localhost:9000/mangoplate/restaurant_list.do"
 						class="Header__MenuLink" onclick="trackEvent('CLICK_TOP_LIST')"
 						target="_parent"> <span class="Header__MenuText">맛집 리스트</span>
 					</a></li>
