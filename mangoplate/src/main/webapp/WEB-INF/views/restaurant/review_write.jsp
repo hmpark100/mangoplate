@@ -13,6 +13,11 @@
 		padding : 0px;
 	}
 	
+	.body {
+	 /* 	border : 1px solid black;  */
+		margin-top : 100px;
+	}
+	
 	/* top과 관련된 css */
 	
 	.review_top {
@@ -172,6 +177,7 @@
 		background-color : #ffffff;
 		cursor : not-allowed;
 		float : left;
+		margin-top: 16px;
 	}
 	
 	.upload ul:nth-child(4) li button{
@@ -227,6 +233,7 @@ $(document).ready(function(){
 <!-- <iframe src="header.do" width="100%" height="61px" scrolling="no" frameborder=0 ></iframe> -->
 <jsp:include page="../header.jsp"></jsp:include>
 
+	<div class="body">
 	<section class="review_top">
 		<div>
 			<h1>팔레드 신</h1>
@@ -284,5 +291,6 @@ $(document).ready(function(){
 			</form>
 		</article>
 	</section>
+	</div>
 </body>
 </html>
