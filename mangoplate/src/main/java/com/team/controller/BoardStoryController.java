@@ -127,9 +127,9 @@ public class BoardStoryController {
 
 		MangoBoardStoryVO vo = boardStoryService.getContent(sid);
 		if (vo != null) {
-			mv.addObject("vo", vo);
+			boardStoryService.getUpdateHits(sid);
 		}
-
+		mv.addObject("vo", vo);
 		mv.setViewName("/boardstory/boardstory_content");
 
 		return mv;
