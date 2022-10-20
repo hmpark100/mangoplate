@@ -7,13 +7,13 @@
 <mapper namespace="mapper.restaurant">
 
 	<!-- movie content-->
-	<select id="content" parameterType="java.lang.String" resultType="com.mycgv.vo.CgvMovieVO">
+	<select id="content" parameterType="java.lang.String" resultType="com.mangoplate.vo.MangoRestVO">
 		select cm.mid, mcategory, mname, mdesc, mdate, mfile1, msfile1, mfile2, msfile2
 				from cgv_movie cm,cgv_movie_file cmf where cm.mid=cmf.mid and cm.mid=#{mid}
 	</select>
 	
 	<!-- movie list-->
-	<select id="list" parameterType="map" resultType="com.mycgv.vo.CgvMovieVO">
+	<select id="list" parameterType="map" resultType="com.mangoplate.vo.MangoRestVO">
 		 select rno, mid, mcategory, mname, mdate
 				from (select rownum rno, mid, mcategory, mname, mdate
 				from (select mid, mcategory, mname,mdate from cgv_movie order by mdate desc))
@@ -26,7 +26,7 @@
 	</select>
 	
 	<!-- movie insertfile-->
-	<insert id="insertfile" parameterType="com.mycgv.vo.CgvMovieVO">
+	<insert id="insertfile" parameterType="com.mangoplate.vo.MangoRestVO">
 		insert into cgv_movie_file 
 			values('f_'||sequ_cgv_movie_file.nextval,#{mfile1},#{msfile1},#{mfile2},#{msfile2},#{mid})
 	</insert>
@@ -38,7 +38,7 @@
 	</select>
 	
 	<!-- movie insert-->
-	<insert id="insert" parameterType="com.mycgv.vo.CgvMovieVO">
+	<insert id="insert" parameterType="com.mangoplate.vo.MangoRestVO">
 		insert into cgv_movie 
 			values('m_'||sequ_cgv_movie.nextval,#{mcategory},#{mname},#{mdesc},sysdate)
 	</insert>
