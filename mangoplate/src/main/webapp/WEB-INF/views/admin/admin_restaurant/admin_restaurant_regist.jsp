@@ -108,50 +108,38 @@
 			<ul>
 				<li>
 					<label>식당명</label>
-					<input type="text" name="mname" id="mname">
+					<input type="text" name="rname" id="rname">
 				</li>
 				<li>
 					<label>주소</label>
-					<input type="text" name="maddr" id="maddr">
+					<input type="text" name="raddr" id="raddr">
 				</li>
 				<li>
 					<label>연락처</label>
-					<input type="text" name="mcontact" id="mcontact">
+					<input type="text" name="rcontact" id="rcontact">
 				</li>
 				<li>
 					<label>가격대</label>
-					<input type="text" name="mprice" id="mprice">
+					<input type="text" name="rprice" id="rprice">
 				</li>
 				<li>
-					<label>영업시간</label>
-					<input type="text" name="mtime" id="mtime">
-				</li>
-				<li>
-					<label>주차</label>
-					<input type="checkbox" name="parking" value="있음">주차공간있음
-					<input type="checkbox" name="parking" value="없음">주차공간없음
-				</li>
-				<li>
-					<label>카테고리</label>
-					<select name="mcategory">
+					<label>음식종류</label>
+					<select name="rcategory">
 						<option value="양식">양식</option>
 						<option value="한식">한식</option>
 						<option value="중식">중식</option>
 						<option value="일식">일식</option>
+						<option value="아시안음식">아시안음식</option>
 					</select>
 				</li>
 				<li>
-					<label>대표메뉴</label>
-					<input type="text" name="mmenu" id="mmenu">
-				</li>
-				<li>
 					<label>대표사진</label>
-					<input type="file" name="files">
+					<input type="rimage" name="rimage">
 				</li>
 				<li>
 					<button type="button" class="btn_style" id="btnNoticeWrite">등록완료</button>
 					<button type="reset" class="btn_style">다시쓰기</button>
-					<a href="admin_restaurant_list.do">
+					<a href="http://localhost:9000/mangoplate/admin/admin_restaurant_list.do">
 						<button type="button" class="btn_style">리스트</button></a>
 					<a href="http://localhost:9000/mangoplate/admin/admin.do"><button type="button" class="btn_style">관리자홈</button></a>
 				</li>

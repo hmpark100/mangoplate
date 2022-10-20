@@ -33,39 +33,33 @@ public class AdminController {
 	
 	//admin_restaurant
 		/**
-		 * admin_movie_regist_check.do : 영화 등록 처리
+		 * admin_restaurant_regist_check.do : 영화 등록 처리
 		 */
-		@RequestMapping(value="/admin_restaurant_regist_check.do", method=RequestMethod.POST)
-		public ModelAndView admin_restaurant_regist_check(MangoRestVO vo, HttpServletRequest request) throws Exception {
-			ModelAndView mv = new ModelAndView();
-			
-			//파일을 선택했는지 체크
-			vo = fileService.multiFileCheck(vo);
-			
-			//DB 연동
-			//1. mg_detail 테이블 저장 --> mid 생성
-			int result = restaurantService.getInsert(vo);
-			
-			if(result == 1) {
-				//2. mid값을 가져오기
-				String mid = restaurantService.getMid();
-				
-				//3. mid를 레퍼런스하는 cgv_movie_file 테이블 저장
-				vo.setMid(mid);
-				int result2 = restaurantService.getInsertFile(vo);
-				
-				if(result2 ==1) {
-					//파일을 upload에 저장
-					fileService.multiFileSave(vo, request);
-				}
-				
-			}		
-			
-			mv.setViewName("redirect:/admin_restaurant_list.do");
-			
-			return mv;
-		}
-		
+
+		/*
+		 * @RequestMapping(value="/admin_restaurant_regist_check.do",
+		 * method=RequestMethod.POST) public ModelAndView
+		 * admin_restaurant_regist_check(MangoRestVO vo, HttpServletRequest request)
+		 * throws Exception { ModelAndView mv = new ModelAndView();
+		 * 
+		 * //파일을 선택했는지 체크 vo = fileService.multiFileCheck(vo);
+		 * 
+		 * //DB 연동 //1. mg_detail 테이블 저장 --> mid 생성 int result =
+		 * restaurantService.getInsert(vo);
+		 * 
+		 * if(result == 1) { //2. mid값을 가져오기 String mid = restaurantService.getMid();
+		 * 
+		 * //3. mid를 레퍼런스하는 cgv_movie_file 테이블 저장 vo.setMid(mid); int result2 =
+		 * restaurantService.getInsertFile(vo);
+		 * 
+		 * if(result2 ==1) { //파일을 upload에 저장 fileService.multiFileSave(vo, request); }
+		 * 
+		 * }
+		 * 
+		 * mv.setViewName("redirect:/admin_restaurant_list.do");
+		 * 
+		 * return mv; }
+		 */
 		/**
 		 * admin_restaurant_regist.do
 		 */
@@ -97,9 +91,10 @@ public class AdminController {
 	ModelAndView mv = new ModelAndView();
 	MangoMemberVO vo =memberService.getMemberContent(id);
 	String address = vo.getAddr1()+" "+ vo.getAddr2();
-	
+	String email = vo.getEmail1()+"@"+ vo.getEmail2();
 	mv.addObject("vo", vo);
 	mv.addObject("address", address);
+	mv.addObject("email", email);
 	mv.setViewName("/admin/admin_member/admin_member_content");
 	return mv;
 	}

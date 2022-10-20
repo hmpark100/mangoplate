@@ -18,6 +18,15 @@ public class MangoMemberDAO {
 	private SqlSessionTemplate sqlSession;
 	
 	/**
+	 * selectMypage : 마이페이지 회원정보 출력
+	 */
+	
+	  public MangoMemberVO selectMypage(String id) { 
+		  return sqlSession.selectOne("mapper.member.mypage", id); 
+	  }
+	 
+	
+	/**
 	 * totalCount : 전체 로우수 출력
 	 */
 	public int totalCount() {
@@ -69,4 +78,5 @@ public class MangoMemberDAO {
 		//sqlSession 객체의 메소드를 호출하여 실행결과를 가져옴
 		return sqlSession.insert("mapper.member.join", vo);
 	}
+
 }

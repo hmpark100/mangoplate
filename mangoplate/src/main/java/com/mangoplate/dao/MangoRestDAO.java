@@ -43,7 +43,7 @@ public class MangoRestDAO {
 	}
 	
 	/**
-	 * insert_file(vo) :
+	 * insert_file(vo) : 필요없어어~~
 	 */
 	public int insert_file(MangoRestVO vo) {
 		return sqlSession.insert("mapper.restaurant.insertfile",vo);
@@ -57,7 +57,7 @@ public class MangoRestDAO {
 	}
 	
 	/**
-	 * insert(vo) : 영화등록
+	 * insert(vo) : 식당등록
 	 */
 	public int insert(MangoRestVO vo) {		
 		return sqlSession.insert("mapper.restaurant.insert",vo);
