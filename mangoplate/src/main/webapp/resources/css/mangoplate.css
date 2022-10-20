@@ -32,7 +32,6 @@ table.board td, table.boardContent {
 table.board tr:first-child td {
 	border: 1px solid #fff;
 	border-bottom: 1px solid #ccc;
-	text-align: right;
 }
 
 table.board tr:first-child td button {
@@ -73,7 +72,7 @@ form[name='boardWriteForm'] ul li, form[name='boardUpdateForm'] ul li,
 
 form[name='boardWriteForm'] ul label, form[name='boardUpdateForm'] ul label
 	{
-	background-color: powderblue;
+	background-color: coral;
 	display: block;
 	float: left;
 	width: 120px;
@@ -84,7 +83,7 @@ form[name='boardWriteForm'] ul label, form[name='boardUpdateForm'] ul label
 	margin-right: 10px;
 	margin-left: 50px;
 	font-weight: bold;
-	border: 1px solid powderblue;
+	border: 1px solid coral;
 	border-radius: 5px;
 }
 
@@ -233,6 +232,8 @@ form[name='boardDeleteForm'] li:nth-child(2) div {
  	table.board th, table.boardContent th {
  		background-color:coral;
  		color:white;
+ 		font-size: 15px;
+ 		text-align: center;
  	}
  	table.board th, table.board td,
  	table.boardContent th, table.boardContent td {

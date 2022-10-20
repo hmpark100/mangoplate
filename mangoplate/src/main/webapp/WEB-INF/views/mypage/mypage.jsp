@@ -170,26 +170,38 @@
 						<img alt="" src="http://localhost:9000/mangoplate/resources/images/profile.jpg">
 						<button type="button" class="btn_style">사진 설정</button>
 					</div>
-					<ul class="membership">
-						<li>
-							<label>성함</label>
-							<span id="id">정우정</span>
-							<%-- <span id="id">${vo.id}</span> --%>
-						</li>
-						<li>
-							<label>전화번호</label>
-							<span id="pnumber">010-1111-1111</span>
-							<%-- <span id="pnumber">${vo.pnumber}</span> --%>
-						</li>
-						<li>
-							<label>이메일</label>
-							<span id="id">friendship@naver.com</span>
-							<%-- <span id="id">${vo.id}</span> --%>
-						</li>
-						<li>
+					<div class="membership">
+						<table class="board" border=1>
+							<tr>
+								<th>아이디</th>
+								<td>test</td>
+								<%-- <td>${vo.id }</td> --%>
+							</tr>
+							<tr>
+								<th>성명</th>
+								<td>test</td>
+								<%-- <td>${vo.name}</td> --%>
+							</tr>
+							<tr>
+								<th>이메일</th>
+								<td>test</td>
+								<%-- <td>${vo.email}</td> --%>
+							</tr>
+							<tr>
+								<th>주소</th>
+								<td>test</td>
+								<%-- <td colspan="5">${address}</td> --%>
+							</tr>
+							<tr>
+								<th>연락처</th>
+								<td>test</td>
+								<%-- <td colspan="5">${vo.pnumber}</td> --%>
+							</tr>
+
 							<button type="button" class="btn_style" id="profile_update">회원정보수정</button>
-						</li>
-					</ul>
+
+						</table>
+					</div>
 				</div>
 			</div>
 		</section>

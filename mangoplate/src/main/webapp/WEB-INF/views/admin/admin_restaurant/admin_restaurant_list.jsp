@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,75 +72,79 @@
 		margin-left: 30px;
 	}
 	
-	ul.h2 li:nth-child(2) a {
+	ul.h2 li:nth-child(5) a {
 		background-color: coral;
 		color:#fff;
 	}
 	
-	h3 {
+	h2 {
 		border: 1px solid red;
-	}
-	table.board {
-		border: 1px solid red;
+		margin: 50px;
 	}
 </style>
 </head>
-
 <body>
 	<!-- Header Include -->
 	<jsp:include page="../../header.jsp"></jsp:include>
 	
+	
 	<!---------------------------------------------->
-	<!--------------- Content ---------------------->
+	<!--------------- Content ----------------------->
 	<!---------------------------------------------->
 	<div class="content">
 		<div class="admin_head">
-				<h1>관리자 페이지</h1>	
+			<h1>관리자 페이지</h1>	
 		</div>
 	<ul class="h2">
 		<li><a href="admin.do">Admin</a></li>
-		<li><a href="admin_member_list.do" class="active">회원정보관리</a></li>
+		<li><a href="admin_member_list.do">회원정보관리</a></li>
 		<li><a href="contact.asp">공지사항 관리</a></li>
 		<li><a href="about.asp">eatdeal 관리</a></li>
+		<li><a href="admin_restaurant_list.do">식당등록 관리</a></li>
 	</ul>
-		<h2>회원정보-상세보기</h2>
-		<table class="board" border=1>
+		
+		<h2>식당상세정보-리스트</h2>
+		<table class="board">	
 			<tr>
-				<th>아이디</th>
-				<td>${vo.id }</td>
-			</tr>
+				<td colspan="5">
+					<a href="admin_restaurant_regist.do">
+					<button type="button" class="btn_style">식당등록</button>
+					</a>
+				</td>
+			</tr>		
 			<tr>
-				<th>성명</th>
-				<td>${vo.name}</td>
-			</tr>
-			<tr>
-				<th>가입날짜</th>
-				<td>${vo.mdate}</td>
-			</tr>
-			<tr>
-				<th>주소</th>
-				<td >${address}</td>
-			</tr>
-			<tr>
-				<th>이메일</th>
-				<td >${email}</td>
-			</tr>
-			<tr>
+				<th>번호</th>
+				<th>식당명</th>
+				<th>카테고리</th>
+				<th>가격대</th>
 				<th>연락처</th>
-				<td >${vo.pnumber}</td>
 			</tr>
 			
+			<c:forEach var="vo" items="${list}">
 			<tr>
-				<td colspan="7">					
-					<a href="admin_member_list.do"><button type="button" class="btn_style">리스트</button></a>
-					<a href="admin.do"><button type="button" class="btn_style">관리자홈</button></a>
-				</td>
-			</tr>	
-		</table>
+				<td>${vo.rno }</td>
+				<td>${vo.mname }</a></td>
+				<td>${vo.mcategory}</td>
+				<td>${vo.mprice}</td>
+				<td>${vo.mcontact}</td>
+			</tr>			
+			</c:forEach>
+			
+			<tr>
+				<td colspan="5"><div id="ampaginationsm"></div></td>
+			</tr>
+		</table>	
 	</div>
 	
-<!-- footer Include -->
+	<!-- footer Include -->
 	<iframe src="footer.do" width="100%" height="750px" scrolling="no" frameborder=0></iframe>
 	
 </body>
 </html>
+
+
+
+
+
+
+

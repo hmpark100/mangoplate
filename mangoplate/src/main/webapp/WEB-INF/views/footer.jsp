@@ -36,7 +36,7 @@
 
 			<nav class="links-external">
 				<ul class="list-links">
-					<li><a href="/company" target="_parent"> 회사소개 </a></li>
+					<li><a href="company.do" target="_parent"> 회사소개 </a></li>
 
 					<li><a href="/" target="_parent"> 망고플레이트 채용 </a></li>
 

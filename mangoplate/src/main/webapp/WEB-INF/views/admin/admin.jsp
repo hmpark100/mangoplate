@@ -61,6 +61,7 @@
 		<li><a href="admin_member_list.do">회원정보관리</a></li>
 		<li><a href="contact.asp">공지사항 관리</a></li>
 		<li><a href="about.asp">eatdeal 관리</a></li>
+		<li><a href="admin_restaurant_list.do">식당등록 관리</a></li>
 	</ul>
 	</div>
 	

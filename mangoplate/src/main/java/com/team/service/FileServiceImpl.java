@@ -11,9 +11,50 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import com.mangoplate.vo.MangoBoardStoryVO;
 import com.mangoplate.vo.MangoEatdealVO;
 import com.mangoplate.vo.MangoNoticeVO;
+import com.mangoplate.vo.MangoRestVO;
 
 @Service
 public class FileServiceImpl {
+	
+	/**
+	 * 식당등록 : 멀티파일 저장
+	 */
+	public void multiFileSave(MangoRestVO vo, HttpServletRequest request) throws Exception {
+		//파일을 upload에 저장
+		for(int i=0; i<vo.getFiles().length; i++) {
+			CommonsMultipartFile file = vo.getFiles()[i];
+			
+			if(!file.getOriginalFilename().equals("")) {
+				String path = request.getSession().getServletContext().getRealPath("/");
+				path += "\\resources\\upload\\";
+				
+				File upload_file = new File(path+vo.getMsfiles().get(i));
+				file.transferTo(upload_file);
+			}
+		}//for
+	}
+	
+	/**
+	 * 식당등록 : 멀티파일 체크
+	 */
+	public MangoRestVO multiFileCheck(MangoRestVO vo) {
+		for(CommonsMultipartFile file : vo.getFiles()) {
+			if(!file.getOriginalFilename().equals("")) {
+				UUID uuid = UUID.randomUUID();
+				
+				vo.getMfiles().add(file.getOriginalFilename());
+				vo.getMsfiles().add(uuid+"_"+file.getOriginalFilename());
+			}else {
+				vo.getMfiles().add("");
+				vo.getMsfiles().add("");
+			}
+		}
+		vo.setMfile1(vo.getMfiles().get(0));
+		vo.setMsfile1(vo.getMsfiles().get(0));
+		
+		return vo;
+	}
+	
 	/**
 	 * 망고스토리 게시판 : 망고스토리 게시글 삭세 시 파일이 존재하면 삭제하기
 	 */
