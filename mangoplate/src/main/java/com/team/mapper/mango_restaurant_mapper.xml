@@ -17,19 +17,12 @@
 		 select rno, rid, rcategory, rname, rdate
 				from (select rownum rno, rid, rcategory, rname, rdate
 				from (select rid, rcategory, rname, rdate from mg_restaurant order by rdate desc))
-				where rno between #{start} and #{end}
 	</select>
 	
 	<!-- movie totalcount-->
 	<select id="totalcount" resultType="int">
 		select count(*) from mg_restaurant
 	</select>
-	
-	<!-- movie insertfile-->
-	<insert id="insertfile" parameterType="com.mangoplate.vo.MangoRestVO">
-		insert into mg_restaurant_file 
-			values('f_'||sequ_cgv_movie_file.nextval,#{mfile1},#{msfile1},#{mfile2},#{msfile2},#{mid})
-	</insert>
 	
 	<!-- restaurant select-->
 	<select id="select" resultType="java.lang.String">
