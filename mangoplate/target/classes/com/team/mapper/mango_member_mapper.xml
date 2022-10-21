@@ -5,6 +5,12 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.member">
 
+	<!-- member mypage -->
+	<select id="mypage" parameterType="java.lang.String" resultType="com.mangoplate.vo.MangoMemberVO" >
+		select id, name, pnumber, email, addr1, addr2
+				 from mg_member where id=#{id}
+	</select> 
+	
 	<!-- member idcheck -->
 	<select id="idcheck" parameterType="java.lang.String" resultType="int">
 		select count(id) from mg_member where id=#{id}
@@ -17,7 +23,11 @@
 
 	<!-- member content -->
 	<select id="content" parameterType="java.lang.String" resultType="com.mangoplate.vo.MangoMemberVO" >
+<<<<<<< HEAD
 		select id, pass, name, hp, pnumber, email, addr1, addr2, mdate
+=======
+		select id, name, pnumber, email, mdate, addr1, addr2
+>>>>>>> branch 'main' of https://github.com/hmpark100/mangoplate.git
 				 from mg_member where id=#{id}
 	</select>
 

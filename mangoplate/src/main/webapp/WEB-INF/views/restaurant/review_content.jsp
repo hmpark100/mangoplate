@@ -1,5 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import = "com.mangoplate.vo.MangoRestVO" %>
+<%@ page import = "com.mangoplate.dao.MangoRestDAO" %>
+<% 
+String bid = request.getParameter("vid");
+MangoRestDAO dao = new MangoRestDAO();
+MangoRestVO vo = new MangoRestVO();
+%>
+
+<%-- <%
+	String bid = request.getParameter("vid");
+	MangoRestDAO dao = new MangoRestDAO();
+	MangoRestVO vo = dao.select(bid);
+	if(vo != null){
+		dao.updateHits(bid);
+	}
+	
+%> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +40,7 @@
 		width : 610px;
 		height : 486px;
 		background-color : #ffffff;
-		margin : 7px auto;
+		margin : 70px auto 7px;
 	 	padding : 10px 0px;
 	}
 	
@@ -110,6 +127,27 @@
 		clear : both;
 	}
 	
+	.real_content div:nth-child(4) {
+	 	width : 570px;
+	/* 	border : 1px solid black; */
+		margin : auto;
+		margin-top : 40px;
+	}
+	
+	.real_content div:nth-child(4) button {
+		border : 2px solid #FF7100;
+		width : 130px;
+		/*height : 40px; */
+		padding : 14px 0px;
+		float : right;
+		border-radius : 30px;
+		color : #ff7100;
+	}
+	
+	.detail_page {
+		margin-right : 10px;
+	}
+	
 </style>
 </head>
 <body>
@@ -130,14 +168,15 @@
 				</div>
 			</div>
 			<div>
-				<p>반찬은 그렇게 맛있지 않은데 기본으로 주는 채소무침? 이 진짜 맛있어요ㅋㅋㅋ 
-				양념갈비는 그냥 양념갈비지 라고 생각하고 갔는데 고기는 특별하지 않지만 분위기가 진짜 특별합니다ㅋㅋㅋㅋ 
-				고기 구워주시는 분이 인간적이고 오랜만에 어머니 같은 느낌을 받아서 좋았어요ㅋㅋ 집근처에 있으면 자주 갈 것 같네요ㅋㅋㅋ 
-				된장찌개도 무난하게 맛있었습니다ㅋㅋ 양에 비해 서비스가 많아서 좋아요ㅋㅋ 꼭 가는거 추천입니다.</p>
+				<p><%= vo.getVcontent() %></p>
 			</div>
 			<div>
 				<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg">
 				<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg">
+			</div>
+			<div>
+				<a href="http://localhost:9000/mangoplate/index.do"><button type="button">홈으로</button></a>
+				<a href="http://localhost:9000/mangoplate/restaurant_detail.do"><button type="button" class="detail_page">상세페이지로</button></a>
 			</div>
 		</section>
 	</article>

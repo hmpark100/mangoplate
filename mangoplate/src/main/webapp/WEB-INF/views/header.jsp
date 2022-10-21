@@ -475,7 +475,7 @@ form[name='joinForm'] #join_textbutton button {
 						</button>
 					</li>
 
-					<li class="Header__MenuItem"><a href="mypage.do"
+					<li class="Header__MenuItem"><a href="mypage.do?id=${vo.id }"
 						class="Header__MenuLink" onclick="trackEvent('CLICK_LOGIN')"
 						target="_parent"> <span class="Header__MenuText">마이페이지</span>
 					</a></li>

@@ -201,7 +201,7 @@
 	 	color : #ffffff;
 	 	border : 1px solid #e9e9e9;
 		padding : 14px 31px;
-		cursor : not-allowed;
+	/* 	cursor : not-allowed; */
 	}
 	
 </style>
@@ -242,7 +242,7 @@ $(document).ready(function(){
 	</section>
 	<section class="review_content">
 		<article class="first">
-			<form name="#" action="#" method="#">
+			<form name="reivewForm" action="review_write_check.do" method="post">
 				<div class="emotion">
 					<ul>
 						<li>
@@ -254,7 +254,7 @@ $(document).ready(function(){
 							<span>별로</span>
 						</li>
 						<li>
-							<textarea name="intro" id="textBox" placeholder="김태형님, 주문하신 메뉴는 어떠셨나요? 식당의 서비스와 분위기도 궁금해요!"></textarea>
+							<textarea name="vcontent" id="textBox" placeholder="김태형님, 주문하신 메뉴는 어떠셨나요? 식당의 서비스와 분위기도 궁금해요!"></textarea>
 						</li>
 					</ul>
 				</div>
@@ -282,7 +282,7 @@ $(document).ready(function(){
 				</ul>
 				<ul>
 					<li>
-						<button type="button">리뷰 올리기</button>
+						<button type="submit">리뷰 올리기</button>
 					</li>
 					<li>
 						<button type="button">취소</button>
