@@ -21,36 +21,14 @@ public class MypageController {
 	 * mypage.do : 마이페이지
 	 */
 	/*
-<<<<<<< HEAD
-	 * @RequestMapping(value="/mypage.do", method=RequestMethod.GET) public String
-	 * mypage() { return "/mypage/mypage"; }
-=======
-	 * @RequestMapping(value = "/mypage.do", method = RequestMethod.GET) public
+
 	 * ModelAndView mypage(String id) { ModelAndView mv = new ModelAndView();
 	 * MangoMemberVO vo =memberService.getMemberContent(id); String address =
 	 * vo.getAddr1()+" "+ vo.getAddr2();
 	 * 
 	 * mv.addObject("vo", vo); mv.addObject("address", address);
 	 * mv.setViewName("/mypage/mypage"); return mv; }
->>>>>>> branch 'main' of https://github.com/hmpark100/mangoplate.git
 	 */
-<<<<<<< HEAD
-	
-	/**
-	 * mypage.do : 마이페이지
-	 */
-	@RequestMapping(value = "/mypage.do", method = RequestMethod.GET)
-	public ModelAndView mypage(String id) {
-		ModelAndView mv = new ModelAndView();
-		MangoMemberVO vo = memberService.getMemberContent(id);
-		if (vo != null) {
-			mv.addObject("vo", vo);
-		}
-		mv.setViewName("/mypage/mypage");
-		return mv;
-	}
-	
-=======
 
 	/**
 	 * mypage.do : 마이페이지
@@ -65,7 +43,5 @@ public class MypageController {
 		  System.out.println(id);
 		  return mv; 
 	  }
-	 
->>>>>>> branch 'main' of https://github.com/hmpark100/mangoplate.git
 
 }
