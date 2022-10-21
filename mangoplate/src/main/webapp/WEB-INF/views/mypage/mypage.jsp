@@ -144,6 +144,7 @@
 		 display : inline-block;
 		 width: 500px;
 		 height: 300px;
+		 /* clear:both; */
 	}
 </style>
 </head>
@@ -174,58 +175,52 @@
 						<table class="board" border=1>
 							<tr>
 								<th>아이디</th>
-								<td>test</td>
-								<%-- <td>${vo.id }</td> --%>
+								<td>${vo.id}</td>
 							</tr>
 							<tr>
 								<th>성명</th>
-								<td>test</td>
-								<%-- <td>${vo.name}</td> --%>
+								<td>${vo.name}</td>
 							</tr>
 							<tr>
 								<th>이메일</th>
-								<td>test</td>
-								<%-- <td>${vo.email}</td> --%>
+								<td>${vo.email}</td>
 							</tr>
 							<tr>
 								<th>주소</th>
-								<td>test</td>
-								<%-- <td colspan="5">${address}</td> --%>
+								<td colspan="5">${vo.addr1} ${vo.addr2}</td>
 							</tr>
 							<tr>
 								<th>연락처</th>
-								<td>test</td>
-								<%-- <td colspan="5">${vo.pnumber}</td> --%>
+								<td colspan="5">${vo.pnumber}</td>
 							</tr>
 
-							<button type="button" class="btn_style" id="profile_update">회원정보수정</button>
-
 						</table>
+							<button type="button" class="btn_style" id="profile_update">회원정보수정</button>
 					</div>
 				</div>
 			</div>
 		</section>
 		
-		<section class="mypage">
+		<!-- <section class="mypage">
 		<div class="wish">
-				<!-- 가고싶다가 하나도 클릭이 안되어있을때 -->
+				가고싶다가 하나도 클릭이 안되어있을때
 				<div class="wish_zero">
 					<p>가고싶다</p>
-					<img alt="" src="http://localhost:9000/mangoplate/resources/images/wishstar.png"> <!-- 하얀별  -->
+					<img alt="" src="http://localhost:9000/mangoplate/resources/images/wishstar.png"> 하얀별 
 					<p>격하게 가고싶다..</p>
 					<span>식당의 '별' 아이콘을 누르면 가고싶은 곳을 쉽게 저장할 수 있습니다.</span>
 				</div>
 		</div>
 		
 		<div class="recent">	
-				<!-- 최근본맛집이 하나도 없을때 또는 all clear버튼을 누른 경우 -->
+				최근본맛집이 하나도 없을때 또는 all clear버튼을 누른 경우
 				<div class="recent_zero">
 					<p>최근 본 맛집 </p>
 					<p>거기가 어디였지?</p>
 					<span>내가 둘러 본 식당이 이 곳에 순서대로 기록됩니다.</span>
 				</div>
 		</div>	
-		</section>
+		</section> -->
 	</div>
 <%-- 	
 	<div class="content">

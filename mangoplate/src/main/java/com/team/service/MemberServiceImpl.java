@@ -14,6 +14,15 @@ public class MemberServiceImpl implements MemberService{
 	private MangoMemberDAO memberDao;
 	
 	/**
+	 * 마이페이지 - 회원 정보
+	 */
+	
+	  @Override 
+	  public MangoMemberVO getMemberMypage(String id) { 
+		  return memberDao.selectMypage(id); }
+	 
+	
+	/**
 	 * 아이디 중복 체크
 	 */
 	public int getIdCheck(String id) {

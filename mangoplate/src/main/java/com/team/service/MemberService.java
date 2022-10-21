@@ -11,5 +11,6 @@ public interface MemberService {
 	int getTotalCount();	//전체 회원수 
 	ArrayList<MangoMemberVO> getMemberList(int startCount, int endCount);  //회원 전체 리스트
 	MangoMemberVO getMemberContent(String id);	//회원 상세정보
+	MangoMemberVO getMemberMypage(String id);
 	
 }
