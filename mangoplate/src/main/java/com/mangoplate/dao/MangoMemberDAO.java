@@ -9,6 +9,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.mangoplate.vo.MangoBoardStoryVO;
 import com.mangoplate.vo.MangoMemberVO;
 import com.mangoplate.vo.SessionVO;
 
@@ -34,7 +35,7 @@ public class MangoMemberDAO {
 	/**
 	 * selectContent : 회원 상세 정보
 	 */
-	public MangoMemberVO selectContent(String id) {
+	public MangoMemberVO select(String id) {
 		return sqlSession.selectOne("mapper.member.content", id);
 	}
 	
@@ -60,6 +61,18 @@ public class MangoMemberDAO {
 		return sqlSession.selectOne("mapper.member.login", vo);
 	}
 	
+	/**
+	 * 마이페이지
+	 */
+	public ArrayList<MangoMemberVO> select(){
+		//파라미터를 Map으로 정의하기
+		//Map<String, Integer> param = new HashMap<String, Integer>();
+		//param.put("start", startCount);
+		//param.put("end", endCount);
+
+		List<MangoMemberVO> list = sqlSession.selectList("mapper.member.list");
+		return (ArrayList<MangoMemberVO>)list;
+	}
 	
 	
 	/**

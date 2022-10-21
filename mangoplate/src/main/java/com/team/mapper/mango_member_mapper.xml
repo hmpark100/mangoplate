@@ -17,7 +17,7 @@
 
 	<!-- member content -->
 	<select id="content" parameterType="java.lang.String" resultType="com.mangoplate.vo.MangoMemberVO" >
-		select id, name, pnumber, email, mdate
+		select id, pass, name, hp, pnumber, email, addr1, addr2, mdate
 				 from mg_member where id=#{id}
 	</select>
 

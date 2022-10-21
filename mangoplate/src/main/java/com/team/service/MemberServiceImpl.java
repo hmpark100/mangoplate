@@ -25,8 +25,9 @@ public class MemberServiceImpl implements MemberService{
 	 */
 	@Override
 	public MangoMemberVO getMemberContent(String id) {
-		return memberDao.selectContent(id);
+		return memberDao.select(id);
 	}
+	
 	
 	/**
 	 * 회원 전체수
@@ -60,4 +61,14 @@ public class MemberServiceImpl implements MemberService{
 	public SessionVO getLoginResult(MangoMemberVO vo) {	
 		return memberDao.select(vo);
 	}
+	
+	/**
+	 * 마이페이지
+	 */
+	@Override
+	public ArrayList<MangoMemberVO> getList() {
+		ArrayList<MangoMemberVO> list = memberDao.select();
+		return list;
+	}
+	
 }

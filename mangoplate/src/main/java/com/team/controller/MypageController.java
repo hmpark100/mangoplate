@@ -19,21 +19,23 @@ public class MypageController {
 	 * mypage.do : 마이페이지 
 	 */
 	/*
-	 * @RequestMapping(value="/mypage.do", method=RequestMethod.GET) public
-	 * ModelAndView mypage(String id) { ModelAndView mv = new ModelAndView();
-	 * MangoMemberVO vo =memberService.getMemberContent(id);
-	 * 
-	 * mv.addObject("vo", vo); mv.setViewName("/mypage/mypage"); return mv; }
+	 * @RequestMapping(value="/mypage.do", method=RequestMethod.GET) public String
+	 * mypage() { return "/mypage/mypage"; }
 	 */
 	
 	/**
-	 * mypage.do : 마이페이지 
+	 * mypage.do : 마이페이지
 	 */
-	
-	@RequestMapping(value="/mypage.do", method=RequestMethod.GET) 
-	public String mypage() { 
-		return "/mypage/mypage"; 
+	@RequestMapping(value = "/mypage.do", method = RequestMethod.GET)
+	public ModelAndView mypage(String id) {
+		ModelAndView mv = new ModelAndView();
+		MangoMemberVO vo = memberService.getMemberContent(id);
+		if (vo != null) {
+			mv.addObject("vo", vo);
+		}
+		mv.setViewName("/mypage/mypage");
+		return mv;
 	}
-
+	
 
 }
