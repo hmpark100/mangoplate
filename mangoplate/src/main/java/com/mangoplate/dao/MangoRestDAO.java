@@ -11,56 +11,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.mangoplate.vo.MangoRestVO;
 
 
-public class MangoRestDAO {
-	
-	@Autowired
-	private SqlSessionTemplate sqlSession;
+public class MangoRestDAO extends DBConn{
 	
 	/**
-	 * select : 영화 상세 정보
+	 * insert : 게시글 등록
 	 */
-	public MangoRestVO select(String mid) {
-		return sqlSession.selectOne("mapper.restaurant.content",mid);
-	}
-	
-	/**
-	 * select : 전체 영화 리스트
-	 **/
-	public ArrayList<MangoRestVO> select(int startCount, int endCount) {
-		Map<String,Integer> param = new HashMap<String,Integer>();
-		param.put("start", startCount);
-		param.put("end",endCount);
+	public int insert(MangoRestVO vo) {
+		int result = 0;
+		String sql = "insert into mango_review "
+				+ " values('b_'||sequ_cgv_board.nextval, ?)";
 		
-		List<MangoRestVO> list = sqlSession.selectList("mapper.restaurant.list",param);
-		return (ArrayList<MangoRestVO>)list;
+		try {
+			getPreparedStatement(sql);
+			pstmt.setString(1, vo.getVcontent());
+			
+			result = pstmt.executeUpdate();
+			
+			close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return result;
 	}
-	
-	/**
-	 * totalCount : 전체 카운트 가져오기(페이징처리)
-	 **/
-	public int totalCount() {
-		return sqlSession.selectOne("mapper.restaurant.totalcount");
-	}
-	
-	/**
-	 * insert_file(vo) :
-	 */
-	public int insert_file(MangoRestVO vo) {
-		return sqlSession.insert("mapper.restaurant.insertfile",vo);
-	}
-	
-	/**
-	 * selectMid() : 
-	 */
-	public String selectMid() {
-		return sqlSession.selectOne("mapper.restaurant.select");
-	}
-	
-	/**
-	 * insert(vo) : 영화등록
-	 */
-	public int insert(MangoRestVO vo) {		
-		return sqlSession.insert("mapper.restaurant.insert",vo);
-	}
-
 }
