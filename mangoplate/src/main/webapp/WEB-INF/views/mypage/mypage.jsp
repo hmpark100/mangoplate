@@ -137,21 +137,6 @@
 	float: left;
 	/*  margin: auto;
 		 text-align: center; */
-<<<<<<< HEAD
-}
-
-.selfie img {
-	width: 250px;
-	height: 250px;
-}
-
-.membership {
-	border: 1px solid red;
-	display: inline-block;
-	width: 500px;
-	height: 300px;
-}
-=======
 	}
 	
 	.selfie img {
@@ -166,7 +151,6 @@
 		 height: 300px;
 		 /* clear:both; */
 	}
->>>>>>> branch 'main' of https://github.com/hmpark100/mangoplate.git
 </style>
 </head>
 <body>
@@ -195,34 +179,6 @@
 					</div>
 					<div class="membership">
 						<table class="board" border=1>
-<<<<<<< HEAD
-								<tr>
-									<th>아이디</th>
-									<td>${vo.id }</td>
-									<%-- <td>${vo.id }</td> --%>
-								</tr>
-								<tr>
-									<th>성명</th>
-									<!-- <td>test</td> -->
-									<td>${vo.name}</td>
-								</tr>
-								<tr>
-									<th>이메일</th>
-									<td>test</td>
-									<%-- <td>${vo.email}</td> --%>
-								</tr>
-								<tr>
-									<th>주소</th>
-									<td>test</td>
-									<%-- <td colspan="5">${address}</td> --%>
-								</tr>
-								<tr>
-									<th>연락처</th>
-									<td>test</td>
-									<%-- <td colspan="5">${vo.pnumber}</td> --%>
-								</tr>
-							<button type="button" class="btn_style" id="profile_update">회원정보수정</button>
-=======
 							<tr>
 								<th>아이디</th>
 								<td>${vo.id}</td>
@@ -243,7 +199,6 @@
 								<th>연락처</th>
 								<td colspan="5">${vo.pnumber}</td>
 							</tr>
->>>>>>> branch 'main' of https://github.com/hmpark100/mangoplate.git
 
 						</table>
 							<button type="button" class="btn_style" id="profile_update">회원정보수정</button>
@@ -251,52 +206,27 @@
 				</div>
 			</div>
 		</section>
-<<<<<<< HEAD
-
-		<section class="mypage">
-			<div class="wish">
-				<!-- 가고싶다가 하나도 클릭이 안되어있을때 -->
-=======
 		
 		<!-- <section class="mypage">
 		<div class="wish">
 				가고싶다가 하나도 클릭이 안되어있을때
->>>>>>> branch 'main' of https://github.com/hmpark100/mangoplate.git
 				<div class="wish_zero">
 					<p>가고싶다</p>
-<<<<<<< HEAD
-					<img alt=""
-						src="http://localhost:9000/mangoplate/resources/images/wishstar.png">
-					<!-- 하얀별  -->
-=======
 					<img alt="" src="http://localhost:9000/mangoplate/resources/images/wishstar.png"> 하얀별 
->>>>>>> branch 'main' of https://github.com/hmpark100/mangoplate.git
 					<p>격하게 가고싶다..</p>
 					<span>식당의 '별' 아이콘을 누르면 가고싶은 곳을 쉽게 저장할 수 있습니다.</span>
 				</div>
-<<<<<<< HEAD
-			</div>
-
-			<div class="recent">
-				<!-- 최근본맛집이 하나도 없을때 또는 all clear버튼을 누른 경우 -->
-=======
 		</div>
 		
 		<div class="recent">	
 				최근본맛집이 하나도 없을때 또는 all clear버튼을 누른 경우
->>>>>>> branch 'main' of https://github.com/hmpark100/mangoplate.git
 				<div class="recent_zero">
 					<p>최근 본 맛집</p>
 					<p>거기가 어디였지?</p>
 					<span>내가 둘러 본 식당이 이 곳에 순서대로 기록됩니다.</span>
 				</div>
-<<<<<<< HEAD
-			</div>
-		</section>
-=======
 		</div>	
 		</section> -->
->>>>>>> branch 'main' of https://github.com/hmpark100/mangoplate.git
 	</div>
 	<%-- 	
 	<div class="content">
