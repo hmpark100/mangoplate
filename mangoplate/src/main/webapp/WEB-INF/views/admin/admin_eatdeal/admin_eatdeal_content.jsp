@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>망고플레이트</title>
 </head>
 <body>
 <%-- 	이미지(슬라이드)
@@ -15,8 +15,11 @@
 	개별내용
 	공통내용
 	구매하기(버튼)	
-	id, ename, region, packaging, menu, price, scontent, common, eimage1, esimage1, eimage2, esimage --%>
+	eid, ename, region, packaging, menu, price, scontent, common, eimage1, esimage1, eimage2, esimage --%>
 	<table>
+		<tr>
+			<td>현재 재고 수량: ${ vo.stock }</td>
+		</tr>
 		<tr> <%-- 이미지(슬라이드) --%>
 			<td>
 				<c:if test="${ vo.esimage1 != null }">
@@ -33,7 +36,7 @@
 		</tr>
 		<tr> <%-- [지역]식당이름(식당상세링크), 메뉴, 가격 --%>
 			<td>
-				<div id="${ vo.id }" class="flip">
+				<div id="${ vo.eid }" class="flip">
 					<div class="ename">[${ vo.region }]${ vo.ename }</div>
 					<div>${ vo.menu }</div>
 					<div>${ vo.price }</div>
@@ -51,9 +54,10 @@
 		</tr>
 		<tr>
 			<td>
-				<div id="content_${ vo.nid }" class="content">${ vo.ncontent }
-				<a href="admin_eatdeal_update.do?id=${ vo.id }"><button type="button" class="btn_style">수정하기</button></a>
-				<a href="admin_eatdeal_delete.do?id=${ vo.id }"><button type="button" class="btn_style">삭제하기</button></a>
+				<div id="content_${ vo.eid }" class="content"><%-- ${ vo.ncontent } --%>
+				<a href="admin_eatdeal_purchase.do?eid=${ vo.eid }"><button type="button" class="btn_style">구매하기</button></a>
+				<a href="admin_eatdeal_update.do?eid=${ vo.eid }"><button type="button" class="btn_style">수정하기</button></a>
+				<a href="admin_eatdeal_delete.do?eid=${ vo.eid }"><button type="button" class="btn_style">삭제하기</button></a>
 					
 				</div>
 			</td>
