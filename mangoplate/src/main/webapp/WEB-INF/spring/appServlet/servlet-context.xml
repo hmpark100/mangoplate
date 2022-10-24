@@ -47,13 +47,15 @@
 	<beans:bean id="fileService" class="com.team.service.FileServiceImpl"></beans:bean>
 	<beans:bean id="eatdealService" class="com.team.service.EatdealServiceImpl"></beans:bean>	
 	<beans:bean id="pageService" class="com.team.service.PageServiceImpl"></beans:bean>
-	<!-- <beans:bean id="restaurantService" class="com.team.service.RestaurantServiceImpl"></beans:bean> -->
+	<beans:bean id="restaurantService" class="com.team.service.RestaurantServiceImpl"></beans:bean>
 
 	<!-- dao 객체 생성 -->
 	<beans:bean id="boardStoryDao"
 		class="com.mangoplate.dao.MangoBoardStoryDAO"></beans:bean>
 	<beans:bean id="memberDao"
 		class="com.mangoplate.dao.MangoMemberDAO"></beans:bean>
+	<beans:bean id="restaurantDao"
+		class="com.mangoplate.dao.MangoRestDAO"></beans:bean>
 
 	<!-- Interceptor 객체 생성 -->
 	<!-- <beans:bean id="authInterceptor" class="com.team.interceptor.AuthInterceptor"></beans:bean> -->
