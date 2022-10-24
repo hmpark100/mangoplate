@@ -1,7 +1,9 @@
 package com.team.controller;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,14 +15,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.mangoplate.vo.MangoMemberVO;
 import com.mangoplate.vo.MangoRestVO;
+import com.team.service.FileServiceImpl;
 import com.team.service.MemberServiceImpl;
 import com.team.service.PageServiceImpl;
+import com.team.service.RestaurantServiceImpl;
 
 @Controller
 public class AdminController {
 
 	@Autowired
-	private PageServiceImpl fileService;
+	private FileServiceImpl fileService;
 	
 	@Autowired
 	private PageServiceImpl pageService;
@@ -29,39 +33,124 @@ public class AdminController {
 	private MemberServiceImpl memberService;
 	
 	@Autowired
-	private MemberServiceImpl restaurantService;
+	private RestaurantServiceImpl restaurantService;
 	
-	//admin_restaurant
+	//admin_restaurant : 식당 등록
+	
 		/**
-		 * admin_restaurant_regist_check.do : 영화 등록 처리
+		 * admin_notice_delete_check.do : 공지사항 삭제 처리
 		 */
-
-		/*
-		 * @RequestMapping(value="/admin_restaurant_regist_check.do",
-		 * method=RequestMethod.POST) public ModelAndView
-		 * admin_restaurant_regist_check(MangoRestVO vo, HttpServletRequest request)
-		 * throws Exception { ModelAndView mv = new ModelAndView();
-		 * 
-		 * //파일을 선택했는지 체크 vo = fileService.multiFileCheck(vo);
-		 * 
-		 * //DB 연동 //1. mg_detail 테이블 저장 --> mid 생성 int result =
-		 * restaurantService.getInsert(vo);
-		 * 
-		 * if(result == 1) { //2. mid값을 가져오기 String mid = restaurantService.getMid();
-		 * 
-		 * //3. mid를 레퍼런스하는 cgv_movie_file 테이블 저장 vo.setMid(mid); int result2 =
-		 * restaurantService.getInsertFile(vo);
-		 * 
-		 * if(result2 ==1) { //파일을 upload에 저장 fileService.multiFileSave(vo, request); }
-		 * 
-		 * }
-		 * 
-		 * mv.setViewName("redirect:/admin_restaurant_list.do");
-		 * 
-		 * return mv; }
-		 */
+		@RequestMapping(value="/admin_restaurant_delete_check.do", method=RequestMethod.POST)
+		public ModelAndView admin_restaurant_delete_check(String rid, HttpServletRequest request)
+																throws Exception {
+			ModelAndView mv = new ModelAndView();
+		
+			MangoRestVO vo = restaurantService.getContent(rid);
+			int result = restaurantService.getDelete(rid);
+			
+			if(result == 1){	
+				fileService.fileDelete(vo, request);
+				mv.setViewName("redirect:/admin_restaurant_list.do");
+			}else{
+	
+				mv.setViewName("error_page");
+			}		
+			
+			return mv;
+		}
+	
 		/**
-		 * admin_restaurant_regist.do
+		 * admin_restaurant_update_check.do : 공지사항 수정 처리
+		 */
+		@RequestMapping(value="/admin_restaurant_update_check.do", method=RequestMethod.POST)
+		public ModelAndView admin_notice_restaurant_check(MangoRestVO vo, HttpServletRequest request)
+																	throws Exception {
+			ModelAndView mv = new ModelAndView();
+	
+			String old_filename = vo.getRsimage();	//수정화면에서 hidden으로 넘어오는 기존 upload 폴더에 저장된 파일명
+			
+			vo = fileService.update_fileCheck(vo);
+			int result = restaurantService.getUpdate(vo);
+			
+			if(result == 1){
+				//새로운 파일을 upload 폴더에 저장한 후 기존의 파일은 삭제
+				fileService.update_filesave(vo, request, old_filename);
+				mv.setViewName("redirect:/admin_restaurant_list.do");
+				
+			}else{
+	
+				mv.setViewName("error_page");
+			}		
+			
+			return mv;
+		}
+	
+		/**
+		 * admin_restaurant_regist_check.do : 식당 등록 처리
+		 */
+		@RequestMapping(value="/admin_restaurant_regist_check.do", method=RequestMethod.POST)
+		public ModelAndView admin_notice_write_check(MangoRestVO vo, HttpServletRequest request) 
+		throws Exception {
+			
+			if(vo.getFile1().getOriginalFilename().equals("")) {
+				vo.setRimage("");
+				vo.setRsimage("");
+			}else {
+				UUID uuid = UUID.randomUUID();
+				vo.setRimage(vo.getFile1().getOriginalFilename());
+				vo.setRsimage(uuid+"_"+vo.getFile1().getOriginalFilename());
+			}//if-else
+			
+			
+			ModelAndView mv = new ModelAndView();
+			
+			//DB연동
+			int result = restaurantService.getWriteResult(vo);
+			
+			if(result == 1){
+				if(!vo.getFile1().getOriginalFilename().equals("")) {
+					String path = request.getSession().getServletContext().getRealPath("/");
+					path += "\\resources\\upload\\";
+					
+					File file = new File(path+vo.getRsimage());
+					vo.getFile1().transferTo(file);
+				}
+				mv.setViewName("redirect:/admin_restaurant_list.do");
+			}else {
+				mv.setViewName("error_page");
+			}
+			
+			return mv;
+		}
+		/**
+		 * admin_restaurant_delete.do  : 식당 삭제하기
+		 */
+		@RequestMapping(value="/admin_restaurant_delete.do", method=RequestMethod.GET)
+		public ModelAndView admin_restaurant_delete(String rid) {
+			ModelAndView mv = new ModelAndView();
+			
+			mv.addObject("rid",rid);
+			mv.setViewName("/admin/admin_restaurant/admin_restaurant_delete");
+			return mv;
+		}
+		
+		/**
+		 * admin_restaurant_update.do  : 식당 수정하기
+		 */
+		@RequestMapping(value="/admin_restaurant_update.do", method=RequestMethod.GET)
+		public ModelAndView admin_restaurante_update(String rid) {
+			ModelAndView mv = new ModelAndView();
+			
+			MangoRestVO vo = restaurantService.getContent(rid);
+			
+			mv.addObject("vo",vo);
+			mv.setViewName("/admin/admin_restaurant/admin_restaurant_update");
+			
+			return mv;
+		}
+	
+		/**
+		 * admin_restaurant_regist.do : 식당 등록하기
 		 */
 		@RequestMapping(value = "/admin_restaurant_regist.do", method = RequestMethod.GET)
 		public ModelAndView admin_restaurant_regist() {
@@ -72,12 +161,29 @@ public class AdminController {
 		}
 		
 		/**
-		 * admin_restaurant_list.do
+		 * admin_restaurant_content.do : 식당 상세 정보 
+		 */
+		@RequestMapping(value="/admin_restaurant_content.do", method=RequestMethod.GET)
+		public ModelAndView admin_restaurant_content(String rid) {
+			ModelAndView mv = new ModelAndView();
+			
+			MangoRestVO vo = restaurantService.getContent(rid);
+			
+			mv.addObject("vo", vo);
+			mv.setViewName("/admin/admin_restaurant/admin_restaurant_content");
+			
+			return mv;
+		}
+		
+		/**
+		 * admin_restaurant_list.do : 전체 식당 리스트
 		 */
 		@RequestMapping(value = "/admin_restaurant_list.do", method = RequestMethod.GET)
 		public ModelAndView admin_restaurant_list() {
 			ModelAndView mv = new ModelAndView();
 			
+			ArrayList<MangoRestVO> list = restaurantService.getList(1, 3);
+			mv.addObject("list", list);
 			mv.setViewName("/admin/admin_restaurant/admin_restaurant_list");
 			return mv;
 		}

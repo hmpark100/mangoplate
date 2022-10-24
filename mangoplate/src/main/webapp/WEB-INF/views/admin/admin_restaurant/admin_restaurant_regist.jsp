@@ -103,7 +103,7 @@
 		<li><a href="admin_restaurant_list.do">식당등록 관리</a></li>
 	</ul>
 		
-		<h2>식당 등록하기</h2>
+		<h2>식당상세정보-등록하기</h2>
 		<form name="boardWriteForm" action="admin_restaurant_regist_check.do" method="post" enctype="multipart/form-data">
 			<ul>
 				<li>
@@ -134,7 +134,7 @@
 				</li>
 				<li>
 					<label>대표사진</label>
-					<input type="rimage" name="rimage">
+					<input type="file" name="file1">
 				</li>
 				<li>
 					<button type="button" class="btn_style" id="btnNoticeWrite">등록완료</button>

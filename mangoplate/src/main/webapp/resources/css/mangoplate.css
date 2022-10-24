@@ -30,7 +30,7 @@ table.board td, table.boardContent {
 }
 
 table.board tr:first-child td {
-	border: 1px solid #fff;
+	/* border: 1px solid #fff; */
 	border-bottom: 1px solid #ccc;
 }
 
@@ -42,7 +42,7 @@ table.board tr:first-child td button {
 }
 
 table.board tr:last-child td, table.boardContent tr:last-child td {
-	border: 1px solid #fff;
+	/* border: 1px solid #fff; */
 	border-top: 1px solid #ccc;
 	padding-top: 20px;
 }
@@ -78,7 +78,7 @@ form[name='boardWriteForm'] ul label, form[name='boardUpdateForm'] ul label
 	width: 120px;
 	padding: 8px 0px;
 	font-size: 12px;
-	color: #000;
+	color: white;
 	text-indent: 25px;
 	margin-right: 10px;
 	margin-left: 50px;
@@ -91,6 +91,13 @@ form[name='boardWriteForm'] input, form[name='boardUpdateForm'] input {
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	width: 56%;
+	padding: 8px 10px;
+	font-size: 12px;
+}
+form[name='boardWriteForm'] select {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 25%;
 	padding: 8px 10px;
 	font-size: 12px;
 }
@@ -239,11 +246,14 @@ form[name='boardDeleteForm'] li:nth-child(2) div {
  	table.boardContent th, table.boardContent td {
  		padding:10px 0;
  	}
- 	table.board td, table.boardContent { text-align:center; }
+ 	table.board td, table.boardContent { 
+ 	text-align:center; 
+ 	}
+ 	
  	table.board tr:first-child td { 
- 		border:1px solid #fff;
+ 		/* border:1px solid #fff; */
  		border-bottom:1px solid #ccc;
- 		text-align:right; 
+ 		/* text-align:right; */ 
  	}
  	table.board tr:first-child td button{ 
  		/* border:1px solid blue; */
@@ -253,7 +263,7 @@ form[name='boardDeleteForm'] li:nth-child(2) div {
  	}
  	table.board tr:last-child td, 
  	table.boardContent tr:last-child td { 
- 		border:1px solid #fff;
+ 		/* border:1px solid #fff; */
  		border-top:1px solid #ccc;
  		padding-top:20px;
  	}

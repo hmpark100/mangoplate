@@ -16,7 +16,47 @@ public class RestaurantServiceImpl implements RestaurantService{
 	private MangoRestDAO restaurantDao;
 	
 	/**
-	 * 영화 전체 로우수
+	 * 삭제 처리
+	 */
+	@Override
+	public int getDelete(String rid) {
+		return restaurantDao.delete(rid);
+	}
+	
+	/**
+	 * 수정처리
+	 */
+	@Override
+	public int getUpdate(MangoRestVO vo) {
+		return restaurantDao.update(vo);
+	}
+	
+	/**
+	 * 조회수 업데이트
+	 */
+	@Override
+	public void getUpdateHits(String rid) {
+		restaurantDao.updateHits(rid);
+	}
+	
+	/**
+	 * 게시글 쓰기
+	 */
+	@Override
+	public int getWriteResult(MangoRestVO vo) {
+		return restaurantDao.insert(vo);
+	}
+	
+	/**
+	 * 식당 상세보기
+	 */
+	@Override
+	public MangoRestVO getContent(String rid) {
+		return restaurantDao.select(rid);
+	}		
+	
+	/**
+	 * 식당 전체 로우
 	 */
 	@Override
 	public int getTotalCount() {
@@ -24,43 +64,14 @@ public class RestaurantServiceImpl implements RestaurantService{
 	}
 	
 	/**
-	 * 영화 전체 리스트
+	 * 식당 전체 리스트
 	 */
 	@Override
 	public ArrayList<MangoRestVO> getList(int startCount, int endCount){
+		
+		//ArrayList<MangoRestVO> list = restaurantDao.select(startCount, endCount);
+		
 		return restaurantDao.select(startCount, endCount);
-	}
-	
-	/**
-	 * 영화 등록
-	 */
-	@Override
-	public int getInsert(MangoRestVO vo) {
-		return restaurantDao.insert(vo);
-	}
-	
-	/**
-	 * 영화 등록 후 mid 가져오기
-	 */
-	@Override
-	public String getMid() {
-		return restaurantDao.selectMid();
-	}
-	
-	/**
-	 * 영화 파일 등록
-	 */
-	@Override
-	public int getInsertFile(MangoRestVO vo) {
-		return restaurantDao.insert_file(vo);
-	}
-	
-	/**
-	 * 영화 상세보기
-	 */
-	@Override
-	public MangoRestVO getContent(String mid) {
-		return restaurantDao.select(mid);
 	}
 
 }

@@ -12,7 +12,7 @@
 <script src="http://localhost:9000/mangoplate/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/mangoplate/resources/js/am-pagination.js"></script>
 <script>
-	$(document).ready(function(){
+	/* $(document).ready(function(){
 		
 		//페이징 리스트 출력
 		var pager = jQuery('#ampaginationsm').pagination({
@@ -37,7 +37,7 @@
 	           $(location).attr('href', "http://localhost:9000/mangoplate/admin_member_list.do?rpage="+e.page);         
 	    });
 		
- 	});
+ 	}); */
 </script> 
 <style>
 	* {
@@ -116,17 +116,17 @@
 				<th>번호</th>
 				<th>식당명</th>
 				<th>카테고리</th>
-				<th>가격대</th>
 				<th>연락처</th>
+				<th>등록일</th>
 			</tr>
 			
 			<c:forEach var="vo" items="${list}">
 			<tr>
 				<td>${vo.rno }</td>
-				<td>${vo.mname }</a></td>
-				<td>${vo.mcategory}</td>
-				<td>${vo.mprice}</td>
-				<td>${vo.mcontact}</td>
+				<td><a href="admin_restaurant_content.do?rid=${vo.rid}">${vo.rname}</a></td>
+				<td>${vo.rcategory}</td>
+				<td>${vo.rcontact}</td>
+				<td>${vo.rdate}</td>
 			</tr>			
 			</c:forEach>
 			
