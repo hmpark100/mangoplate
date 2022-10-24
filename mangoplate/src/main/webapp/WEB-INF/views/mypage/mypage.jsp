@@ -78,7 +78,7 @@
 }
 
 .personality {
-	border: 1px solid blue;
+	/* border: 1px solid blue; */
 	width: 100%;
 	height: 400px;
 }
@@ -95,43 +95,22 @@
 }
 
 .mypage {
-	border: 1px solid black;
+	/* border: 1px solid black; */
 	width: 100%;
 	height: 800px;
 	clear: both;
 }
 
-.wish_zero {
-	border: 1px solid blue;
-	/* background-color: blue; */
-	width: 50%;
-	height: 800px;
-	float: left;
-	display: inline-block;
-	text-align: center;
-	padding: 10px;
-}
-
-.recent_zero {
-	border: 1px solid green;
-	/* background-color: green; */
-	width: 50%;
-	height: 800px;
-	display: inline-block;
-	clear: both;
-	text-align: center;
-	padding: 10px;
-}
-
 .member {
 	border: 1px solid green;
+	padding: 30px;
 	width: 100%;
 	height: 300px;
 	text-align: center;
 }
 
 .selfie {
-	border: 1px solid black;
+	/* border: 1px solid black; */
 	width: 500px;
 	height: 300px;
 	float: left;
@@ -145,11 +124,17 @@
 	}
 	
 	.membership{
-		 border: 1px solid red;
+		 /* border: 1px solid red; */
 		 display : inline-block;
 		 width: 500px;
 		 height: 300px;
 		 /* clear:both; */
+	}
+	
+	.mypagebutton {
+		border: 1px solid red;
+		 width: 100%;
+		 height: 50px;
 	}
 </style>
 </head>
@@ -175,7 +160,7 @@
 					<div class="selfie">
 						<img alt=""
 							src="http://localhost:9000/mangoplate/resources/images/profile.jpg">
-						<button type="button" class="btn_style">사진 설정</button>
+						
 					</div>
 					<div class="membership">
 						<table class="board" border=1>
@@ -201,7 +186,10 @@
 							</tr>
 
 						</table>
+					</div>
+					<div class="mypagebutton">
 							<button type="button" class="btn_style" id="profile_update">회원정보수정</button>
+							<button type="button" class="btn_style">사진 설정</button>
 					</div>
 				</div>
 			</div>

@@ -74,7 +74,6 @@ public class MemberServiceImpl implements MemberService{
 	/**
 	 * 마이페이지
 	 */
-	@Override
 	public ArrayList<MangoMemberVO> getList() {
 		ArrayList<MangoMemberVO> list = memberDao.select();
 		return list;

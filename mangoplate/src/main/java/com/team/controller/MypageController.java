@@ -40,7 +40,7 @@ public class MypageController {
 		  MangoMemberVO vo = memberService.getMemberMypage(id);
 		  mv.addObject("vo",vo);
 		  mv.setViewName("/mypage/mypage");
-		  System.out.println(id);
+		  //System.out.println(id);
 		  return mv; 
 	  }
 
