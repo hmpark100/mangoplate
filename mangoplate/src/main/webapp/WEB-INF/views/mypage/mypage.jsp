@@ -23,10 +23,6 @@
 
 <script>
 	$(document).ready(function() {
-		$("#recent_close").click(function() {
-			/* list가 초기화 로직*/
-		});
-		
 		$("#profile_update").click(function() {
 			/* 회원정보수정할 수 있는 페이지 호출  */
 		});
@@ -48,7 +44,7 @@
 .personality_head {
 	/* border: 1px solid blue; */
 	width: 100%;
-	height: 300px;
+	height: 250px;
 	background-color: coral;
 }
 
@@ -80,7 +76,7 @@
 .personality {
 	/* border: 1px solid blue; */
 	width: 100%;
-	height: 400px;
+	height: 500px;
 }
 
 .personality h3 {
@@ -102,39 +98,54 @@
 }
 
 .member {
-	border: 1px solid green;
+	/* border: 1px solid green; */
 	padding: 30px;
-	width: 100%;
-	height: 300px;
+	width: 900px;
+	height: 400px;
 	text-align: center;
+	margin: auto;
 }
 
 .selfie {
-	/* border: 1px solid black; */
-	width: 500px;
+ 	/* border: 1px solid black;  */
+	width: 300px;
 	height: 300px;
 	float: left;
+	margin : 0px;
+	padding : 0px;
 	/*  margin: auto;
 		 text-align: center; */
+	position : relative;
 	}
 	
 	.selfie img {
-		 width: 250px;
-		 height: 250px;
+		/* border : 1px solid black; */
+		width: 150px;
+		height: 150px;
+		display : inline-block;
+	}
+	
+	.selfie button {
+		/* border : 1px solid blue; */
+		display : block;
+		position : absolute;
+		left : 100px;
+		top: 180px;
 	}
 	
 	.membership{
-		 /* border: 1px solid red; */
+	 	/*  border: 1px solid red;  */
 		 display : inline-block;
 		 width: 500px;
 		 height: 300px;
 		 /* clear:both; */
+		 position: relative;
 	}
-	
-	.mypagebutton {
-		border: 1px solid red;
-		 width: 100%;
-		 height: 50px;
+	.membership button {
+		/* border: 2px solid blue; */
+		position: absolute; 
+		left: 323px;
+		top: 230px;
 	}
 </style>
 </head>
@@ -160,6 +171,7 @@
 					<div class="selfie">
 						<img alt=""
 							src="http://localhost:9000/mangoplate/resources/images/profile.jpg">
+						<button type="button" class="btn_style">사진설정</button>
 						
 					</div>
 					<div class="membership">
@@ -186,10 +198,7 @@
 							</tr>
 
 						</table>
-					</div>
-					<div class="mypagebutton">
-							<button type="button" class="btn_style" id="profile_update">회원정보수정</button>
-							<button type="button" class="btn_style">사진 설정</button>
+						<button type="button" class="btn_style" id="profile_update">회원정보수정</button>
 					</div>
 				</div>
 			</div>

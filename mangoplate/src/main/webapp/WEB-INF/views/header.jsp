@@ -453,19 +453,19 @@ form[name='joinForm'] #join_textbutton button {
 
 				<ul class="Header__MenuList">
 					<li class="Header__MenuItem Header__MenuItem--New"><a
-						href="/eat_deals" class="Header__MenuLink"
-						onclick="trackEvent('CLICK_EAT_DEALS')" target="_parent"> <span
-							class="Header__MenuText">EAT딜</span>
+						href="/admin_eatdeal_list.do" class="Header__MenuLink"
+						target="_parent"> <span
+						class="Header__MenuText">EAT딜</span>
 					</a></li>
 
 					<li class="Header__MenuItem"><a href="http://localhost:9000/mangoplate/restaurant_list.do"
-						class="Header__MenuLink" onclick="trackEvent('CLICK_TOP_LIST')"
+						class="Header__MenuLink" 
 						target="_parent"> <span class="Header__MenuText">맛집 리스트</span>
 					</a></li>
 
 					<li class="Header__MenuItem"><a
 						href="http://localhost:9000/mangoplate/boardstory_list.do"
-						class="Header__MenuLink" onclick="trackEvent('CLICK_MANGO_PICK')"
+						class="Header__MenuLink"
 						target="_parent"> <span class="Header__MenuText">망고 스토리</span>
 					</a></li>
 					<li class="Header__MenuItem">
@@ -476,25 +476,21 @@ form[name='joinForm'] #join_textbutton button {
 					</li>
 
 					<li class="Header__MenuItem"><a href="mypage.do?id=${vo.id }"
-						class="Header__MenuLink" onclick="trackEvent('CLICK_LOGIN')"
+						class="Header__MenuLink" 
 						target="_parent"> <span class="Header__MenuText">마이페이지</span>
 					</a></li>
-					<!-- <li class="Header__MenuItem"><a href="admin.do"
-						class="Header__MenuLink" target="_parent"> <span
-							class="Header__MenuText">admin</span>
-					</a></li> -->
 				</ul>
 			</c:when>
 
 			<c:otherwise>
 				<ul class="Header__MenuList">
 					<li class="Header__MenuItem Header__MenuItem--New"><a
-						href="/eat_deals" class="Header__MenuLink"
-						onclick="trackEvent('CLICK_EAT_DEALS')" target="_parent"> <span
+						href="/admin_eatdeal_list.do" class="Header__MenuLink"
+						target="_parent"> <span
 							class="Header__MenuText">EAT딜</span>
 					</a></li>
 
-					<li class="Header__MenuItem"><a href="/top_lists"
+					<li class="Header__MenuItem"><a href="http://localhost:9000/mangoplate/restaurant_list.do"
 						class="Header__MenuLink" target="_parent"> <span
 							class="Header__MenuText">맛집 리스트</span>
 					</a></li>

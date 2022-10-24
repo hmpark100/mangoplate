@@ -56,7 +56,7 @@
 				</ul>
 
 				<ul class="list-links">
-					<li><a href="/notice" target="_parent"> 공지사항 </a></li>
+					<li><a href="/notice.do" target="_parent"> 공지사항 </a></li>
 
 					<li><a class="" href="/terms/contract"
 						onclick="trackEvent('CLICK_TERMS', 'contract')" target="_blank">

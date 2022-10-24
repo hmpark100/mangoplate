@@ -302,7 +302,7 @@
 			 </div>
 			 <div id="join_textbutton">
 				<input type="text" name="addr1" id="addr1" placeholder="주소 입력">
-				<button type="button" class="btn_style" id="btnSearchAddr">주소찾기</button>
+				<!-- <button type="button" class="btn_style" id="btnSearchAddr">주소찾기</button> -->
 			 </div>
 			 <input type="text" name="addr2" id="addr2" placeholder="상세주소 입력">
 			

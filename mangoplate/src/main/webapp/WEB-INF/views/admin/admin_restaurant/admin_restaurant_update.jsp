@@ -11,35 +11,7 @@
 <link rel="stylesheet"  href="http://localhost:9000/mangoplate/resources/css/am-pagination.css">
 <script src="http://localhost:9000/mangoplate/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/mangoplate/resources/js/am-pagination.js"></script>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-	$(document).ready(function(){
-		
-		//페이징 리스트 출력
-		var pager = jQuery('#ampaginationsm').pagination({
-		
-		    maxSize: 7,	    		// max page size
-		    totals: '${dbCount}',	// total rows	
-		    page: '${rpage}',		// initial page		
-		    pageSize: '${pageSize}',	// max number items per page
-		
-		    // custom labels		
-		    lastText: '&raquo;&raquo;', 		
-		    firstText: '&laquo;&laquo;',		
-		    prevText: '&laquo;',		
-		    nextText: '&raquo;',
-				     
-		    btnSize:'sm'	// 'sm'  or 'lg'		
-		});
-		
-		//페이징 번호 클릭 시 이벤트 처리
-		jQuery('#ampaginationsm').on('am.pagination.change',function(e){		
-			   jQuery('.showlabelsm').text('The selected page no: '+e.page);
-	           $(location).attr('href', "http://localhost:9000/mangoplate/admin_member_list.do?rpage="+e.page);         
-	    });
-		
- 	});
-</script> 
+
 <style>
 	* {
 			margin: 0px;
@@ -82,7 +54,28 @@
 		border: 1px solid red;
 		margin: 50px;
 	}
+	
+	#upload_file {
+      /*border:1px solid red;*/
+      position:relative;
+      left:265px; top:-30px;
+      width:200px;  height:20px;
+      display:inline-block;   
+      background-color:white;   
+      font-size:12px;
+   }
 </style>
+<script>
+   $(document).ready(function(){
+      //새로운 파일선택하는 이벤트 
+      $("input[type=file]").change(function(){
+         if(window.FileReader){
+            let fname = $(this)[0].files[0].name;
+            $("#upload_file").text(fname);
+         }
+      });
+   });
+</script>
 </head>
 <body>
 	<!-- Header Include -->
@@ -107,8 +100,8 @@
 		<h2>식당상세정보-수정하기</h2>
 		<form name="boardUpdateForm" action="admin_restaurant_update_check.do" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="rid"  value="${vo.rid}" >
-			<input type="hidden" name="rfile"  value="${vo.rimage}" >
-			<input type="hidden" name="rsfile"  value="${vo.rsimage}" >
+			<input type="hidden" name="rimage"  value="${vo.rimage}" >
+			<input type="hidden" name="rsimage"  value="${vo.rsimage}" >
 			<ul>
 				<li>
 					<label>식당명</label>

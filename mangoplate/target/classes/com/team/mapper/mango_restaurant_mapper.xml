@@ -20,7 +20,7 @@
 	<update id="update" parameterType="com.mangoplate.vo.MangoRestVO" >
 		update mg_restaurant set rname=#{rname},raddr=#{raddr},
 			rcontact=#{rcontact},rprice=#{rprice},rcategory=#{rcategory}, 
-			rcontent=#{rcontent}, rimage=#{rimage}, rsimage=#{rsimage} 
+			rimage=#{rimage}, rsimage=#{rsimage} 
 			where rid=#{rid}
 	</update>
 
@@ -31,7 +31,7 @@
 	
 	<!-- restaurant content-->
 	<select id="content" parameterType="java.lang.String" resultType="com.mangoplate.vo.MangoRestVO">
-	 select rid,rname,raddr,rcontact,rprice,rcategory,rdate,rhits,rcontent,rimage,rsimage
+	 select rid,rname,raddr,rcontact,rprice,rcategory,rdate,rhits,rimage,rsimage
 		 from mg_restaurant  where rid=#{rid}
 	</select>
 

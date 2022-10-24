@@ -124,7 +124,7 @@
 			</c:forEach>
 			
 			<tr>
-				<td colspan="5"><div id="ampaginationsm"></div></td>
+				<td><div id="ampaginationsm"></div></td>
 			</tr>
 		</table>	
 	</div>

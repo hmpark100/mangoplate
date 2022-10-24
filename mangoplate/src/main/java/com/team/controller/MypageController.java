@@ -17,18 +17,6 @@ public class MypageController {
 	@Autowired
 	private MemberServiceImpl memberService;
 
-	/**
-	 * mypage.do : 마이페이지
-	 */
-	/*
-
-	 * ModelAndView mypage(String id) { ModelAndView mv = new ModelAndView();
-	 * MangoMemberVO vo =memberService.getMemberContent(id); String address =
-	 * vo.getAddr1()+" "+ vo.getAddr2();
-	 * 
-	 * mv.addObject("vo", vo); mv.addObject("address", address);
-	 * mv.setViewName("/mypage/mypage"); return mv; }
-	 */
 
 	/**
 	 * mypage.do : 마이페이지

@@ -182,7 +182,7 @@ public class AdminController {
 		public ModelAndView admin_restaurant_list() {
 			ModelAndView mv = new ModelAndView();
 			
-			ArrayList<MangoRestVO> list = restaurantService.getList(1, 3);
+			ArrayList<MangoRestVO> list = restaurantService.getList(1, 5);
 			mv.addObject("list", list);
 			mv.setViewName("/admin/admin_restaurant/admin_restaurant_list");
 			return mv;

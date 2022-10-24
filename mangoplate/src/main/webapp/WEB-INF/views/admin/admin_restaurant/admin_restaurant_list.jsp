@@ -12,7 +12,7 @@
 <script src="http://localhost:9000/mangoplate/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/mangoplate/resources/js/am-pagination.js"></script>
 <script>
-	/* $(document).ready(function(){
+	$(document).ready(function(){
 		
 		//페이징 리스트 출력
 		var pager = jQuery('#ampaginationsm').pagination({
@@ -37,7 +37,7 @@
 	           $(location).attr('href', "http://localhost:9000/mangoplate/admin_member_list.do?rpage="+e.page);         
 	    });
 		
- 	}); */
+ 	});
 </script> 
 <style>
 	* {
@@ -131,7 +131,7 @@
 			</c:forEach>
 			
 			<tr>
-				<td colspan="5"><div id="ampaginationsm"></div></td>
+				<td><div id="ampaginationsm"></div></td>
 			</tr>
 		</table>	
 	</div>
