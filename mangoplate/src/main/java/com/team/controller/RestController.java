@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mangoplate.dao.MangoRestDAO;
-import com.mangoplate.vo.MangoRestVO;
+import com.mangoplate.dao.MangoReviewDAO;
+import com.mangoplate.vo.MangoReviewVO;
 
 @Controller
 public class RestController {
@@ -63,9 +63,9 @@ public class RestController {
 	 * review_write_check.do : 리뷰 작성하기
 	 */
 	@RequestMapping(value="/review_write_check.do", method = RequestMethod.POST)
-	public ModelAndView review_write_check(MangoRestVO vo) {
+	public ModelAndView review_write_check(MangoReviewVO vo) {
 		ModelAndView mv = new ModelAndView();
-		MangoRestDAO dao = new MangoRestDAO();
+		MangoReviewDAO dao = new MangoReviewDAO();
 		int result = dao.insert(vo);
 		
 		if(result == 1){
@@ -75,6 +75,7 @@ public class RestController {
 		}
 		
 		return mv;
-	}
+		
+	}//review-write-check-end
 	
 }

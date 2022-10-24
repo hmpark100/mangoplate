@@ -1,5 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import = "com.mangoplate.vo.MangoReviewVO" %>    
+<%@ page import = "com.mangoplate.dao.MangoReviewDAO" %>   
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+	String bid = request.getParameter("bid");  
+	MangoReviewDAO dao = new MangoReviewDAO(); 
+	MangoReviewVO vo = dao.select(bid); 
+	if(vo != null){
+		//dao.조회수 업데이트(bid);
+		dao.updateHits(bid);
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -113,7 +125,7 @@
 	
 	
 	.emotion ul li:nth-child(1) input {
-		visibility : hidden;
+		/* visibility : hidden; */
 	}
 	
 	.emotion ul li:nth-child(1) {
@@ -236,7 +248,8 @@ $(document).ready(function(){
 	<div class="body">
 	<section class="review_top">
 		<div>
-			<h1>팔레드 신</h1>
+			<!-- <h1>팔레드 신</h1> -->
+			<h1><%=vo.getKname() %></h1>
 			<span>에 대한 솔직한 리뷰를 써주세요.</span>
 		</div>
 	</section>
@@ -246,15 +259,15 @@ $(document).ready(function(){
 				<div class="emotion">
 					<ul>
 						<li>
-							<input type="radio" name="rating" class="super-happy" id="super-happy" value="super-happy" checked /><img src="http://localhost:9000/mangoplate/resources/images/delicious_checked.png">
+							<input type="radio" name="krate" class="super-happy" id="super-happy" value="5" checked /><img src="http://localhost:9000/mangoplate/resources/images/delicious_checked.png">
 							<span>맛있다</span>
-							<input type="radio" name="rating" class="happy" id="happy" value="happy" /><img src="http://localhost:9000/mangoplate/resources/images/NotBad_unchecked.png">
+							<input type="radio" name="krate" class="happy" id="happy" value="3" /><img src="http://localhost:9000/mangoplate/resources/images/NotBad_unchecked.png">
 							<span>괜찮다</span>
-							<input type="radio" name="rating" class="sad" id="sad" value="sad" /><img src="http://localhost:9000/mangoplate/resources/images/bad_unchecked.png">
+							<input type="radio" name="krate" class="sad" id="sad" value="1" /><img src="http://localhost:9000/mangoplate/resources/images/bad_unchecked.png">
 							<span>별로</span>
 						</li>
 						<li>
-							<textarea name="vcontent" id="textBox" placeholder="김태형님, 주문하신 메뉴는 어떠셨나요? 식당의 서비스와 분위기도 궁금해요!"></textarea>
+							<textarea name="kcontent" id="textBox" placeholder="김태형님, 주문하신 메뉴는 어떠셨나요? 식당의 서비스와 분위기도 궁금해요!"></textarea>
 						</li>
 					</ul>
 				</div>
