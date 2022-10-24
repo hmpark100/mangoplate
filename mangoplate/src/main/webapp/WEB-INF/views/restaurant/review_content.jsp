@@ -2,8 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ page import = "com.mangoplate.vo.MangoRestVO" %>
 <%@ page import = "com.mangoplate.dao.MangoRestDAO" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <% 
-String bid = request.getParameter("vid");
+String kid = request.getParameter("kid");
 MangoRestDAO dao = new MangoRestDAO();
 MangoRestVO vo = new MangoRestVO();
 %>
