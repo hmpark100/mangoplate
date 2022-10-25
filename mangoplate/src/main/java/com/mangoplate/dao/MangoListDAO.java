@@ -2,9 +2,15 @@ package com.mangoplate.dao;
 
 import java.util.ArrayList;
 
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.mangoplate.vo.MangoRestVO;
 
 public class MangoListDAO extends DBConn{
+	
+	@Autowired
+	private SqlSessionTemplate sqlSession;
 
 	/**
 	 * select(String rcategory) : 상세리스트 출력
@@ -12,7 +18,11 @@ public class MangoListDAO extends DBConn{
 	public ArrayList<MangoRestVO> select(String rcategory) {
 		ArrayList<MangoRestVO> list = new ArrayList<MangoRestVO>();
 		
-		String sql = "select rownum rno, rid, rname, raddr, rcontact, rprice, rcategory, rdate, rhits, rimage, rsimage from mg_restaurant where rcategory = ?";
+		/*
+		 * String sql =
+		 * "select rownum rno, rid, rname, raddr, rcontact, rprice, rcategory, rdate, rhits, rimage, rsimage from mg_restaurant where rcategory = ?"
+		 * ;
+		 */
 				
 		try {
 			getPreparedStatement(sql);
