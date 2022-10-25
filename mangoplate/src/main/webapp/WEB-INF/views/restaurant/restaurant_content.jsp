@@ -367,7 +367,7 @@
 		<div>
 			<!-- <p>181,458 클릭 | 2022-09-26</p> -->
 			<p>${vo.rhits } 클릭 | 2022-09-26</p>
-			<p>${vo.rcategory } 맛집 베스트 35곳</p>
+			<p>${rcategory } 맛집 베스트 35곳</p>
 			<p>"국내에서 즐기는 ${vo.rcategory }의 맛!"</p>
 		</div>
 	</section>
@@ -391,7 +391,7 @@
 								<span>가고싶다</span>
 							</div>
 							<div>
-								<a href="http://localhost:9000/mangoplate/restaurant_detail.do">소이연남마오 더보기 ></a>
+								<a href="http://localhost:9000/mangoplate/restaurant_detail.do">${vo.rname} 더보기 ></a>
 							</div>
 						</li>
 					</c:forEach>

@@ -48,6 +48,7 @@
 	<beans:bean id="eatdealService" class="com.team.service.EatdealServiceImpl"></beans:bean>	
 	<beans:bean id="pageService" class="com.team.service.PageServiceImpl"></beans:bean>
 	<beans:bean id="restaurantService" class="com.team.service.RestaurantServiceImpl"></beans:bean>
+	<beans:bean id="listService" class="com.team.service.ListServiceImpl"></beans:bean>
 
 	<!-- dao 객체 생성 -->
 	<beans:bean id="boardStoryDao"
