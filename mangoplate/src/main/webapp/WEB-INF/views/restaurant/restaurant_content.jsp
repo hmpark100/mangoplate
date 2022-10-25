@@ -366,8 +366,8 @@
 	<section class="top">
 		<div>
 			<p>181,458 클릭 | 2022-09-26</p>
-			<p>태국 음식 맛집 베스트 35곳</p>
-			<p>"국내에서 즐기는 태국 현지의 맛!"</p>
+			<p>${vo.rcategory } 맛집 베스트 35곳</p>
+			<p>"국내에서 즐기는 ${vo.rcategory }의 맛!"</p>
 		</div>
 	</section>
 	<section class="content">
@@ -375,10 +375,16 @@
 			<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg" width="230px">
 			<div class="bundle">
 				<div class="pull">
-					<ul class="restaurant_name">
+					<!-- <ul class="restaurant_name">
 						<li style="color:rgb(85,85,85);">1. 소이연남마오 <span style="color:coral;">4.7</span></li>
 						<li style="color:grey;">서울특별시 강남구 도산대로 53길 30</li>
+					</ul> -->
+					<c:forEach var="vo" items="${list}">
+					<ul class="restaurant_name">
+						<li style="color:rgb(85,85,85);">${vo.rno}. ${vo.rname } ${vo.rcategory } <span style="color:coral;">4.7</span></li>
+						<li style="color:grey;">${vo.raddr }</li>
 					</ul>
+					</c:forEach>
 					<div class="push">
 						<img src="http://localhost:9000/mangoplate/resources/images/star.png" width="47px" height="45px">
 						<span>가고싶다</span>
