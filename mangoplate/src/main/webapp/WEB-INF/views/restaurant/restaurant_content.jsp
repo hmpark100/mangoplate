@@ -373,29 +373,31 @@
 	</section>
 	<section class="content">
 		<article class="second">
-			<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg" width="230px">
 			<div class="bundle">
 				<div class="pull">
 					<!-- <ul class="restaurant_name">
 						<li style="color:rgb(85,85,85);">1. 소이연남마오 <span style="color:coral;">4.7</span></li>
 						<li style="color:grey;">서울특별시 강남구 도산대로 53길 30</li>
 					</ul> -->
-					<c:forEach var="vo" items="${list}">
 					<ul class="restaurant_name">
-						<li style="color:rgb(85,85,85);">${vo.rno}. ${vo.rname } ${vo.rcategory } <span style="color:coral;">4.7</span></li>
-						<li style="color:grey;">${vo.raddr }</li>
-					</ul>
+					<c:forEach var="vo" items="${list}">
+						<li style="color:rgb(85,85,85); border:1px solid black;">
+							<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg" width="230px">
+							<label>${vo.rno}. ${vo.rname } ${vo.rcategory } </label>
+							<span style="color:coral;">4.7</span>
+							<div>${vo.raddr }</div>
+							<div class="push">
+								<img src="http://localhost:9000/mangoplate/resources/images/star.png" width="47px" height="45px">
+								<span>가고싶다</span>
+							</div>
+							<div>
+								<a href="http://localhost:9000/mangoplate/restaurant_detail.do">소이연남마오 더보기 ></a>
+							</div>
+						</li>
 					</c:forEach>
-					<div class="push">
-						<img src="http://localhost:9000/mangoplate/resources/images/star.png" width="47px" height="45px">
-						<span>가고싶다</span>
-					</div>
+					</ul>
 				</div>
 				<div class="contents2">
-					<ul>
-						<li>리뷰</li>
-						<li style="color:rgb(85,85,85);"><a href="http://localhost:9000/mangoplate/restaurant_detail.do">소이연남마오 더보기 ></a></li>
-					</ul>
 				</div>
 			</div>
 		</article>

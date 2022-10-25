@@ -36,8 +36,8 @@ public class MangoListDAO extends DBConn{
 				
 				list.add(vo);
 				
-				close();
 			}
+			close(); 
 			
 		}catch (Exception e) {
 			e.printStackTrace();
