@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -13,6 +14,7 @@ import com.mangoplate.vo.MangoEatdealVO;
 import com.team.service.EatdealServiceImpl;
 import com.team.service.FileServiceImpl;
 
+@Controller
 public class EatdealController {
 	
 	@Autowired
@@ -27,14 +29,14 @@ public class EatdealController {
 	 * admin_eatdeal_content.do
 	 */
 	@RequestMapping(value = "/admin_eatdeal_content.do", method = RequestMethod.GET)
-	public ModelAndView admin_eatdeal_content(String nid) {
+	public ModelAndView admin_eatdeal_content(String eid) {
 		
 		ModelAndView mv = new ModelAndView();
 		
 		//String nid = request.getParameter("nid");
 		//CgvNoticeDAO dao = new CgvNoticeDAO(); //DB는 서비스쪽에서 관리
 		//CgvNoticeVO vo = dao.select(nid);
-		MangoEatdealVO vo = eatdealService.getContent(nid); //서비스쪽 메소드 호출
+		MangoEatdealVO vo = eatdealService.getContent(eid); //서비스쪽 메소드 호출
 		
 		//if(vo != null){
 		//	dao.updateHits(nid);
@@ -51,12 +53,12 @@ public class EatdealController {
 	 * admin_eatdeal_delete.do
 	 */
 	@RequestMapping(value = "/admin_eatdeal_delete.do", method = RequestMethod.GET)
-	public ModelAndView admin_eatdeal_delete(String nid) {
+	public ModelAndView admin_eatdeal_delete(String eid) {
 		
 		ModelAndView mv = new ModelAndView();
 		
 		//String nid = request.getParameter("nid");
-		mv.addObject("nid", nid);
+		mv.addObject("eid", eid);
 		mv.setViewName("/admin/admin_eatdeal/admin_eatdeal_delete");
 		
 		return mv;
@@ -66,18 +68,18 @@ public class EatdealController {
 	 * admin_eatdeal_delete_check.do
 	 */
 	@RequestMapping(value="/admin_eatdeal_delete_check.do", method=RequestMethod.POST)
-	public ModelAndView admin_eatdeal_delete_check(String nid, HttpServletRequest request) throws Exception {
+	public ModelAndView admin_eatdeal_delete_check(String eid, HttpServletRequest request) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		
+	//	System.out.println("eid="+eid);
 		
 		//String nid = request.getParameter("nid");
 		//CgvNoticeDAO dao = new CgvNoticeDAO(); //서비스쪽에서!
 		
 		//CgvNoticeVO vo = dao.select(nid);
-		MangoEatdealVO vo = eatdealService.getContent(nid);
+		MangoEatdealVO vo = eatdealService.getContent(eid);
 		
 		//int result = dao.delete(nid);
-		int result = eatdealService.getDeleteResult(nid);
+		int result = eatdealService.getDeleteResult(eid);
 		if(result == 1){
 			//파일이 있는 게시글일 경우 게시글과 함께 upload 폴더의 파일도 삭제
 //			if(vo.getNsfile() != null) {
@@ -104,46 +106,11 @@ public class EatdealController {
 	 * admin_eatdeal_list.do : Eatdeal 전체리스트
 	 */
 	@RequestMapping(value = "/admin_eatdeal_list.do", method = RequestMethod.GET)
-	public ModelAndView admin_eatdeal_list(String nid) {
+	public ModelAndView admin_eatdeal_list(String eid) {
 		
 		ModelAndView mv = new ModelAndView();
 		
-//		//String rpage = request.getParameter("rpage");
-//		//CgvNoticeDAO dao = new CgvNoticeDAO(); //서비스쪽에서 관리
-//
-//		//startCount, endCount
-//		//페이징 처리 - startCount, endCount 구하기
-//		int startCount = 0;
-//		int endCount = 0;
-//		int pageSize = 5;	//한페이지당 게시물 수
-//		int reqPage = 1;	//요청페이지	
-//		int pageCount = 1;	//전체 페이지 수
-//		//int dbCount = dao.totalCount();	//DB에서 가져온 전체 행수
-//		int dbCount = noticeService.getTotalCount(); //서비스쪽 메소드 호출
-//		
-//		//총 페이지 수 계산
-//		if(dbCount % pageSize == 0){
-//			pageCount = dbCount/pageSize;
-//		}else{
-//			pageCount = dbCount/pageSize+1;
-//		}
-//		
-//		//요청 페이지 계산
-//		if(rpage != null){
-//			reqPage = Integer.parseInt(rpage);
-//			startCount = (reqPage-1) * pageSize+1;
-//			endCount = reqPage *pageSize;
-//		}else{
-//			startCount = 1;
-//			endCount = pageSize;
-//		}
-//
-//		//ArrayList<CgvNoticeVO> list = dao.select(startCount, endCount);
-//		ArrayList<CgvNoticeVO> list = noticeService.getList(startCount, endCount); //서비스쪽 메소드 호출
-
-		//Map<String, Integer> param = pageService.getPageResult(rpage, "notice", noticeService);
-		
-		MangoEatdealVO vo = eatdealService.getContent(nid); //서비스쪽 메소드 호출
+		MangoEatdealVO vo = eatdealService.getContent(eid); //서비스쪽 메소드 호출
 		
 		mv.addObject("vo", vo);
 		
@@ -161,14 +128,14 @@ public class EatdealController {
 	 * admin_eatdeal_update.do : eatdeal 수정화면
 	 */
 	@RequestMapping(value = "/admin_eatdeal_update.do", method = RequestMethod.GET)
-	public ModelAndView admin_notice_update(String nid) {
+	public ModelAndView admin_eatdeal_update(String eid) {
 		
 		ModelAndView mv = new ModelAndView();
 		
 		//String nid = request.getParameter("nid");
 		//CgvNoticeDAO dao = new CgvNoticeDAO(); //DB는 서비스쪽에서 처리
 		//CgvNoticeVO vo = dao.select(nid);
-		MangoEatdealVO vo = eatdealService.getContent(nid);
+		MangoEatdealVO vo = eatdealService.getContent(eid);
 		
 		mv.addObject("vo", vo);
 		mv.setViewName("/admin/admin_eatdeal/admin_eatdeal_update");
@@ -184,7 +151,7 @@ public class EatdealController {
 		
 		ModelAndView mv = new ModelAndView();
 		
-		String old_filename = vo.getNsfile(); //수정화면(admin_notice_update.jsp)에서 hidden으로 넘어오는 기존 upload 폴더에 저장된 파일명
+//		String old_filename = vo.getNsfile(); //수정화면(admin_notice_update.jsp)에서 hidden으로 넘어오는 기존 upload 폴더에 저장된 파일명
 												//이 기존의 파일의 이름 값을 미리 변수로 구해놓는다
 		
 //		if(!vo.getFile1().getOriginalFilename().equals("")) { //새로운 파일을 선택한 경우      //서비스쪽에서 진행하여 주석처리
@@ -193,7 +160,7 @@ public class EatdealController {
 //			vo.setNfile(vo.getFile1().getOriginalFilename());
 //			vo.setNsfile(uuid + "_" + vo.getFile1().getOriginalFilename());
 //		}
-		vo = fileService.update_fileCheck(vo);//위의 주석처리한 코드를 서비스쪽으로 이동하였고, 그 메소드 호출한 것
+//		vo = fileService.update_fileCheck(vo);//위의 주석처리한 코드를 서비스쪽으로 이동하였고, 그 메소드 호출한 것
 		
 		//CgvNoticeDAO dao = new CgvNoticeDAO(); //서비스쪽에서 처리
 		//int result = dao.update(vo);
@@ -213,7 +180,7 @@ public class EatdealController {
 //					old_file.delete();
 //				}
 //			}
-			fileService.update_filesave(vo, request, old_filename); //위의 주석처리한 코드를 이동시킨 서비스쪽 메소드 호출
+//			fileService.update_filesave(vo, request, old_filename); //위의 주석처리한 코드를 이동시킨 서비스쪽 메소드 호출
 			
 			mv.setViewName("redirect:/admin_eatdeal_list.do");
 		}else{
@@ -228,7 +195,7 @@ public class EatdealController {
 	 * admin_eatdeal_write.do
 	 */
 	@RequestMapping(value = "/admin_eatdeal_write.do", method = RequestMethod.GET)
-	public String admin_notice_write() {
+	public String admin_eatdeal_write() {
 		return "/admin/admin_eatdeal/admin_eatdeal_write";
 	}
 	
@@ -280,4 +247,51 @@ public class EatdealController {
 		
 		return mv;
 	}
+	
+	
+	/**
+	 * admin_eatdeal_purchase.do : eatdeal 구매화면
+	 */
+	@RequestMapping(value = "/admin_eatdeal_purchase.do", method = RequestMethod.GET)
+	public ModelAndView admin_eatdeal_purchase(String eid) {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		//String nid = request.getParameter("nid");
+		//CgvNoticeDAO dao = new CgvNoticeDAO(); //DB는 서비스쪽에서 처리
+		//CgvNoticeVO vo = dao.select(nid);
+		MangoEatdealVO vo = eatdealService.getContent(eid);
+		
+		mv.addObject("vo", vo);
+		mv.setViewName("/admin/admin_eatdeal/admin_eatdeal_purchase");
+		
+		return mv;
+	}
+	
+	/**
+	 * admin_eatdeal_purchase_check.do 
+	 */
+	@RequestMapping(value="/admin_eatdeal_purchase_check.do", method=RequestMethod.POST)
+	public ModelAndView admin_eatdeal_purchase_check(String eid, HttpServletRequest request) throws Exception {
+	//	System.out.println("eid="+eid);
+		ModelAndView mv = new ModelAndView();
+		
+	//	MangoEatdealVO vo = eatdealService.getContent(eid);
+		
+		//CgvNoticeDAO dao = new CgvNoticeDAO(); //서비스쪽에서 처리
+		//int result = dao.update(vo);
+		int result = eatdealService.getPurchaseResult(eid);
+		if(result == 1){
+
+			
+			mv.setViewName("redirect:/admin_eatdeal_list.do");
+		}else{
+			mv.setViewName("error_page");
+		}
+		
+		return mv;
+	}
+	
+	
+	
 }
