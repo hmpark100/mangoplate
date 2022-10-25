@@ -13,4 +13,5 @@ public interface EatdealService {
 	int getWriteResult(MangoEatdealVO vo); //3. 게시글 글쓰기 처리
 	int getUpdateResult(MangoEatdealVO vo); //3. 게시글 수정 처리
 	int getDeleteResult(String nid); //3. 게시글 삭제 처리
+	int getPurchaseResult(String eid);
 }

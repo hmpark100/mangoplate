@@ -5,17 +5,17 @@ import java.util.ArrayList;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class MangoEatdealVO {
-	String id, ename, region, packaging, menu, price, scontent, common, eimage1, esimage1, eimage2, esimage2;
+	String eid, ename, region, packaging, menu, price, scontent, common, eimage1, esimage1, eimage2, esimage2;
 	int stock;
 	CommonsMultipartFile[] images;
 	ArrayList<String> eimages = new ArrayList<String>();  //DB에 저장할 eimage 목록
 	ArrayList<String> esimages = new ArrayList<String>();  //DB에 저장할 esimage 목록
 	
-	public String getId() {
-		return id;
+	public String getEid() {
+		return eid;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setEid(String eid) {
+		this.eid = eid;
 	}
 	public String getEname() {
 		return ename;

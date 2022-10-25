@@ -29,13 +29,13 @@ public class MangoEatdealDAO extends DBConn{
 	/**
 	 * delete : 게시글 삭제 
 	 */
-	public int delete(String nid) {
+	public int delete(String eid) {
 		int result = 0;
-		String sql = "delete from mg_eatdeal where nid=?";
+		String sql = "delete from mg_eatdeal where eid=?";
 						
 		try {
 			getPreparedStatement(sql);
-			pstmt.setString(1, nid);		
+			pstmt.setString(1, eid);		
 			
 			result = pstmt.executeUpdate();
 			
@@ -53,8 +53,8 @@ public class MangoEatdealDAO extends DBConn{
 	 */
 	public int update(MangoEatdealVO vo) {
 		int result = 0;
-		String sql = "update mg_eatdeale set packaging=?, stock=?, menu=?, price=?, scontent=?, eimage1=?, esimage1=?, eimage2=?, esimage2=? "
-				+ " where id=?";
+		String sql = "update mg_eatdeal set packaging=?, stock=?, menu=?, price=?, scontent=?, common=? "
+				+ " where eid=?";
 		
 		try {
 			getPreparedStatement(sql);
@@ -63,11 +63,8 @@ public class MangoEatdealDAO extends DBConn{
 			pstmt.setString(3, vo.getMenu());
 			pstmt.setString(4, vo.getPrice());
 			pstmt.setString(5, vo.getScontent());
-			pstmt.setString(6, vo.getEimage1());
-			pstmt.setString(7, vo.getEsimage1());
-			pstmt.setString(8, vo.getEimage2());
-			pstmt.setString(9, vo.getEsimage2());
-			pstmt.setString(10, vo.getId());
+			pstmt.setString(6, vo.getCommon());
+			pstmt.setString(7, vo.getEid());
 			
 			result = pstmt.executeUpdate();
 			
@@ -84,17 +81,17 @@ public class MangoEatdealDAO extends DBConn{
 	/**
 	 * select : 게시글 상세보기
 	 */
-	public MangoEatdealVO select(String id) {
+	public MangoEatdealVO select(String eid) {
 		MangoEatdealVO vo = new MangoEatdealVO();
-		String sql = "select id, ename, region, packaging, stock, menu, price, scontent, common, esimage1, esimage2 "
-				+ " from mg_eatdeal where id=?";
+		String sql = "select eid, ename, region, packaging, stock, menu, price, scontent, common, esimage1, esimage2 "
+				+ " from mg_eatdeal where eid=?";
 		
 		try {
 			getPreparedStatement(sql);
-			pstmt.setString(1, id);
+			pstmt.setString(1, eid);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				vo.setId(rs.getString(1));
+				vo.setEid(rs.getString(1));
 				vo.setEname(rs.getString(2));
 				vo.setRegion(rs.getString(3));
 				vo.setPackaging(rs.getString(4));
@@ -107,7 +104,7 @@ public class MangoEatdealDAO extends DBConn{
 				vo.setEsimage2(rs.getString(11));
 			}
 			
-			//close();  //조회수 처리시 커넥션 종료를 막기위해 주석처리함!!!			
+			close();  //조회수 처리시 커넥션 종료를 막기위해 주석처리함!!!			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -122,8 +119,25 @@ public class MangoEatdealDAO extends DBConn{
 	 */
 	public ArrayList<MangoEatdealVO> select(){
 		ArrayList<MangoEatdealVO> list = new ArrayList<MangoEatdealVO>();
-		String sql = "select nid, ntitle, ncontent, to_char(ndate, 'yyyy-mm-dd') ndate, nfile, nsfile "
-				+ " from (select nid, ntitle, ncontent, ndate, nfile, nsfile from mg_notice order by ndate desc)";
+		String sql = "select eid, ename, region, packaging, stock, menu, price, scontent, common, eimage1, esimage1, "
+				+ " eimage2, esimage2"
+				+ " from mg_eatdeal "
+				+ " order by eid desc";
+		
+//		eid varchar2(20) constraint pk_mg_eatdeal_id primary key, 
+//		ename varchar2(30) not null,
+//		region varchar2(30) not null,
+//		packaging varchar2(30) not null,
+//		stock number(30) not null,
+//		menu varchar2(200) not null,
+//		price varchar2(30) not null,
+//		scontent varchar2(500) not null,
+//		common varchar2(500) not null,
+//		eimage1 varchar2(200),
+//		esimage1 varchar2(200),
+//		eimage2 varchar2(200),
+//		esimage2 varchar2(200)
+		
 		
 		try {
 			getPreparedStatement(sql);
@@ -131,12 +145,19 @@ public class MangoEatdealDAO extends DBConn{
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				MangoEatdealVO vo = new MangoEatdealVO();
-				vo.setNid(rs.getString(1));
-				vo.setNtitle(rs.getString(2));
-				vo.setNcontent(rs.getString(3));
-				vo.setNdate(rs.getString(4));
-				vo.setNfile(rs.getString(5));
-				vo.setNsfile(rs.getString(6));
+				vo.setEid(rs.getString(1));
+				vo.setEname(rs.getString(2));
+				vo.setRegion(rs.getString(3));
+				vo.setPackaging(rs.getString(4));
+				vo.setStock(rs.getInt(5));
+				vo.setMenu(rs.getString(6));
+				vo.setPrice(rs.getString(7));
+				vo.setScontent(rs.getString(8));
+				vo.setCommon(rs.getString(9));
+				vo.setEimage1(rs.getString(10));
+				vo.setEsimage1(rs.getString(11));
+				vo.setEimage2(rs.getString(12));
+				vo.setEsimage2(rs.getString(13));
 				
 				list.add(vo);
 			}
@@ -155,8 +176,8 @@ public class MangoEatdealDAO extends DBConn{
 	 */
 	public int insert(MangoEatdealVO vo) {
 		int result = 0;
-		String sql = "insert into mg_notice "
-				+ " values('n_'||sequ_mg_eatdeal.nextval,?,?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into mg_eatdeal "
+				+ " values('e_'||sequ_mg_eatdeal.nextval,?,?,?,?,?,?,?,?,?,?,?,?)";
 		
 //	1	ename varchar2(30) not null,             
 //	2	region varchar2(30) not null,            
@@ -194,4 +215,34 @@ public class MangoEatdealDAO extends DBConn{
 		
 		return result;
 	}
+	
+	
+	/**
+	 * 구매하기
+	 */
+	public int purchase(String eid) {
+	//	System.out.println(eid);
+		int result = 0;
+		String sql = " update mg_eatdeal set stock=stock-1 where eid=? ";
+		
+		try {
+			getPreparedStatement(sql);
+			pstmt.setString(1, eid);
+			
+			result = pstmt.executeUpdate();
+			
+			close();			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	
 }
+	
+	
+	
+

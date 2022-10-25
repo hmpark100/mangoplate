@@ -17,7 +17,7 @@ public class EatdealServiceImpl implements EatdealService {
 	}
 	
 	/**
-	 * 공지사항 전체 리스트
+	 * 전체 리스트
 	 */
 	public ArrayList<MangoEatdealVO> getList(){
 		MangoEatdealDAO dao = new MangoEatdealDAO();
@@ -28,17 +28,17 @@ public class EatdealServiceImpl implements EatdealService {
 	
 	
 	/**
-	 * 공지사항 상세보기
+	 * 상세보기
 	 */
-	public MangoEatdealVO getContent(String nid) {
+	public MangoEatdealVO getContent(String eid) {
 		MangoEatdealDAO dao = new MangoEatdealDAO();
-		MangoEatdealVO vo = dao.select(nid);
+		MangoEatdealVO vo = dao.select(eid);
 		
 		return vo;
 	}
 	
 	/**
-	 * 공지사항 글쓰기
+	 * 글쓰기
 	 */
 	public int getWriteResult(MangoEatdealVO vo) {
 		MangoEatdealDAO dao = new MangoEatdealDAO();
@@ -49,7 +49,7 @@ public class EatdealServiceImpl implements EatdealService {
 	
 	
 	/**
-	 * 공지사항 수정하기
+	 * 수정하기
 	 */
 	public int getUpdateResult(MangoEatdealVO vo) {
 		MangoEatdealDAO dao = new MangoEatdealDAO();
@@ -60,12 +60,22 @@ public class EatdealServiceImpl implements EatdealService {
 	
 	
 	/**
-	 * 공지사항 삭제하기
+	 * 삭제하기
 	 */
-	public int getDeleteResult(String nid) {
+	public int getDeleteResult(String eid) {
 		MangoEatdealDAO dao = new MangoEatdealDAO();
-		int result = dao.delete(nid);
+		int result = dao.delete(eid);
 		
 		return  result;
+	}
+	
+	
+	/**
+	 * 구매하기
+	 */
+	public int getPurchaseResult(String eid) {
+		MangoEatdealDAO dao = new MangoEatdealDAO();
+		int result = dao.purchase(eid);
+		return result;
 	}
 }
