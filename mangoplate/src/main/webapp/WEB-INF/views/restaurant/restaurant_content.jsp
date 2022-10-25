@@ -365,7 +365,8 @@
 
 	<section class="top">
 		<div>
-			<p>181,458 클릭 | 2022-09-26</p>
+			<!-- <p>181,458 클릭 | 2022-09-26</p> -->
+			<p>${vo.rhits } 클릭 | 2022-09-26</p>
 			<p>${vo.rcategory } 맛집 베스트 35곳</p>
 			<p>"국내에서 즐기는 ${vo.rcategory }의 맛!"</p>
 		</div>
@@ -393,7 +394,7 @@
 				<div class="contents2">
 					<ul>
 						<li>리뷰</li>
-						<li style="color:rgb(85,85,85);">소이연남마오 더보기 ></li>
+						<li style="color:rgb(85,85,85);"><a href="http://localhost:9000/mangoplate/restaurant_detail.do">소이연남마오 더보기 ></a></li>
 					</ul>
 				</div>
 			</div>
