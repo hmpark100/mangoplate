@@ -9,8 +9,8 @@ public class ListServiceImpl implements ListService{
 
 	public ArrayList<MangoRestVO> getContent(String rcategory){
 		MangoListDAO dao = new MangoListDAO();
-		ArrayList<MangoRestVO> vo = dao.select(rcategory);
+		ArrayList<MangoRestVO> list = dao.select(rcategory);
 		
-		return vo;
+		return list;
 	}
 }
