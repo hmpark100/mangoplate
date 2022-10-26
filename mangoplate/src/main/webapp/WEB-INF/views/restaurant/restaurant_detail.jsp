@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +28,7 @@
 							<header>
 								<div class="restaurant_title_wrap">
 									<span class="title">
-										<h1 class="restaurant_name">상암회관</h1> <strong
+										<h1 class="restaurant_name">${vo.rname }</h1> <strong
 										class="rate-point expected"> <span>4.4</span>
 									</strong>
 

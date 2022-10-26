@@ -19,10 +19,7 @@ public class ListServiceImpl implements ListService{
 	}
 	
 	public MangoRestVO getContent(String rid) {
-		MangoRestVO vo = new MangoRestVO();
-		vo = listDao.selectDetail(rid);
-		
-		return vo;
+		return listDao.selectDetail(rid);
 	}
 	
 }//ListServiceImpl-end
