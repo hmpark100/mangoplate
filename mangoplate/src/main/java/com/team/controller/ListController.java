@@ -1,16 +1,24 @@
 package com.team.controller;
 
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.mangoplate.dao.MangoReviewDAO;
+import com.mangoplate.vo.MangoRestVO;
 import com.mangoplate.vo.MangoReviewVO;
+import com.team.service.ListServiceImpl;
 
 @Controller
 public class ListController {
 
+	@Autowired
+	private ListServiceImpl listService;
+	
 	/**
 	 * restaurant_list.do : 맛집리스트 화면
 	 */
@@ -23,8 +31,15 @@ public class ListController {
 	 * restaurant_content.do : 맛집 세부리스트 화면
 	 */
 	@RequestMapping(value="/restaurant_content.do", method = RequestMethod.GET)
-	public String restaurant_content() {
-		return "/restaurant/restaurant_content";
+	public ModelAndView restaurant_content(String rcategory) {
+		ModelAndView mv = new ModelAndView();
+		ArrayList<MangoRestVO> list = listService.getContent(rcategory);
+		
+		mv.addObject("rcategory", rcategory);
+		mv.addObject("list", list);
+		mv.setViewName("/restaurant/restaurant_content");
+		
+		return mv;
 	}
 	
 	/**
