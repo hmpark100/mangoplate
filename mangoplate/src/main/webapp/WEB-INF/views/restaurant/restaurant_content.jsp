@@ -20,6 +20,7 @@
 		text-align : center;
 		border-bottom : 1px solid #dbdbdb;
 		margin-bottom : 28px;
+		padding-top : 30px;
 	}
 	
 	section.top div {
@@ -50,119 +51,90 @@
 	/* content 부분 css */
 	
 	.content {
-		/* border : 1px solid black; */
-		width : 900px;
-		margin : 0 auto; 
-		padding : 0 30px;
-		height : 3910px;
-	}
-	
-	.second img {
-		float : left;
-		margin-bottom : 20px;
-		clear : both;
+		width : 100%;
 	}
 	
 	.second {
-	/* 	border : 1px solid yellow; */
-		height : 230px;
-	/* 	margin-bottom : 530px; */
+	/* 	border : 1px solid red; */
+		width : 900px;
+		margin : auto;
 	}
 	
-	.second div.bundle {
-	/*  	border : 1px solid red;  */
-		margin-left : 255px;
-	}
-	
-	.second ul {
-		list-style-type : none;
-	}
-	
-	.pull {
-		/* border : 1px solid blue; */
-		height : 80px;
-		/* width : 100%; */
-	}
-	
-	.second ul.restaurant_name {
-	/* 	border : 1px solid green;  */
-		/* width : 70%; */
-		float : left;
-	}
-	
-	.second ul.restaurant_name li:nth-child(1){
-		font-size : 30px;
-		margin-bottom : 4px;
-	}
-	
- 	.push {
- 	 	/* border : 1px solid red; */
- 		float : right;
- 		display : inline-block;
- 		width : 50px;
- 		height : 60px;
- 		position : relative;
- 	}
- 
-	.push span {
-	 /* border : 3px solid black;  */
-		display : inline-block;
-		font-size : 10px;
-		text-align : center;
-		position : absolute;
-		left : 3px;
-		top : 47px;
-		color : rgb(155,155,155);
-		
-	}
-	
-	
-	.contents2 li:nth-child(1) {
-	/*   border : 1px solid red;   */
-	/*  width : 100px; */
-		height : 100px;
-	}
-	
-	.contents2 li:nth-child(2) {
-	
-		text-align :right;
-	}
-	
-	
-	/* 더보기 버튼 css */
-	
-	article.more {
-		clear : both;
-	}
-	
-	article.more span {
-		color : #FF792A;
-	}
-	
-	.more {
+	.first {
+		border-bottom : 1px solid #dbdbdb;
+		padding : 28px 0px;
+		display : flex;
+		flex-wrap : wrap;
 		position : relative;
 	}
 	
-	.more div {
+	.first div:nth-child(2) label {
 	/* 	border : 1px solid black; */
-		width : 896px;
-		margin : 0 auto;
-		text-align : center;
-		height : 50px;
-		border-bottom : 1px solid #dbdbdb;
-		
+		margin-left : 20px;
+		font-size : 28px;
+	}
+	
+	.first div:nth-child(2) p {
+	/* 	border : 1px solid red; */
+		margin-left : 20px;
+	}
+	
+	.push {
+	/* 	border : 1px solid red; */
+		position : absolute;
+		left : 850px;
+		width : 90px;
+	}
+	
+	.push img {
+	/* 	border : 1px solid blue; */
+		width : 47px;
+		height : 47px;
+		position : absolute;
+		left : 10px;
+	}
+	
+	.push span {
+	/* 	border : 1px solid red; */
+		font-size : 0.7rem;
+		position : absolute;
+		left : 11px;
+		top : 45px;
+	}
+	
+	.next {
+	/* 	border : 1px solid blue; */
+		position : absolute;
+		top : 232px;
+		left : 750px;
+	}
+	
+	.next a {
+		text-decoration : none;
+		color : #888888;
+	}
+	
+	/* 더보기 버튼 css */
+	
+	.more {
+		width : 113px;
+		margin : auto;
+	 	margin-bottom : 30px;
 	}
 	
 	.more img {
-		position : absolute;
-		top : 3px;
+	 /* border : 1px solid black; */
+		width: 113px;
+		height : 30px;
+		padding : 5px;
 	}
+	
 	
 	/* 공유 버튼 css */
 	
 	.share div {
-	/*  	border : 1px solid red; */
-		width : 960px;
+	/* 	border : 1px solid red; */ 
+		width : 900px;
 		height : 25px;
 		padding : 27px 0;
 		position : relative;
@@ -187,7 +159,7 @@
 		top : 19px;
 		left : 228px;
 		border-radius : 50px;
-		padding : 6px 0px 1px 0px;
+		padding : 6px 0px 8px 0px;
 	}
 	
 	.share div ul:nth-child(2) li {
@@ -226,6 +198,7 @@
 	
 	.third {
 	/* 	border : 1px solid blue; */
+		margin-top : 35px;
 		padding : 27px 0px;
 		border-top : 1px solid #dbdbdb;
 	}
@@ -248,14 +221,24 @@
 	section.bottom {
 	 	background-color : #f7f7f7; 
 		width : 100%;
+		height : 600px;
 		border-top : 1px solid #dbdbdb;
 	}
 	
-	.main2, .main3 {
-	 /* 	border : 1px solid red; */
+	.main2 {
+	/*  	border : 1px solid red; */
 		width : 900px;
-		margin : 0 auto ;
-	 	padding : 0 30px; 
+		margin : 0 auto;
+	 	padding : 0 20px; 
+	}
+	
+	.main3 {
+	/* 	border : 1px solid blue; */
+		width : 900px;
+		height : 300px;
+		margin : auto;
+		margin-top : 20px;
+		padding : 0 20px;
 	}
 	
 	.main2 h2 {
@@ -272,9 +255,8 @@
 	.similar { 
 	/* 	border : 1px solid black; */
 		width : 858.8px;
-		height : 186px;
-		padding-bottom : 27px;
-		border-bottom : 1px solid #dbdbdb;
+		height : 210px;
+	 	border-bottom : 1px solid #dbdbdb;
 	}
 	
 	div.similar article:nth-child(1) {
@@ -335,14 +317,6 @@
 		clear : both;
 	}
 	
-	.main3 { 
-	/* 	border : 1px solid red; */
-		clear : both;
-		margin : 20px auto;	
-		height : 143px;
-		padding : 0 0 27px 0;
-	}
-	
 	.tag li {
 		float : left;
 		list-style-type : none;
@@ -368,101 +342,95 @@
 			<!-- <p>181,458 클릭 | 2022-09-26</p> -->
 			<p>${vo.rhits } 클릭 | 2022-09-26</p>
 			<p>${rcategory } 맛집 베스트 35곳</p>
-			<p>"국내에서 즐기는 ${vo.rcategory }의 맛!"</p>
+			<p>"국내에서 즐기는 ${rcategory }의 맛!"</p>
 		</div>
 	</section>
 	<section class="content">
 		<article class="second">
 			<div class="bundle">
 				<div class="pull">
-					<!-- <ul class="restaurant_name">
-						<li style="color:rgb(85,85,85);">1. 소이연남마오 <span style="color:coral;">4.7</span></li>
-						<li style="color:grey;">서울특별시 강남구 도산대로 53길 30</li>
-					</ul> -->
 					<ul class="restaurant_name">
 					<c:forEach var="vo" items="${list}">
-						<li style="color:rgb(85,85,85); border:1px solid black;">
+						<li class="first" style="color:rgb(85,85,85);">
 							<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg" width="230px">
-							<label>${vo.rno}. ${vo.rname } ${vo.rcategory } </label>
-							<span style="color:coral;">4.7</span>
-							<div>${vo.raddr }</div>
+							<div>
+								<label>${vo.rno}. ${vo.rname } </label>
+								<!-- <span style="color:coral;">4.7</span> -->
+								<p>${vo.raddr }</p>
+							</div>
 							<div class="push">
-								<img src="http://localhost:9000/mangoplate/resources/images/star.png" width="47px" height="45px">
+								<img src="http://localhost:9000/mangoplate/resources/images/star.png">
 								<span>가고싶다</span>
 							</div>
-							<div>
+							<div class="next">
 								<a href="http://localhost:9000/mangoplate/restaurant_detail.do">${vo.rname} 더보기 ></a>
 							</div>
 						</li>
 					</c:forEach>
 					</ul>
 				</div>
-				<div class="contents2">
+			</div>
+			<article class="more">
+				<div>
+					<img src="http://localhost:9000/mangoplate/resources/images/more.png">
 				</div>
-			</div>
-		</article>
-		<article class="more">
-			<div>
-				<img src="http://localhost:9000/mangoplate/resources/images/12323.png" width="25px"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-				<span>더보기</span>
-				<span>&nbsp;<img src="http://localhost:9000/mangoplate/resources/images/12323.png" width="25px"></span>
-			</div>
-		</article>
-		<article class="share">
-			<div>
-				<ul>
-					<li>http://localhost:9000/man...</li>
-				</ul>
-				<ul>
-					<li><img src="http://localhost:9000/mangoplate/resources/images/share.jpg"></li>
-					<li>공유하기</li>
-				</ul>
-				<ul>
-					<li><img src="http://localhost:9000/mangoplate/resources/images/sns.png"></li>
-				</ul>
-			</div>
-		</article>
-		<article class="third">
-			<h2>리스트 지도</h2>
-			<div class="map_wrap">
-			    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div> 
-			    <!-- 지도 확대, 축소 컨트롤 div 입니다 -->
-			    <div class="custom_zoomcontrol radius_border"> 
-			        <span onclick="zoomIn()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>  
-			        <span onclick="zoomOut()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
-			    </div>
-			</div>
-			<script>
-			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-			    mapOption = { 
-			        center: new kakao.maps.LatLng(37.5252, 127.0389), // 지도의 중심좌표
-			        level: 1 // 지도의 확대 레벨
-			    };  
-			
-			var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-			    
-			// 지도 확대, 축소 컨트롤에서 확대 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
-			function zoomIn() {
-			    map.setLevel(map.getLevel() - 1);
-			}
-			
-			// 지도 확대, 축소 컨트롤에서 축소 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
-			function zoomOut() {
-			    map.setLevel(map.getLevel() + 1);
-			}
-			
-			// 마커가 표시될 위치입니다 
-			var markerPosition  = new kakao.maps.LatLng(37.5252, 127.0389); 
-
-			// 마커를 생성합니다
-			var marker = new kakao.maps.Marker({
-			    position: markerPosition
-			});
-
-			// 마커가 지도 위에 표시되도록 설정합니다
-			marker.setMap(map);
-			
-			</script>
+			</article>
+			<article class="share">
+				<div>
+					<ul>
+						<li>http://localhost:9000/man...</li>
+					</ul>
+					<ul>
+						<li><img src="http://localhost:9000/mangoplate/resources/images/share.jpg"></li>
+						<li>공유하기</li>
+					</ul>
+					<ul>
+						<li><img src="http://localhost:9000/mangoplate/resources/images/sns.png"></li>
+					</ul>
+				</div>
+			</article>
+			<article class="third">
+				<h2>리스트 지도</h2>
+				<div class="map_wrap">
+				    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div> 
+				    <!-- 지도 확대, 축소 컨트롤 div 입니다 -->
+				    <div class="custom_zoomcontrol radius_border"> 
+				        <span onclick="zoomIn()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>  
+				        <span onclick="zoomOut()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+				    </div>
+				</div>
+				<script>
+				var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+				    mapOption = { 
+				        center: new kakao.maps.LatLng(37.5252, 127.0389), // 지도의 중심좌표
+				        level: 1 // 지도의 확대 레벨
+				    };  
+				
+				var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+				    
+				// 지도 확대, 축소 컨트롤에서 확대 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+				function zoomIn() {
+				    map.setLevel(map.getLevel() - 1);
+				}
+				
+				// 지도 확대, 축소 컨트롤에서 축소 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+				function zoomOut() {
+				    map.setLevel(map.getLevel() + 1);
+				}
+				
+				// 마커가 표시될 위치입니다 
+				var markerPosition  = new kakao.maps.LatLng(37.5252, 127.0389); 
+	
+				// 마커를 생성합니다
+				var marker = new kakao.maps.Marker({
+				    position: markerPosition
+				});
+	
+				// 마커가 지도 위에 표시되도록 설정합니다
+				marker.setMap(map);
+				
+				</script>
+			</article>
 		</article>
 	</section>
 	<section class="bottom">
