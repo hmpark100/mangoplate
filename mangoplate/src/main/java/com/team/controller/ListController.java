@@ -9,7 +9,7 @@ import com.mangoplate.dao.MangoReviewDAO;
 import com.mangoplate.vo.MangoReviewVO;
 
 @Controller
-public class RestController {
+public class ListController {
 
 	/**
 	 * restaurant_list.do : 맛집리스트 화면
