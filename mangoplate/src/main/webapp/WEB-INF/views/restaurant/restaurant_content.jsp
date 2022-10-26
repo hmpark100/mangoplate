@@ -363,7 +363,7 @@
 								<span>가고싶다</span>
 							</div>
 							<div class="next">
-								<a href="http://localhost:9000/mangoplate/restaurant_detail.do">${vo.rname} 더보기 ></a>
+								<a href="http://localhost:9000/mangoplate/restaurant_detail.do?rid=${vo.rid }">${vo.rname} 더보기 ></a>
 							</div>
 						</li>
 					</c:forEach>

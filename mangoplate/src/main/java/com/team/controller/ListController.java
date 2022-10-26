@@ -19,6 +19,8 @@ public class ListController {
 	@Autowired
 	private ListServiceImpl listService;
 	
+	ModelAndView mv = null;
+	
 	/**
 	 * restaurant_list.do : 맛집리스트 화면
 	 */
@@ -46,7 +48,11 @@ public class ListController {
 	 * restaurant_detail.do : 식당 상세페이지 화면
 	 */
 	@RequestMapping(value="/restaurant_detail.do", method = RequestMethod.GET)
-	public String restaurant_detail() {
+	public String restaurant_detail(String rid) {
+		/* System.out.println(rid); */
+		
+		MangoRestVO
+		
 		return "/restaurant/restaurant_detail";
 	}
 	
