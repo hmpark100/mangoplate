@@ -57,6 +57,8 @@
 		class="com.mangoplate.dao.MangoMemberDAO"></beans:bean>
 	<beans:bean id="restaurantDao"
 		class="com.mangoplate.dao.MangoRestDAO"></beans:bean>
+	<beans:bean id="listDao"
+		class="com.mangoplate.dao.MangoListDAO"></beans:bean>
 
 	<!-- Interceptor 객체 생성 -->
 	<!-- <beans:bean id="authInterceptor" class="com.team.interceptor.AuthInterceptor"></beans:bean> -->
