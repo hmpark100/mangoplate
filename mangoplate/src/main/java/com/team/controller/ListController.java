@@ -19,8 +19,6 @@ public class ListController {
 	@Autowired
 	private ListServiceImpl listService;
 	
-	ModelAndView mv = null;
-	
 	/**
 	 * restaurant_list.do : 맛집리스트 화면
 	 */
@@ -49,7 +47,7 @@ public class ListController {
 	 */
 	@RequestMapping(value="/restaurant_detail.do", method = RequestMethod.GET)
 	public ModelAndView restaurant_detail(String rid) {
-		
+		ModelAndView mv = new ModelAndView();
 		MangoRestVO vo = listService.getContent(rid);
 		
 		mv.addObject("vo", vo);
