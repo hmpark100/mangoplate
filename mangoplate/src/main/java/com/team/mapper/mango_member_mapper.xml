@@ -4,10 +4,18 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.member">
-
+	
+	<!-- member mypage_update -->
+	<update id="mypage_update" parameterType="com.mangoplate.vo.MangoMemberVO" >
+		update mg_member set pass=#{pass},name=#{name},
+			hp=#{hp},pnumber=#{pnumber}, 
+			addr1=#{addr1}, addr2=#{addr2} 
+			where id=#{id}
+	</update>
+	
 	<!-- member mypage -->
 	<select id="mypage" parameterType="java.lang.String" resultType="com.mangoplate.vo.MangoMemberVO" >
-		select id, name, pnumber, email, addr1, addr2
+		select id, name, hp, pnumber, email, addr1, addr2
 				 from mg_member where id=#{id}
 	</select> 
 	
@@ -23,7 +31,7 @@
 
 	<!-- member content -->
 	<select id="content" parameterType="java.lang.String" resultType="com.mangoplate.vo.MangoMemberVO" >
-		select id, name, pnumber, email, mdate, addr1, addr2
+		select id, name, hp, pnumber, email, mdate, addr1, addr2
 				 from mg_member where id=#{id}
 	</select>
 

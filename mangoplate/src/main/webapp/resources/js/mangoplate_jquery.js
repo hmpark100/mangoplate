@@ -43,6 +43,51 @@ $(document).ready(function(){
 			boardUpdateForm.submit();
 		}
 	});
+	
+	/*********************
+		마이페이지 수정 폼
+	**********************/
+	$("#btnMypageUpdate").click(()=>{
+		if($("#mypagepass").val() == ""){
+			alert("비밀번호를 입력해주세요");
+			$("#mypagepass").focus();
+			return false;
+		}else if($("#mypagecpass").val() == ""){
+			alert("비밀번호 확인을 입력해주세요");
+			$("#mypagecpass").focus();
+			return false;
+		}else if($("#mypagename").val() == ""){
+			alert("성명을 입력해주세요");
+			$("#mypagename").focus();
+			return false;
+		}else if($("#mypagehp").val() == "default"){
+			alert("통신사를 선택해주세요");
+			return false;
+		}else if($("#mypagepnumber").val() == ""){
+			alert("전화번호를 입력해주세요");
+			$("#mypagepnumber").focus();
+			return false;
+		//}else if($("#mypageemail1").val() == ""){
+			//alert("이메일을 입력해주세요");
+			//$("#mypageemail1").focus();
+			//return false;
+		//}else if($("#mypageemail2").val() == "default"){
+			//alert("이메일 주소를 선택해주세요");
+			//$("#mypageemail2").focus();
+			//return false;
+		}else if($("#mypageaddr1").val() == ""){
+			alert("주소를 입력해주세요");
+			$("#mypageaddr1").focus();
+			return false;
+		}else if($("#mypageaddr2").val() == ""){
+			alert("상세주소를 입력해주세요");
+			$("#mypageaddr2").focus();
+			return false;
+		}else{
+			//서버전송
+			updateForm.submit();
+		}
+	});
 
 	/*********************
 		로그인폼 체크 함수
@@ -111,6 +156,22 @@ $(document).ready(function(){
 	});
 	
 	/*********************
+		회원정보수정 - 주소찾기
+	 **********************/
+	$("#btnSearchAddr2").click(function(){
+		new daum.Postcode({
+	        oncomplete: function(data) {
+	            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+	            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+	            //alert(data.address);
+	          /*  $("#zonecode").val(data.zonecode); */
+	            $("#mypageaddr1").val(data.address);
+	            $("#mypageaddr2").focus();
+	        }
+	    }).open(); 
+	});
+	
+	/*********************
 		회원가입 폼 유효성 체크 --> 서버의 효율성을 높이기위함:부하를 줄임
 	**********************/
 	$("#btnJoin").click(()=>{		
@@ -163,6 +224,24 @@ $(document).ready(function(){
 	
 	
 	/*********************
+		회원정보수정 비밀번호, 비밀번호 확인 비교
+	**********************/
+	$("#mypagecpass").on("blur",()=>{
+		if($("#mypagepass").val() != "" && $("#mypagecpass").val() != ""){
+			if($("#mypagepass").val() == $("#mypagecpass").val()){
+				$("#mypagepassCheckMsg").text("*비밀번호가 동일합니다.")
+					.css("color","blue").css("font-size","13px").css("margin-bottom","15px");
+			}else{
+				$("#mypagepassCheckMsg").text("*비밀번호가 동일하지 않습니다. 다시 입력해주세요.")
+					.css("color","red").css("font-size","13px").css("margin-bottom","15px");
+
+				$("#mypagecpass").val("");
+				$("#mypagepass").val("").focus();
+			}
+		}//else{} --> 회원가입 폼의 유효성 체크로 진행됨
+	});
+	
+	/*********************
 		비밀번호, 비밀번호 확인 비교
 	**********************/
 	$("#cpass").on("blur",()=>{
@@ -176,6 +255,24 @@ $(document).ready(function(){
 
 				$("#cpass").val("");
 				$("#jpass").val("").focus();
+			}
+		}//else{} --> 회원가입 폼의 유효성 체크로 진행됨
+	});
+	
+	/*********************
+		회원정보수정 비밀번호, 비밀번호 확인 비교
+	**********************/
+	$("#mypagecpass").on("blur",()=>{
+		if($("#mypagepass").val() != "" && $("#mypagecpass").val() != ""){
+			if($("#mypagepass").val() == $("#mypagecpass").val()){
+				$("#passCheckMsg").text("*비밀번호가 동일합니다.")
+					.css("color","blue").css("font-size","11px").css("margin-bottom","15px");
+			}else{
+				$("#passCheckMsg").text("*비밀번호가 동일하지 않습니다. 다시 입력해주세요.")
+					.css("color","red").css("font-size","11px").css("margin-bottom","15px");
+
+				$("#mypagecpass").val("");
+				$("#mypagepass").val("").focus();
 			}
 		}//else{} --> 회원가입 폼의 유효성 체크로 진행됨
 	});

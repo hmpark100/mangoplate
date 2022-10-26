@@ -38,7 +38,7 @@ public class AdminController {
 	//admin_restaurant : 식당 등록
 	
 		/**
-		 * admin_notice_delete_check.do : 공지사항 삭제 처리
+		 * admin_restaurant_delete_check.do : 공지사항 삭제 처리
 		 */
 		@RequestMapping(value="/admin_restaurant_delete_check.do", method=RequestMethod.POST)
 		public ModelAndView admin_restaurant_delete_check(String rid, HttpServletRequest request)
@@ -171,7 +171,7 @@ public class AdminController {
 			
 			mv.addObject("vo", vo);
 			mv.setViewName("/admin/admin_restaurant/admin_restaurant_content");
-			
+			System.out.println(rid);
 			return mv;
 		}
 		

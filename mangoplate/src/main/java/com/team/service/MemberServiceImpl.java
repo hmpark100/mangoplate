@@ -14,6 +14,16 @@ public class MemberServiceImpl implements MemberService{
 	private MangoMemberDAO memberDao;
 	
 	/**
+	 * 마이페이지 - 회원정보 수정
+	 */
+	
+	  @Override 
+	  public int getUpdate(MangoMemberVO vo) { 
+		  return memberDao.mypage_update(vo); 
+	  }
+	 
+	
+	/**
 	 * 마이페이지 - 회원 정보
 	 */
 	

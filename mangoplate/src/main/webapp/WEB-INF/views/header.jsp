@@ -8,7 +8,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
-<!-- <link rel="stylesheet" media="screen" href="https://www.mangoplate.com/assets/dist/home-cc0b8af0c9ad32f34e28c70162caf8a05a5ac4b1756a43825d6ce8cf94693e6a.css"> -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -570,9 +569,9 @@ form[name='joinForm'] #join_textbutton button {
 				<div>
 					<select name="hp" id="hp">
 						<option value="default">통신사</option>
-						<option value="010">SKT</option>
-						<option value="011">LGU+</option>
-						<option value="016">KT</option>
+						<option value="skt">SKT</option>
+						<option value="lgu">LGU+</option>
+						<option value="kt">KT</option>
 					</select> <input type="text" name="pnumber" id="pnum"
 						placeholder=" 전화번호 입력(000-0000-0000)">
 				</div>

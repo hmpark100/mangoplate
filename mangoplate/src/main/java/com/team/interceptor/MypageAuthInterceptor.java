@@ -21,7 +21,7 @@ public class MypageAuthInterceptor extends HandlerInterceptorAdapter {
 		SessionVO svo = (SessionVO)session.getAttribute("svo"); //로그인한 계정 : 자신의ID , 로그인하지 않은 사용자:null
 		if(svo == null) {
 			//로그인하지 않은 사용자 : null
-			response.sendRedirect("http://localhost:9000/mangoplate/login.do?auth=fail");
+			response.sendRedirect("http://localhost:9000/mangoplate/index.do?auth=fail");
 			
 			return false;
 		}

@@ -14,7 +14,8 @@ public class MangoRestDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	
-	/**
+	
+	/*
 	 * totalCount() : 페이징처리 전체 로우수 가져오기
 	 */
 	public int totalCount() {
@@ -61,6 +62,7 @@ public class MangoRestDAO {
 		
 		return (ArrayList<MangoRestVO>)list;
 	}
+	
 	
 	/**
 	 * insert : 게시글 등록

@@ -12,10 +12,10 @@
 	href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
 <script
 	src="http://localhost:9000/mangoplate/resources/js/jquery-3.6.0.min.js"></script>
-<script
-	src="http://localhost:9000/mangoplate/resources/js/mangoplate_jquery.js"></script>
-<script
-	src="http://localhost:9000/mangoplate/resources/js/mangoplate_index.js"></script>
+<!-- <script
+	src="http://localhost:9000/mangoplate/resources/js/mangoplate_jquery.js"></script> -->
+<!-- <script
+	src="http://localhost:9000/mangoplate/resources/js/mangoplate_index.js"></script> -->
 <script>
 $(document).ready(function() {
 	/* alert("1234");

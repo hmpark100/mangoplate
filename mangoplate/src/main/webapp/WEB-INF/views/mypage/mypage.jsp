@@ -198,134 +198,13 @@
 							</tr>
 
 						</table>
-						<button type="button" class="btn_style" id="profile_update">회원정보수정</button>
+						<a href="mypage_update.do?id=${ vo.id }"><button type="button" class="btn_style" id="profile_update">회원정보수정</button></a>
 					</div>
 				</div>
 			</div>
 		</section>
-		
-		<!-- <section class="mypage">
-		<div class="wish">
-				가고싶다가 하나도 클릭이 안되어있을때
-				<div class="wish_zero">
-					<p>가고싶다</p>
-					<img alt="" src="http://localhost:9000/mangoplate/resources/images/wishstar.png"> 하얀별 
-					<p>격하게 가고싶다..</p>
-					<span>식당의 '별' 아이콘을 누르면 가고싶은 곳을 쉽게 저장할 수 있습니다.</span>
-				</div>
-		</div>
-		
-		<div class="recent">	
-				최근본맛집이 하나도 없을때 또는 all clear버튼을 누른 경우
-				<div class="recent_zero">
-					<p>최근 본 맛집</p>
-					<p>거기가 어디였지?</p>
-					<span>내가 둘러 본 식당이 이 곳에 순서대로 기록됩니다.</span>
-				</div>
-		</div>	
-		</section> -->
 	</div>
-	<%-- 	
-	<div class="content">
-		<section class="information">
-			<div class="personality_head">
-				<h1>My Mangoplate</h1>
-				<p class="subtitle">Eat, Share, Be Happy.</p>
-				<p class="subtitle2">망고플레이트에 오신 것을 환영합니다</p>
-			</div>
-			<div class="personality">
-				<p>Profile</p>
-				<div class="selfie">
-					<img alt="" src="https://mp-seoul-image-production-s3.mangoplate.com/web/resources/mangoplate-logo-horizontal.svg">
-					<input type="file" name="file1">사진설정하기
-				</div>
-				<ul>
-					<li>
-						<label>성함</label>
-						<span id="id">정우정</span>
-						<span id="id">${vo.id}</span>
-					</li>
-					<li>
-						<label>전화번호</label>
-						<span id="pnumber">010-1111-1111</span>
-						<span id="pnumber">${vo.pnumber}</span>
-					</li>
-					<li>
-						<label>이메일</label>
-						<span id="id">friendship@naver.com</span>
-						<span id="id">${vo.id}</span>
-					</li>
-					<li>
-						<button type="button" class="btn_style" id="profile_update">회원정보수정</button>
-					</li>
-				</ul>
-			</div>
-		</section>
-		
-		<section class="mypage">
-		<div class="wish">
-			<c:choose>
-				<!-- 가고싶다가 하나도 클릭이 안되어있을때 -->
-				<c:when test="${}"> 
-				<div class="wish_zero">
-					<p>가고싶다</p>
-					<img alt="" src="http://localhost:9000/mangoplate/resources/images/wishstar.png"> <!-- 하얀별  -->
-					<p>격하게 가고싶다..</p>
-					<span>식당의 '별' 아이콘을 누르면 가고싶은 곳을 쉽게 저장할 수 있습니다.</span>
-				</div>
-				</c:when>
-				<c:otherwise>
-				<!-- 가고싶다 버튼이 클릭될때  -->
-				<table  class="wish_save">
-					<c:forEach var="vo" items="${}"> <!-- 주황별이 눌린 식당들이 리스트로 출력  -->
-						<tr>
-							<td>
-								<!-- 음식사진  -->
-								<!-- 식당명 -->
-								<!-- 평점 -->
-								<!-- 식당위치 -->	
-								<button class="btn-type-icon favorite wannago_btn "
-													data-restaurant_uuid="398759" data-action_id=""></button> <!-- 주황별이여야하는데 현재 하얀별 -->
-							</td>
-						</tr>
-					</c:forEach>
-				</table>
-				</c:otherwise>
-			</c:choose>
-		</div>
-		
-		<div class="recent">	
-			<c:choose>
-				<!-- 최근본맛집이 하나도 없을때 또는 all clear버튼을 누른 경우 -->
-				<c:when test="${}"> 
-				<div class="recent_zero">
-					<p>최근 본 맛집 </p>
-					<p>거기가 어디였지?</p>
-					<span>내가 둘러 본 식당이 이 곳에 순서대로 기록됩니다.</span>
-				</div>
-				</c:when>
-				<c:otherwise>
-				<!-- 최근본맛집이 한개라도 있을때  -->
-				<button type="button" class="recent_close" id="recent_close">X Clear All</button>
-				<table  class="recent_save">
-					<c:forEach var="vo" items="${}"> <!-- detail 페이지가 눌리자마자 이 list에 데이터가 넘어온다-->
-						<tr>
-							<td>
-								<!-- 음식사진  -->
-								<!-- 식당명 -->
-								<!-- 식당위치 -->	
-								<button class="btn-type-icon favorite wannago_btn "
-													data-restaurant_uuid="398759" data-action_id=""></button>
-							</td>
-						</tr>
-					</c:forEach>
-				</table>
-				</c:otherwise>
-			</c:choose>
-		</div>	
-		</section>
-	</div> 
---%>
+	
 	<!-- footer Include -->
 	<iframe src="footer.do" width="100%" height="750px" scrolling="no"
 		frameborder=0></iframe>

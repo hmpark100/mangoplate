@@ -22,13 +22,13 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 		
 		if(svo == null) {
 			//로그인하지 않은 사용자 : null
-			response.sendRedirect("http://localhost:9000/mangoplate/login.do?auth=fail");
+			response.sendRedirect("http://localhost:9000/mangoplate/index.do?auth=fail");
 			
 			return false;
 		}else {
 			//sid가 null이 아니고ㅡ admin 인 경우에만 접속
 			if(!svo.getId().equals("admin")) {
-				response.sendRedirect("http://localhost:9000/mangoplate/login.do?auth=fail");
+				response.sendRedirect("http://localhost:9000/mangoplate/index.do?auth=fail");
 				return false;
 			}
 		}

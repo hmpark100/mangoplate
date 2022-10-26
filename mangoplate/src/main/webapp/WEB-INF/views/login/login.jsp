@@ -8,7 +8,6 @@
 <title>Mangoplate</title>
 <link rel="stylesheet"  href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
 <script src="http://localhost:9000/mangoplate/resources/js/jquery-3.6.0.min.js"></script>
-<script src="http://localhost:9000/mangoplate/resources/js/mangoplate_jquery.js"></script>
 
 <script>
 	let join_result = '${join_result}';

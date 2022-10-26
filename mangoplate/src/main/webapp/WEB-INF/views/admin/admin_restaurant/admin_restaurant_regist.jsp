@@ -55,7 +55,7 @@
 	.admin_head {
 		/* border: 1px solid blue; */
 		width: 100%;
-		height: 300px;
+		height: 250px;
 		background-color: coral;
 	}
 	
@@ -99,7 +99,7 @@
 		<li><a href="admin.do">Admin</a></li>
 		<li><a href="admin_member_list.do">회원정보관리</a></li>
 		<li><a href="contact.asp">공지사항 관리</a></li>
-		<li><a href="about.asp">eatdeal 관리</a></li>
+		<li><a href="about.asp">EAT딜 관리</a></li>
 		<li><a href="admin_restaurant_list.do">식당등록 관리</a></li>
 	</ul>
 		
@@ -125,11 +125,11 @@
 				<li>
 					<label>음식종류</label>
 					<select name="rcategory">
-						<option value="양식">양식</option>
-						<option value="한식">한식</option>
-						<option value="중식">중식</option>
-						<option value="일식">일식</option>
-						<option value="아시안음식">아시안음식</option>
+						<option value="10">양식</option>
+						<option value="20">한식</option>
+						<option value="30">중식</option>
+						<option value="40">일식</option>
+						<option value="50">아시안음식</option>
 					</select>
 				</li>
 				<li>

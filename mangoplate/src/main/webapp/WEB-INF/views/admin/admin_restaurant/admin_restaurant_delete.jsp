@@ -24,7 +24,7 @@
 	.admin_head {
 		/* border: 1px solid blue; */
 		width: 100%;
-		height: 300px;
+		height: 250px;
 		background-color: coral;
 	}
 	
@@ -68,7 +68,7 @@
 		<li><a href="admin.do">Admin</a></li>
 		<li><a href="admin_member_list.do">회원정보관리</a></li>
 		<li><a href="contact.asp">공지사항 관리</a></li>
-		<li><a href="about.asp">eatdeal 관리</a></li>
+		<li><a href="about.asp">EAT딜 관리</a></li>
 		<li><a href="admin_restaurant_list.do">식당등록 관리</a></li>
 	</ul>
 		

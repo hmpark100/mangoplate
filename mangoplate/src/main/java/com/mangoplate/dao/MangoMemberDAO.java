@@ -11,12 +11,20 @@ import org.springframework.stereotype.Repository;
 
 import com.mangoplate.vo.MangoBoardStoryVO;
 import com.mangoplate.vo.MangoMemberVO;
+import com.mangoplate.vo.MangoRestVO;
 import com.mangoplate.vo.SessionVO;
 
 @Repository
 public class MangoMemberDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
+	
+	/**
+	 * update :  마이페이지 회원정보 수정 
+	 */
+	public int mypage_update(MangoMemberVO vo) {
+		return sqlSession.update("mapper.member.mypage_update",vo);
+	}
 	
 	/**
 	 * selectMypage : 마이페이지 회원정보 출력

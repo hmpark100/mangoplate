@@ -6,6 +6,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class MainController {
+
+
+	/**
+	 * error_page.do 페이지 호출
+	 */
+	@RequestMapping(value="/error_page.do", method=RequestMethod.GET)
+	public String error_page() {
+		return "error_page";
+	}
+	
 	@RequestMapping(value="/header.do", method=RequestMethod.GET)
 	public String header() {
 		return "header";

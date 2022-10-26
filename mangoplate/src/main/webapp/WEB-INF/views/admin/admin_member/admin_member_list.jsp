@@ -11,7 +11,7 @@
 <link rel="stylesheet"  href="http://localhost:9000/mangoplate/resources/css/am-pagination.css">
 <script src="http://localhost:9000/mangoplate/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/mangoplate/resources/js/am-pagination.js"></script>
-<script>
+<!-- <script>
 	$(document).ready(function(){
 		
 		//페이징 리스트 출력
@@ -38,7 +38,7 @@
 	    });
 		
  	});
-</script> 
+</script>  -->
 <style>
 	* {
 			margin: 0px;
@@ -55,7 +55,7 @@
 	.admin_head {
 		/* border: 1px solid blue; */
 		width: 100%;
-		height: 300px;
+		height: 250px;
 		background-color: coral;
 	}
 	
@@ -81,6 +81,10 @@
 		border: 1px solid red;
 		margin: 50px;
 	}
+	
+	tr:last-child {
+		border: none;	
+	}
 </style>
 </head>
 <body>
@@ -99,7 +103,7 @@
 		<li><a href="admin.do">Admin</a></li>
 		<li><a href="admin_member_list.do" class="active">회원정보관리</a></li>
 		<li><a href="contact.asp">공지사항 관리</a></li>
-		<li><a href="about.asp">eatdeal 관리</a></li>
+		<li><a href="about.asp">EAT딜 관리</a></li>
 		<li><a href="admin_restaurant_list.do">식당등록 관리</a></li>
 	</ul>
 		
