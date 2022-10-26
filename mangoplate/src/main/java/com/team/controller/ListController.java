@@ -35,7 +35,7 @@ public class ListController {
 	@RequestMapping(value="/restaurant_content.do", method = RequestMethod.GET)
 	public ModelAndView restaurant_content(String rcategory) {
 		ModelAndView mv = new ModelAndView();
-		ArrayList<MangoRestVO> list = listService.getContent(rcategory);
+		ArrayList<MangoRestVO> list = listService.getList(rcategory);
 		
 		mv.addObject("rcategory", rcategory);
 		mv.addObject("list", list);
@@ -48,12 +48,14 @@ public class ListController {
 	 * restaurant_detail.do : 식당 상세페이지 화면
 	 */
 	@RequestMapping(value="/restaurant_detail.do", method = RequestMethod.GET)
-	public String restaurant_detail(String rid) {
-		/* System.out.println(rid); */
+	public ModelAndView restaurant_detail(String rid) {
 		
-		MangoRestVO
+		MangoRestVO vo = listService.getContent(rid);
 		
-		return "/restaurant/restaurant_detail";
+		mv.addObject("vo", vo);
+		mv.setViewName("/restaurant/restaurant_detail");
+		
+		return mv;
 	}
 	
 	/**
