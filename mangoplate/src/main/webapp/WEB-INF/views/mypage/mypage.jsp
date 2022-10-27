@@ -21,13 +21,6 @@
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
-<script>
-	$(document).ready(function() {
-		$("#profile_update").click(function() {
-			/* 회원정보수정할 수 있는 페이지 호출  */
-		});
-	});
-</script>
 <style>
 * {
 	margin: 0px;
@@ -120,9 +113,10 @@
 	
 	.selfie img {
 		/* border : 1px solid black; */
-		width: 150px;
-		height: 150px;
+		width: 200px;
+		height: 200px;
 		display : inline-block;
+		margin-left: 120px;
 	}
 	
 	.selfie button {
@@ -171,8 +165,7 @@
 					<div class="selfie">
 						<img alt=""
 							src="http://localhost:9000/mangoplate/resources/images/profile.jpg">
-						<button type="button" class="btn_style">사진설정</button>
-						
+						<!-- <button type="button" class="btn_style">사진설정</button> -->
 					</div>
 					<div class="membership">
 						<table class="board" border=1>
