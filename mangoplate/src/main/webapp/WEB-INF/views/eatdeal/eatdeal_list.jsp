@@ -80,8 +80,8 @@ text-align: center;
 </style>
 </head>
 <body>
-	<!-- Header Include -->
-	<jsp:include page="../header.jsp"></jsp:include>
+	<!-- header -->
+	<iframe src="header.do" width="100%" height="61px" scrolling="no" frameborder=0 ></iframe>
 	
 	<div class="out">
 	<div class="in">
