@@ -166,7 +166,6 @@ public class AdminController {
 		@RequestMapping(value="/admin_restaurant_content.do", method=RequestMethod.GET)
 		public ModelAndView admin_restaurant_content(String rid) {
 			ModelAndView mv = new ModelAndView();
-			
 			MangoRestVO vo = restaurantService.getContent(rid);
 			
 			mv.addObject("vo", vo);
