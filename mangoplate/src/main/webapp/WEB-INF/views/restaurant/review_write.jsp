@@ -244,7 +244,7 @@ $(document).ready(function(){
 	</section>
 	<section class="review_content">
 		<article class="first">
-			<form name="reivewForm" action="review_write_check.do" method="post">
+			<form name="reivewForm" action="review_write_check.do" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="vname" value=${vo.rname }>
 				<div class="emotion">
 					<ul>

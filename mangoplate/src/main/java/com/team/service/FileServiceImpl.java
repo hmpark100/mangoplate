@@ -12,10 +12,42 @@ import com.mangoplate.vo.MangoBoardStoryVO;
 import com.mangoplate.vo.MangoEatdealVO;
 import com.mangoplate.vo.MangoNoticeVO;
 import com.mangoplate.vo.MangoRestVO;
+import com.mangoplate.vo.MangoReviewVO;
 
 @Service
 public class FileServiceImpl {
 
+	
+	/**
+	 * 리뷰: 파일 체크 후, vfile, vsfile 생성(메소드 오버로딩)
+	 */
+	public MangoReviewVO fileCheck(MangoReviewVO vo) {
+
+		if (vo.getFile1().getOriginalFilename().equals("")) {
+			vo.setVfile("");
+			vo.setVsfile(""); 
+		} else {
+			UUID uuid = UUID.randomUUID();
+
+			vo.setVfile(vo.getFile1().getOriginalFilename());
+			vo.setVsfile(uuid + "_" + vo.getFile1().getOriginalFilename()); 
+		}
+		return vo;
+	}
+
+	/**
+	 * 리뷰: 파일 upload 폴더에 저장(메소드 오버로딩)
+	 */
+	public void fileSave(MangoReviewVO vo, HttpServletRequest request) throws Exception {
+		if (!vo.getFile1().getOriginalFilename().equals("")) {
+			String path = request.getSession().getServletContext().getRealPath("/");
+			path += "\\resources\\upload\\";
+
+			File file = new File(path + vo.getVsfile()); 
+			vo.getFile1().transferTo(file); 
+		}
+	}
+	
 	/**
 	 * 식당등록 : 게시글 삭세 시 파일이 존재하면 삭제하기
 	 */

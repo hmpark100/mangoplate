@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.mangoplate.vo.MangoRestVO;
 import com.mangoplate.vo.MangoReviewVO;
+import com.team.service.FileServiceImpl;
 import com.team.service.ListServiceImpl;
 import com.team.service.ReviewServiceImpl;
 
@@ -21,6 +22,9 @@ public class ReviewController {
 	
 	@Autowired
 	private ReviewServiceImpl reviewService;
+	
+	@Autowired
+	private FileServiceImpl fileService;
 	
 	/**
 	 * review_write.do : 리뷰 작성 페이지 화면
@@ -41,20 +45,26 @@ public class ReviewController {
 	/**
 	 * review_write_check.do : 리뷰 작성하기
 	 */
-	@RequestMapping(value="/review_write_check.do", method = RequestMethod.POST)
-	public ModelAndView review_write_check(MangoReviewVO vo, HttpServletRequest request) throws Exception{
+	@RequestMapping(value = "/review_write_check.do", method = RequestMethod.POST)
+	public ModelAndView review_write_check(MangoReviewVO vo, HttpServletRequest request) throws Exception {
+		
+		vo = fileService.fileCheck(vo); //서비스쪽 메소드 호출(위의 주석처리 내용임)
+		
 		ModelAndView mv = new ModelAndView();
 		
-		int result = reviewService.getReview(vid);
-		
-		if(result==1) {
+		int result = reviewService.getReview(vo);
+		if(result == 1){
+			
+			fileService.fileSave(vo, request); //위코드를 이동한 서비스쪽 메소드 호출
+			
 			mv.setViewName("/restaurant/review_content");
-		}else {
+		}else{
 			mv.setViewName("error_page");
 		}
 		
 		return mv;
-	}//review-write-check-end
+	}
+	
 	
 	/**
 	 * review_content.do : 리뷰 보기 화면
