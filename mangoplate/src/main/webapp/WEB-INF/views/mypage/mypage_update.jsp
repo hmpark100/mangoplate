@@ -170,7 +170,7 @@ form[name='updateForm'] button[id="btnSearchAddr2"] {
 				<h3>회원정보 수정</h3>
 				<div class="updateForm">
 					<form name="updateForm"  action="mypage_update_check.do"  method="post" enctype="multipart/form-data">
-					<input type="hidden" name="id" value="${vo.id}">
+					<%-- <input type="hidden" name="id" value="${vo.id}"> --%>
 					
 						<ul>
 							<li>

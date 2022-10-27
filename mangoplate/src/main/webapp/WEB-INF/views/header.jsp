@@ -21,7 +21,7 @@
 <script
 	src="http://localhost:9000/mangoplate/resources/js/jquery-3.6.0.min.js"></script>
 <script
-	src="http://localhost:9000/mangoplate/resources/js/mangoplate_jquery.js"></script>
+	src="http://localhost:9000/mangoplate/resources/js/mangoplate_header.js"></script>
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
@@ -474,7 +474,7 @@ form[name='joinForm'] #join_textbutton button {
 						</button>
 					</li>
 
-					<li class="Header__MenuItem"><a href="mypage.do?id=${vo.id }"
+					<li class="Header__MenuItem"><a href="mypage.do"
 						class="Header__MenuLink" 
 						target="_parent"> <span class="Header__MenuText">마이페이지</span>
 					</a></li>
