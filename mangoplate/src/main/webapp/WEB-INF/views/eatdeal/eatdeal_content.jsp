@@ -106,10 +106,10 @@ function showDivs(n) {
 	<div class="in">
 	<table>
 		<tr>
-			<td><div class="stock">현재 재고 수량: ${ vo.stock }</div></td>
-			<td><a href="admin_eatdeal_update.do?eid=${ vo.eid }"><button type="button" class="btn_style2">수정하기</button></a></td>
+<%--	<td><div class="stock">현재 재고 수량: ${ vo.stock }</div></td>
+ 		<td><a href="admin_eatdeal_update.do?eid=${ vo.eid }"><button type="button" class="btn_style2">수정하기</button></a></td>
 			<td><a href="admin_eatdeal_delete.do?eid=${ vo.eid }"><button type="button" class="btn_style2">삭제하기</button></a></td>
-		</tr>
+--%>	</tr>
 		<tr> <%-- 이미지(슬라이드) --%>
 			<td>
 			
@@ -165,7 +165,7 @@ function showDivs(n) {
 		</tr>
 		
 	</table>
-	<a href="admin_eatdeal_purchase.do?eid=${ vo.eid }"><button type="button" class="btn_style1"><div class="purchase">구매하기</div></button></a>
+	<a href="eatdeal_purchase.do?eid=${ vo.eid }"><button type="button" class="btn_style1"><div class="purchase">구매하기</div></button></a>
 	</div>
 	</div>
 	

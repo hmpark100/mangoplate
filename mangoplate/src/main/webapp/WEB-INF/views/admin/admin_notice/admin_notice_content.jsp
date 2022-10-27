@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Mango Plate</title>
+<title>망고플레이트 - 공지사항</title>
 </head>
 <body>
 	<!-- Header Include -->

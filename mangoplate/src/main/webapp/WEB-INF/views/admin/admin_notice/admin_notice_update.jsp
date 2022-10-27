@@ -15,35 +15,44 @@
 	#upload_file {
 		/*border:1px solid red;*/
 		position:relative;
-		left:265px; top:-30px;
+		left:-665px; top:12px;
 		width:200px;  height:20px;
 		display:inline-block;	
 		background-color:white;	
 		font-size:12px;
 	}
+	 .btn_style {
+ 	border-radius: 4px;
+ }
+ .footer {
+  padding: 0 0 80px 0;
+ }
 </style>
 <script>
 	$(document).ready(function(){
 		//새로운 파일선택하는 이벤트 
-		$("input[type=file]").change(function(){
+		 $("input[type=file]").change(function(){
 			if(window.FileReader){
 				let fname = $(this)[0].files[0].name;
 				$("#upload_file").text(fname);
 			}
-		});
+		}); 
+		
+		
+		
 	});
 </script>
 </head>
 <body>
 	<!-- Header Include -->
-	<iframe src="http://localhost:9000/mangoplate/header.do" width="100%" height="160px" scrolling="no" frameborder=0 ></iframe>
+	<iframe src="http://localhost:9000/mangoplate/header.do" width="100%" height="131px" scrolling="no" frameborder=0 ></iframe>
 	
 	
 	<!---------------------------------------------->
 	<!--------------- Content ----------------------->
 	<!---------------------------------------------->
+	<div style="padding:0 0 15px 300px; color:#ff7f50; font-size: 24px; font-weight: bold;">공지사항 - 수정 페이지입니다</div>
 	<div class="content">
-		<h1>공지사항-수정하기</h1>
 		<form name="boardUpdateForm" action="admin_notice_update_check.do" method="post"
 			enctype="multipart/form-data">
 			<input type="hidden" name="nid" value="${vo.nid}">
@@ -61,23 +70,16 @@
 				<li>
 					<label>파일첨부</label>
 					<input type="file" name="file1">
-					<!-- JSTL의 if는 조건이 단하나로 체크될떄 사용, 조건이 여러개로 체크될 경우 choose/when -->
-					<c:choose>
-						<c:when test="${vo.nfile != null }"> <!-- if~else -->
-							<span id="upload_file">${vo.nfile}</span>
-						</c:when>
-						<c:otherwise>
-							<span id="upload_file">선택된 파일 없음</span>
-						</c:otherwise>	
-					</c:choose>	
+					<span id="upload_file">${ vo.nfile }</span>
 				</li>
 				<li>
-					<button type="button" class="btn_style" id="btnNoticeUpdate">수정완료</button>
-					<button type="reset" class="btn_style">다시쓰기</button>
-					<a href="admin_notice_content.do?nid=${vo.nid }"><button type="button" class="btn_style">이전페이지</button></a>
-					<a href="admin_notice_list.do"><button type="button" class="btn_style">리스트</button></a>
 				</li>
 			</ul>
+				<br>
+					<button type="button" class="btn_style" id="btnNoticeUpdate">수정완료</button>
+					<button type="reset" class="btn_style">다시쓰기</button>
+					<a href="admin_notice_list.do"><button type="button" class="btn_style">리스트</button></a>
+					<div class="footer"></div>
 		</form>
 			
 	</div>

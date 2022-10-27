@@ -294,4 +294,92 @@ public class EatdealController {
 	
 	
 	
+	
+	/**
+	 * eatdeal_list.do : Eatdeal 전체리스트
+	 */
+	@RequestMapping(value = "/eatdeal_list.do", method = RequestMethod.GET)
+	public ModelAndView eatdeal_list(String eid) {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		MangoEatdealVO vo = eatdealService.getContent(eid); //서비스쪽 메소드 호출
+		
+		mv.addObject("vo", vo);
+		
+		
+		ArrayList<MangoEatdealVO> list = eatdealService.getList();
+		
+		mv.addObject("list", list);
+		mv.setViewName("/eatdeal/eatdeal_list");
+		
+		return mv;
+	}
+	
+	/**
+	 * eatdeal_purchase.do : eatdeal 구매화면
+	 */
+	@RequestMapping(value = "/eatdeal_purchase.do", method = RequestMethod.GET)
+	public ModelAndView eatdeal_purchase(String eid) {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		//String nid = request.getParameter("nid");
+		//CgvNoticeDAO dao = new CgvNoticeDAO(); //DB는 서비스쪽에서 처리
+		//CgvNoticeVO vo = dao.select(nid);
+		MangoEatdealVO vo = eatdealService.getContent(eid);
+		
+		mv.addObject("vo", vo);
+		mv.setViewName("/eatdeal/eatdeal_purchase");
+		
+		return mv;
+	}
+	
+	/**
+	 * eatdeal_purchase_check.do 
+	 */
+	@RequestMapping(value="/eatdeal_purchase_check.do", method=RequestMethod.POST)
+	public ModelAndView eatdeal_purchase_check(String eid, HttpServletRequest request) throws Exception {
+	//	System.out.println("eid="+eid);
+		ModelAndView mv = new ModelAndView();
+		
+	//	MangoEatdealVO vo = eatdealService.getContent(eid);
+		
+		//CgvNoticeDAO dao = new CgvNoticeDAO(); //서비스쪽에서 처리
+		//int result = dao.update(vo);
+		int result = eatdealService.getPurchaseResult(eid);
+		if(result == 1){
+
+			
+			mv.setViewName("redirect:/eatdeal_list.do");
+		}else{
+			mv.setViewName("error_page");
+		}
+		
+		return mv;
+	}
+	
+	/**
+	 * eatdeal_content.do
+	 */
+	@RequestMapping(value = "/eatdeal_content.do", method = RequestMethod.GET)
+	public ModelAndView eatdeal_content(String eid) {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		//String nid = request.getParameter("nid");
+		//CgvNoticeDAO dao = new CgvNoticeDAO(); //DB는 서비스쪽에서 관리
+		//CgvNoticeVO vo = dao.select(nid);
+		MangoEatdealVO vo = eatdealService.getContent(eid); //서비스쪽 메소드 호출
+		
+		//if(vo != null){
+		//	dao.updateHits(nid);
+		//}
+		
+		mv.addObject("vo", vo);
+		mv.setViewName("/eatdeal/eatdeal_content");
+		
+		return mv;
+	}
+	
 }

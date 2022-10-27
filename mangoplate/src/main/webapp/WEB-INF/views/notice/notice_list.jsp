@@ -87,7 +87,7 @@
 		position:relative;
 		
 	}
-		 .footer {
+	 .footer {
   padding: 0 0 180px 0;
  }
 </style>
@@ -114,8 +114,8 @@
 	
 	<div class="out">
 	<div class="in">
-	<a href="admin_notice_write.do">
-					<button type="button" class="btn_style" id="btn_style1">글쓰기</button></a>
+<%--	<a href="admin_notice_write.do">
+					<button type="button" class="btn_style" id="btn_style1">글쓰기</button></a> --%>
 	<h1 class="title">공지사항</h1>
 	
 	
@@ -133,8 +133,8 @@
 			<td>
 				<div id="content_${ vo.nid }" class="content" style="white-space:pre;">${ vo.ncontent }
 				
-				<a href="admin_notice_update.do?nid=${ vo.nid }"><button type="button" class="btn_style" id="btn_style2">수정하기</button></a>	
-				<a href="admin_notice_delete.do?nid=${ vo.nid }"><button type="button" class="btn_style" id="btn_style3">삭제하기</button></a>
+<%-- 				<a href="admin_notice_update.do?nid=${ vo.nid }"><button type="button" class="btn_style" id="btn_style2">수정하기</button></a>	
+				<a href="admin_notice_delete.do?nid=${ vo.nid }"><button type="button" class="btn_style" id="btn_style3">삭제하기</button></a> --%>
 					<c:if test="${ vo.nsfile != null }">
 						<br><br>
 							<img src="http://localhost:9000/mangoplate/resources/upload/${ vo.nsfile }">
@@ -150,16 +150,3 @@
 	</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -287,4 +287,29 @@ public class NoticeController {
 		
 		return mv;
 	}
+	
+	
+	/**
+	 * notice_list.do : 공지사항 전체리스트
+	 */
+	@RequestMapping(value = "/notice_list.do", method = RequestMethod.GET)
+	public ModelAndView notice_list(String nid) {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		
+		MangoNoticeVO vo = noticeService.getContent(nid); //서비스쪽 메소드 호출
+		
+		mv.addObject("vo", vo);
+		
+		
+		ArrayList<MangoNoticeVO> list = noticeService.getList();
+		
+		mv.addObject("list", list);
+		mv.setViewName("/notice/notice_list");
+		
+		return mv;
+	}
+	
+	
 }

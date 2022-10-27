@@ -96,7 +96,7 @@ text-align: center;
 			</td>
 	
 			<td>
-			<a href="admin_eatdeal_write.do"><button type="button" class="btn_style2">글쓰기</button></a>
+		<%--	<a href="admin_eatdeal_write.do"><button type="button" class="btn_style2">글쓰기</button></a>  --%>
 			<td>
 		</tr>
 			
@@ -106,10 +106,8 @@ text-align: center;
 				
 					<tr>
 						<td>
-							<div class="container">			
-								<a href="admin_eatdeal_content.do?eid=${ vo.eid }">		
+							<div class="container">					
 								<img class="zero" src="http://localhost:9000/mangoplate/resources/upload/${ vo.esimage1 }">
-								</a>
 								<div class="center" style="font-size:40px;">매진된 상품입니다</div>
 								<div class="bottom-right" style="font-size: 24px; font-weight: bold;">₩ ${ vo.price }</div>	
 							</div>
@@ -137,9 +135,9 @@ text-align: center;
 					<tr>
 						<td>
 							<div class="container">
-								<a href="admin_eatdeal_content.do?eid=${ vo.eid }">
+								<a href="eatdeal_content.do?eid=${ vo.eid }">
 								<img src="http://localhost:9000/mangoplate/resources/upload/${ vo.esimage1 }" height=auto>
-								</a>
+							</a>
 								<div class="bottom-right" style="font-size: 24px; font-weight: bold;">₩ ${ vo.price }</div>
 							</div>
 							<br>

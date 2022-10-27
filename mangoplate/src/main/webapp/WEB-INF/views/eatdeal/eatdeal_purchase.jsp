@@ -53,7 +53,7 @@
 	<!---------------------------------------------->
 	<div style="padding:0 0 15px 300px; color:#ff7f50; font-size: 24px; font-weight: bold;">EAT딜 - 구매 페이지입니다</div>
 	<div class="content">
-		<form name="boardDeleteForm" action="admin_eatdeal_purchase_check.do" method="post">
+		<form name="boardDeleteForm" action="eatdeal_purchase_check.do" method="post">
 			<input type="hidden" name="eid" value="${vo.eid}">
 			<ul>
 				<li>
@@ -76,8 +76,8 @@
 			</ul>
 			<br>
 					<button type="submit" class="btn_style">구매완료</button>					
-					<a href="admin_eatdeal_content.do?eid=${vo.eid}"><button type="button" class="btn_style">이전페이지</button></a>
-					<a href="admin_eatdeal_list.do"><button type="button" class="btn_style">리스트</button></a>
+					<a href="eatdeal_content.do?eid=${vo.eid}"><button type="button" class="btn_style">이전페이지</button></a>
+					<a href="eatdeal_list.do"><button type="button" class="btn_style">리스트</button></a>
 					<div class="footer"></div>
 		</form>
 			
