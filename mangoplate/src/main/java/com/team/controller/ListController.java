@@ -49,6 +49,7 @@ public class ListController {
 	public ModelAndView restaurant_detail(String rid) {
 		ModelAndView mv = new ModelAndView();
 		MangoRestVO vo = listService.getContent(rid);
+		System.out.println(vo.getRname());
 		
 		mv.addObject("vo", vo);
 		mv.setViewName("/restaurant/restaurant_detail");
