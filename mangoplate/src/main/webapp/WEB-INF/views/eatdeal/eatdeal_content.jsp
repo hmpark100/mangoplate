@@ -37,6 +37,7 @@ function showDivs(n) {
   	}
  .in { 
  	width:768px;
+ 	max-width:768px;
  	background-color:#ffffff;
  	/* margin: 0 auto; */
  	position:relative;
@@ -149,9 +150,9 @@ function showDivs(n) {
 				<div style="padding:0px 15px">
 					<div style="position: relative; display: block; height: 1px; margin: 32px 15px; background-color: #E9E9E9; color:#4f4f4f;"></div>
 					<div style="font-size:18px; margin: 0 15px 32px; color:#4f4f4f;">방문포장이 ${ vo.packaging }한 상품입니다.</div>
-					<div style="white-space:pre; font-size:16px; color:#4f4f4f;">${ vo.scontent }</div>
+					<div style="white-space:pre-wrap; font-size:16px; color:#4f4f4f;">${ vo.scontent }</div>
 					<br><br>
-					<div style="white-space:pre; font-size:16px; color:#4f4f4f;">${ vo.common }</div>
+					<div style="white-space:pre-wrap; font-size:16px; color:#4f4f4f;">${ vo.common }</div>
 					
 				</div>
 			</td>

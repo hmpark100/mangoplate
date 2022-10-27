@@ -32,7 +32,7 @@
  	
     font-family: '함초롱바탕';
     
-    padding: 10px 0 0 350px;
+    padding: 15px 0 10px 350px;
  }
  div.price {
  	font-size: 20px;

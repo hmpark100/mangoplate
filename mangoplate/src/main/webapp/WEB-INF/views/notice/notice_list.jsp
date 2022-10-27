@@ -84,6 +84,7 @@
 	img {
 		display:block;
 		width:auto;
+		max-width:1300px;
 		position:relative;
 		
 	}

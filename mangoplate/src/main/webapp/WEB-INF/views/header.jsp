@@ -452,7 +452,7 @@ form[name='joinForm'] #join_textbutton button {
 
 				<ul class="Header__MenuList">
 					<li class="Header__MenuItem Header__MenuItem--New"><a
-						href="/admin_eatdeal_list.do" class="Header__MenuLink"
+						href="http://localhost:9000/mangoplate/eatdeal_list.do" class="Header__MenuLink"
 						target="_parent"> <span
 						class="Header__MenuText">EAT딜</span>
 					</a></li>
@@ -484,7 +484,7 @@ form[name='joinForm'] #join_textbutton button {
 			<c:otherwise>
 				<ul class="Header__MenuList">
 					<li class="Header__MenuItem Header__MenuItem--New"><a
-						href="/admin_eatdeal_list.do" class="Header__MenuLink"
+						href="http://localhost:9000/mangoplate/eatdeal_list.do" class="Header__MenuLink"
 						target="_parent"> <span
 							class="Header__MenuText">EAT딜</span>
 					</a></li>
