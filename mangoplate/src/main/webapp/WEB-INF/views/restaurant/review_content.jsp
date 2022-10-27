@@ -153,7 +153,7 @@
 				</div>
 			</div>
 			<div>
-				<%-- <p><%= vo.getVcontent() %></p> --%>
+				<p><%= vo.vcontent() %></p>
 			</div>
 			<div>
 				<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg">

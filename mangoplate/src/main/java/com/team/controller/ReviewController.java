@@ -1,5 +1,7 @@
 package com.team.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,12 +67,25 @@ public class ReviewController {
 		return mv;
 	}
 	
-	
 	/**
 	 * review_content.do : 리뷰 보기 화면
 	 */
 	@RequestMapping(value="/review_content.do", method = RequestMethod.GET)
 	public String review_content() {
 		return "/restaurant/review_content";
+	}
+	
+	/**
+	 * restaurant_detail.do : 식당 상세페이지에 리뷰 출력
+	 */
+	@RequestMapping(value="/restaurant_detail.do", method = RequestMethod.GET)
+	public ModelAndView restaurant_detail_review(String vname) {
+		ModelAndView mv = new ModelAndView();
+		ArrayList<MangoReviewVO> list = reviewService.getReviewList(vname);
+		
+		mv.addObject("list", list);
+		mv.setViewName("/restaurant/restaurant_content");
+		
+		return mv;
 	}
 }
