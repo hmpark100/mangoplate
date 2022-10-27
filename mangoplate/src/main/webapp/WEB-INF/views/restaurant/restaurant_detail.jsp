@@ -28,7 +28,7 @@
 							<header>
 								<div class="restaurant_title_wrap">
 									<span class="title">
-										<h1 class="restaurant_name">${vo.rname }1111</h1> <strong
+										<h1 class="restaurant_name">${vo.rname }</h1> <strong
 										class="rate-point expected"> <span>4.4</span>
 									</strong>
 
@@ -145,7 +145,7 @@
 								<tbody>
 									<tr class="only-desktop">
 										<th>주소</th>
-										<td>서울특별시 마포구 월드컵북로54길 17<br> <span
+										<td>${vo.raddr }<br> <span
 											class="Restaurant__InfoAddress--Rectangle">지번</span> <span
 											class="Restaurant__InfoAddress--Text">서울시 마포구 상암동 1597</span>
 										</td>
@@ -153,23 +153,23 @@
 
 									<tr class="only-desktop">
 										<th>전화번호</th>
-										<td>02-303-1950</td>
+										<td>${vo.rcontact }</td>
 									</tr>
 
 									<tr>
 										<th>식당 종류</th>
-										<td><span>국수 / 면 요리</span></td>
+										<td><span>${vo.rcategory }</span></td>
 									</tr>
 
 									<tr>
 										<th>가격대</th>
-										<td>만원 미만</td>
+										<td>${vo.rprice }</td>
 									</tr>
 
 								</tbody>
 							</table>
 
-							<p class="update_date">업데이트 : 2019. 8. 6</p>
+							<p class="update_date">업데이트 : ${vo.rdate }</p>
 
 							<div id="reviewListFocusId"></div>
 						</section>

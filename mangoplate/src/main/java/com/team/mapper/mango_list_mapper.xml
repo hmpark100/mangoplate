@@ -14,6 +14,6 @@
 	<!-- detail content -->
 	<select id="content" parameterType="java.lang.String" resultType="com.mangoplate.vo.MangoRestVO" >
 		select rownum rno, rid, rname, raddr, rcontact, rprice, rcategory, 
-		rdate, rhits, rimage, rsimage from mg_restaurant where rid = #{rid}
+		to_char(rdate, 'yyyy-mm-dd') rdate, rhits, rimage, rsimage from mg_restaurant where rid = #{rid}
 	</select>
 </mapper>
