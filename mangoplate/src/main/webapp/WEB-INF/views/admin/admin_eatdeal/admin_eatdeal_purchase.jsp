@@ -25,21 +25,21 @@
  	
     font-family: '함초롱바탕';
     
-    padding: 0 0 10px 270px;
+    padding: 0 0 10px 350px;
  }
  div.menu {
  	font-size: 20px;
  	
     font-family: '함초롱바탕';
     
-    padding: 10px 0 0 270px;
+    padding: 10px 0 0 350px;
  }
  div.price {
  	font-size: 20px;
  	
     font-family: '함초롱바탕';
    
-    padding: 10px 0 0 270px;
+    padding: 10px 0 0 350px;
  }
 </style>
 </head>

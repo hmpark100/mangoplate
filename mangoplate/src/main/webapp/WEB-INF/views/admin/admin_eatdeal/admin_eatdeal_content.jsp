@@ -165,7 +165,15 @@ function showDivs(n) {
 		</tr>
 		
 	</table>
-	<a href="admin_eatdeal_purchase.do?eid=${ vo.eid }"><button type="button" class="btn_style1"><div class="purchase">구매하기</div></button></a>
+	<c:choose>
+		<c:when test="${ vo.stock > 0}">
+			<a href="admin_eatdeal_purchase.do?eid=${ vo.eid }"><button type="button" class="btn_style1"><div class="purchase">구매하기</div></button></a>
+		</c:when>
+		<c:otherwise>
+			<button type="button" class="btn_style1"><div class="purchase">재고가 모두 소진되었습니다</div></button>
+		</c:otherwise>
+	</c:choose>
+	
 	</div>
 	</div>
 	
