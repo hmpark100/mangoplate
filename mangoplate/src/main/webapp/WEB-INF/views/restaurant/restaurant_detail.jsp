@@ -37,7 +37,7 @@
 
 									<div class="restaurant_action_button_wrap">
 										
-										<a href="http://localhost:9000/mangoplate/review_write.do">
+										<a href="http://localhost:9000/mangoplate/review_write.do?rid=${vo.rid}">
 										<button class="review_writing_button" data-restaurant_key="onGDjypuMJMF">
 											<i class="review_writing_button_icon"></i> <span
 												class="review_writing_button_text">리뷰쓰기</span>
