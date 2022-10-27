@@ -28,7 +28,7 @@
 							<header>
 								<div class="restaurant_title_wrap">
 									<span class="title">
-										<h1 class="restaurant_name">${vo.rname }</h1> <strong
+										<h1 class="restaurant_name">${vo.rname }1111</h1> <strong
 										class="rate-point expected"> <span>4.4</span>
 									</strong>
 

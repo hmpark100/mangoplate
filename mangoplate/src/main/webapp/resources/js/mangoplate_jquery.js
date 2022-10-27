@@ -224,24 +224,6 @@ $(document).ready(function(){
 	
 	
 	/*********************
-		회원정보수정 비밀번호, 비밀번호 확인 비교
-	**********************/
-	$("#mypagecpass").on("blur",()=>{
-		if($("#mypagepass").val() != "" && $("#mypagecpass").val() != ""){
-			if($("#mypagepass").val() == $("#mypagecpass").val()){
-				$("#mypagepassCheckMsg").text("*비밀번호가 동일합니다.")
-					.css("color","blue").css("font-size","13px").css("margin-bottom","15px");
-			}else{
-				$("#mypagepassCheckMsg").text("*비밀번호가 동일하지 않습니다. 다시 입력해주세요.")
-					.css("color","red").css("font-size","13px").css("margin-bottom","15px");
-
-				$("#mypagecpass").val("");
-				$("#mypagepass").val("").focus();
-			}
-		}//else{} --> 회원가입 폼의 유효성 체크로 진행됨
-	});
-	
-	/*********************
 		비밀번호, 비밀번호 확인 비교
 	**********************/
 	$("#cpass").on("blur",()=>{
@@ -259,17 +241,18 @@ $(document).ready(function(){
 		}//else{} --> 회원가입 폼의 유효성 체크로 진행됨
 	});
 	
+	
 	/*********************
 		회원정보수정 비밀번호, 비밀번호 확인 비교
 	**********************/
 	$("#mypagecpass").on("blur",()=>{
 		if($("#mypagepass").val() != "" && $("#mypagecpass").val() != ""){
 			if($("#mypagepass").val() == $("#mypagecpass").val()){
-				$("#passCheckMsg").text("*비밀번호가 동일합니다.")
-					.css("color","blue").css("font-size","11px").css("margin-bottom","15px");
+				$("#mypagepassCheckMsg").text("*비밀번호가 동일합니다.")
+					.css("color","blue").css("font-size","13px").css("margin-bottom","15px");
 			}else{
-				$("#passCheckMsg").text("*비밀번호가 동일하지 않습니다. 다시 입력해주세요.")
-					.css("color","red").css("font-size","11px").css("margin-bottom","15px");
+				$("#mypagepassCheckMsg").text("*비밀번호가 동일하지 않습니다. 다시 입력해주세요.")
+					.css("color","red").css("font-size","13px").css("margin-bottom","15px");
 
 				$("#mypagecpass").val("");
 				$("#mypagepass").val("").focus();
