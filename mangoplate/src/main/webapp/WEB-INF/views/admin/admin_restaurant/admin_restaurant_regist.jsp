@@ -10,32 +10,13 @@
 <link rel="stylesheet"  href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
 <link rel="stylesheet"  href="http://localhost:9000/mangoplate/resources/css/am-pagination.css">
 <script src="http://localhost:9000/mangoplate/resources/js/jquery-3.6.0.min.js"></script>
-<script src="http://localhost:9000/mangoplate/resources/js/am-pagination.js"></script>
 <script>
 	$(document).ready(function(){
-		
-		//페이징 리스트 출력
-		var pager = jQuery('#ampaginationsm').pagination({
-		
-		    maxSize: 7,	    		// max page size
-		    totals: '${dbCount}',	// total rows	
-		    page: '${rpage}',		// initial page		
-		    pageSize: '${pageSize}',	// max number items per page
-		
-		    // custom labels		
-		    lastText: '&raquo;&raquo;', 		
-		    firstText: '&laquo;&laquo;',		
-		    prevText: '&laquo;',		
-		    nextText: '&raquo;',
-				     
-		    btnSize:'sm'	// 'sm'  or 'lg'		
+		$("#btnNoticeWrite").click(function(){
+			alert("crazy");
+				boardWriteForm.submit();
+			}
 		});
-		
-		//페이징 번호 클릭 시 이벤트 처리
-		jQuery('#ampaginationsm').on('am.pagination.change',function(e){		
-			   jQuery('.showlabelsm').text('The selected page no: '+e.page);
-	           $(location).attr('href', "http://localhost:9000/mangoplate/admin_member_list.do?rpage="+e.page);         
-	    });
 		
  	});
 </script> 
@@ -55,7 +36,7 @@
 	.admin_head {
 		/* border: 1px solid blue; */
 		width: 100%;
-		height: 250px;
+		height: 300px;
 		background-color: coral;
 	}
 	
@@ -99,7 +80,7 @@
 		<li><a href="admin.do">Admin</a></li>
 		<li><a href="admin_member_list.do">회원정보관리</a></li>
 		<li><a href="contact.asp">공지사항 관리</a></li>
-		<li><a href="about.asp">EAT딜 관리</a></li>
+		<li><a href="about.asp">eatdeal 관리</a></li>
 		<li><a href="admin_restaurant_list.do">식당등록 관리</a></li>
 	</ul>
 		
@@ -125,11 +106,11 @@
 				<li>
 					<label>음식종류</label>
 					<select name="rcategory">
-						<option value="양식">양식</option>
-						<option value="한식">한식</option>
-						<option value="중식">중식</option>
-						<option value="일식">일식</option>
-						<option value="아시안음식">아시안음식</option>
+						<option value="10">양식</option>
+						<option value="20">한식</option>
+						<option value="30">중식</option>
+						<option value="40">일식</option>
+						<option value="50">아시안음식</option>
 					</select>
 				</li>
 				<li>
@@ -139,9 +120,9 @@
 				<li>
 					<button type="button" class="btn_style" id="btnNoticeWrite">등록완료</button>
 					<button type="reset" class="btn_style">다시쓰기</button>
-					<a href="http://localhost:9000/mangoplate/admin/admin_restaurant_list.do">
+					<a href="http://localhost:9000/mangoplate/admin_restaurant_list.do">
 						<button type="button" class="btn_style">리스트</button></a>
-					<a href="http://localhost:9000/mangoplate/admin/admin.do"><button type="button" class="btn_style">관리자홈</button></a>
+					<a href="http://localhost:9000/mangoplate/admin.do"><button type="button" class="btn_style">관리자홈</button></a>
 				</li>
 			</ul>
 		</form>
@@ -152,10 +133,4 @@
 	
 </body>
 </html>
-
-
-
-
-
-
 
