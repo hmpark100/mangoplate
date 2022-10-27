@@ -12,14 +12,13 @@
 <script src="http://localhost:9000/mangoplate/resources/js/jquery-3.6.0.min.js"></script>
 <script>
 	$(document).ready(function(){
-		$("#btnNoticeWrite").click(function(){
-			alert("crazy");
-				boardWriteForm.submit();
-			}
+		
+		$('#btnNoticeWrite').click(function(){
+			boardWriteForm.submit();
 		});
 		
  	});
-</script> 
+</script>
 <style>
 	* {
 			margin: 0px;
