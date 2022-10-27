@@ -60,6 +60,9 @@
 		class="com.mangoplate.dao.MangoRestDAO"></beans:bean>
 	<beans:bean id="listDao"
 		class="com.mangoplate.dao.MangoListDAO"></beans:bean>
+	<beans:bean id="reviewDao"
+		class="com.mangoplate.dao.MangoReviewDAO"></beans:bean>	
+		
 
 	<!-- Interceptor 객체 생성 -->
 	<beans:bean id="authInterceptor" class="com.team.interceptor.AuthInterceptor"></beans:bean>

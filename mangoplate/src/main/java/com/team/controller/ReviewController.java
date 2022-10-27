@@ -1,15 +1,17 @@
 package com.team.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mangoplate.dao.MangoReviewDAO;
 import com.mangoplate.vo.MangoRestVO;
 import com.mangoplate.vo.MangoReviewVO;
 import com.team.service.ListServiceImpl;
+import com.team.service.ReviewServiceImpl;
 
 @Controller
 public class ReviewController {
@@ -17,6 +19,8 @@ public class ReviewController {
 	@Autowired
 	private ListServiceImpl listService;
 	
+	@Autowired
+	private ReviewServiceImpl reviewService;
 	
 	/**
 	 * review_write.do : 리뷰 작성 페이지 화면
@@ -38,10 +42,18 @@ public class ReviewController {
 	 * review_write_check.do : 리뷰 작성하기
 	 */
 	@RequestMapping(value="/review_write_check.do", method = RequestMethod.POST)
-	public ModelAndView review_write_check(MangoReviewVO vo) {
+	public ModelAndView review_write_check(MangoReviewVO vo, HttpServletRequest request) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		
+		int result = reviewService.getReview(vid);
 		
+		if(result==1) {
+			mv.setViewName("/restaurant/review_content");
+		}else {
+			mv.setViewName("error_page");
+		}
+		
+		return mv;
 	}//review-write-check-end
 	
 	/**

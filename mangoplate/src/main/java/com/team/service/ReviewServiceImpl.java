@@ -1,5 +1,10 @@
 package com.team.service;
 
-public class ReviewServiceImpl implements ReviewService{
+import org.springframework.stereotype.Service;
 
+@Service
+public class ReviewServiceImpl implements ReviewService{
+	
+	
+	
 }
