@@ -6,12 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>CGV</title>
-<link rel="stylesheet"
-	href="http://localhost:9000/mangpoplate/resources/css/mangoplate.css">
+<link rel="stylesheet"  href="http://localhost:9000/mangoplate/resources/css/mangoplate.css">
 </head>
 <body>
 	<!-- Header Include -->
-	<jsp:include page="../header.jsp"></jsp:include>
+	<iframe src="http://localhost:9000/mangoplate/header.do" width="100%"
+		height="61px" scrolling="no" frameborder=0></iframe>
+	<%-- <jsp:include page="../header.jsp"></jsp:include> --%>
 
 	<!---------------------------------------------->
 	<!--------------- Content ----------------------->

@@ -19,12 +19,14 @@
 	<!---------------------------------------------->
 	<!--------------- Content ----------------------->
 	<!---------------------------------------------->
-	<a href="boardstory_delete.do?sid=${vo.sid }">
-		<button type="button" class="btn_style">삭제하기</button>
-	</a>
-	<a href="boardstory_update.do?sid=${vo.sid }">
-		<button type="button" class="btn_style">수정하기</button>
-	</a>
+	<c:if test="${sessionScope.svo.id == 'admin' }">
+		<a href="boardstory_delete.do?sid=${vo.sid }">
+			<button type="button" class="btn_style">삭제하기</button>
+		</a>
+		<a href="boardstory_update.do?sid=${vo.sid }">
+			<button type="button" class="btn_style">수정하기</button>
+		</a>
+	</c:if>
 	<main class="Story">
 		<div class="Story__BaseInfoContainer">
 			<header class="StoryHeader"
@@ -82,13 +84,12 @@
 					<p class="StoryContent__Caption">${vo.scontent }</p>
 					<section
 						class="Story__Content Story__RestaurantContent StoryRestaurantContent"
-						data-key="3Bs8ZNgdzo">
+						data-key="J665MXlXw4">
 						<a class="StoryRestaurantContent__Link"
-							href="/restaurants/3Bs8ZNgdzo"> <span
-							class="StoryRestaurantContent__Metro">광주시</span>
+							href="http://localhost:9000/mangoplate/admin_restaurant_content.do?rid="> <span
+							class="StoryRestaurantContent__Metro">광주 광산구</span>
 							<h2 class="StoryRestaurantContent__RestaurantNameWrap">
-								<span class="StoryRestaurantContent__RestaurantName ">남한산성
-									건강한밥상</span>
+								<span class="StoryRestaurantContent__RestaurantName ">송정떡갈비</span>
 								<button class="StoryRestaurantContent__RestaurantInfoButton">
 									<i class="StoryRestaurantContent__RestaurantInfoButtonIcon"></i>
 								</button>

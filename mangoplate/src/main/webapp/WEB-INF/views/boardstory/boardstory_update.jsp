@@ -34,7 +34,9 @@
 </head>
 <body>
 	<!-- Header Include -->
-	<jsp:include page="../header.jsp"></jsp:include>
+	<iframe src="http://localhost:9000/mangoplate/header.do" width="100%"
+		height="61px" scrolling="no" frameborder=0></iframe>
+	<%-- <jsp:include page="../header.jsp"></jsp:include> --%>
 	
 	<!---------------------------------------------->
 	<!--------------- Content ----------------------->
@@ -50,7 +52,7 @@
 				<li><label>제목</label> <input type="text" name="stitle" id="stitle" value="${vo.stitle }"></li>
 				<li><label>소제목</label> <input type="text" name="sstitle" id="sstitle" value="${vo.sstitle }"></li>
 				<li><label>내용</label> <textarea name="scontent">${vo.scontent }</textarea></li>
-				<li><label>이미지</label> <input type="file" name="file1"><span id="upload_file">${vo.simage}</span></li>
+				<li><label>이미지</label> <input type="file" name="file1">
 				<li>
 					<button type="button" class="btn_style" id="btnBoardStoryUpdate">수정완료</button>
 					<button type="reset" class="btn_style">다시쓰기</button> 

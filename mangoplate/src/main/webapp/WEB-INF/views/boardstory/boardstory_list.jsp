@@ -30,11 +30,13 @@
 		<article class="contents">
 			<section class="module editors-pick">
 				<div class="inner">
-					<tr>
-						<td colspan="4"><a href="boardstory_write.do">
-								<button type="button" class="btn_style">글쓰기</button>
-						</a></td>
-					</tr>
+					<c:if test="${sessionScope.svo.id == 'admin' }">
+						<tr>
+							<td colspan="4"><a href="boardstory_write.do">
+									<button type="button" class="btn_style">글쓰기</button>
+							</a></td>
+						</tr>
+					</c:if>
 					<h1 class="title only-desktop">에디터 입맛별 맛집 매거진</h1>
 					<ul class="list-editors-pick">
 						<c:forEach var="vo" items="${list}">
