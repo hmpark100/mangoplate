@@ -46,7 +46,46 @@ $(document).ready(function() {
 	if(join_result == 'ok'){
 		alert("회원가입에 성공하셨습니다. 로그인을 진행해주세요.");
 	}
-});
+	
+	/**
+	* index 페이지 로딩 시 잇딜 리스트 가져오기
+	**/
+	initEatdealList();
+	
+	function initEatdealList(){
+		//Ajax를 이용한 데이터 가져오기
+		$.ajax({
+			url : "eatdeal_list_json.do?rpage=1",
+			success : function(result){
+				/* alert(result); */
+				//1.  콜백함수의 결과인 result 값은 문자열을 JSON 객체로 변환
+				let eatdeal = JSON.parse(result);
+				//2. Dynamic HTML을 이용하여 JSON 결과를 출력하는 코드생성
+				let	output = "<div class='eatdeal_table'>";
+				for(data of eatdeal.list){
+				 	output += "<table class='eatdeal_list'>";
+					output += "<tr>";
+					output += "<th><img src='http://localhost:9000/mangoplate/resources/upload/"+data.esimage1+"'></th>";
+					output += "</tr>";
+					output += "<tr>";
+					output += "<td>"+ data.ename +"</td>";
+					output += "<td>"+ data.region + " - " +data.menu +"</td>";
+					output += "</tr>";
+					output += "</table>";
+				}
+				output += "</div>";
+				 
+				//3. 생성된 Dynamic HTML 코드를 해당위치에 출력 
+				$("div.index_eatdeal > a").after(output);
+				$("div.index_restaurant > a").after(output);
+				$("div.index_boardstory > a").after(output);
+				
+				//4. Dynamic HTML 코드에서 이벤트 처리 진행
+			}//success
+		});//ajax
+	}// initNoticeList
+	
+}); //ready
 </script>
 
 <style>
@@ -56,17 +95,18 @@ $(document).ready(function() {
 
 /* 컨텐츠 css */
 .index_restaurant, .index_boardstory, .index_eatdeal {
-	border: 1px solid red;
-	margin: 50px;
+	/* border: 1px solid red; */
+	margin-top: 50px;
+	margin-left: 20px;
 }
 	h3{
-	border: 1px solid red;
+	/* border: 1px solid red; */
 	font-weight: bold;
 	color: coral;
 	display: inline-block;
 }
 	.index_restaurant p, .index_boardstory p, .index_eatdeal p {
-	border: 1px solid blue;
+	/* border: 1px solid blue; */
 	color: gray;
 	display: inline-block;
 	float: right;
@@ -75,17 +115,45 @@ $(document).ready(function() {
 	text-decoration: underline;
 }
 
-table td {
-	border: 27px solid white;
-	width: 550px;
-	height: 265px;
+.eatdeal_table {
+	/* border: 2px solid red; */
+	width: 100%;
+	height: 350px;
+}
+table {
+	/* border: 1px solid green; */
+	margin: 10px;
+	float: left;
+	
+}
+
+table img{
+	width: 450px;
+	height: 250px;
+	
+}
+table td:nth-child(1){
+	/* border: 1px solid red; */
+	/* width: 550px;
+	height: 265px; */
 	margin: 0px;
 	padding: 0px;
 	font-size: 30px;
-	color: white;
-	text-align: center;
-	background-image:
-		url("http://localhost:9000/mangoplate/resources/images/test1.jpg");
+	/* text-align: center; */
+	display:block;
+	font-weight: normal;
+}
+
+table td:nth-child(2) {
+	/* border: 1px solid red; */
+	/* width: 550px;
+	height: 265px; */
+	margin: 0px;
+	padding: 0px;
+	/* font-size: 30px;
+	text-align: center; */
+	color: gray;
+	display:block;
 	font-weight: normal;
 }
 
@@ -163,17 +231,7 @@ table td {
 			<a href="http://localhost:9000/mangoplate/restaurant_list.do">
 				<p>리스트 더보기</p>
 			</a>
-			<table class="art">
-			<tr>
-				<td><span>군자역 맛집 베스트 10곳</span><br> <span>"군자역 우리
-						동네 핫플 총정리"</span></td>
-				<td><span>군자역 맛집 베스트 10곳</span><br> <span>"군자역 우리
-						동네 핫플 총정리"</span></td>
-				<td><span>군자역 맛집 베스트 10곳</span><br> <span>"군자역 우리
-						동네 핫플 총정리"</span></td>
-			</tr>
-			
-		</table>
+			<!-- Ajax + Dynamic HTML로 생성된 맛집리스트 출력위치 -->
 		</div>
 	</section>
 	
@@ -191,9 +249,10 @@ table td {
 	<section>
 		<div class="index_eatdeal">
 			<h3>EAT딜을 판매중인 식당</h3>
-			<a href="http://localhost:9000/mangoplate/_list.do">
+			<a href="http://localhost:9000/mangoplate/eatdeal_list.do">
 				<p>메뉴 더보기</p>
 			</a>
+			<!-- Ajax + Dynamic HTML로 생성된 eatdeal 출력위치 -->
 		</div>	
 	</section>
 	

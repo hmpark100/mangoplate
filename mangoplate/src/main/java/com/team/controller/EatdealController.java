@@ -8,8 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.mangoplate.dao.MangoEatdealDAO;
 import com.mangoplate.vo.MangoEatdealVO;
 import com.team.service.EatdealServiceImpl;
 import com.team.service.FileServiceImpl;
@@ -22,6 +27,100 @@ public class EatdealController {
 	
 	@Autowired
 	private FileServiceImpl fileService;
+	
+	/**
+	 * eatdeal_content_json.do : 잇딜 내용 Ajax로 호출
+	 */
+	@ResponseBody
+	@RequestMapping(value="/eatdeal_content_json.do", method=RequestMethod.GET, produces = "text/plain;charset=UTF-8")
+	public String eatdeal_content_json(String eid) {
+
+		MangoEatdealDAO dao = new MangoEatdealDAO();
+		MangoEatdealVO vo = dao.select(eid);
+		/*
+		 * if(vo != null){ dao.updateHits(eid); }
+		 */
+		Gson gson = new Gson();
+		JsonObject jobject = new JsonObject();
+		jobject.addProperty("eid", vo.getEid());
+		jobject.addProperty("ename", vo.getEname());
+		jobject.addProperty("region", vo.getRegion());
+		jobject.addProperty("packaging", vo.getPackaging());
+		jobject.addProperty("menu", vo.getMenu());
+		jobject.addProperty("price", vo.getPrice());
+		jobject.addProperty("scontent", vo.getScontent());
+		jobject.addProperty("common", vo.getCommon());
+		jobject.addProperty("eimage1", vo.getEimage1());
+		jobject.addProperty("esimage1", vo.getEsimage1());
+		jobject.addProperty("eimage2", vo.getEimage2());
+		jobject.addProperty("esimage2", vo.getEsimage2());
+
+		return gson.toJson(jobject);
+	}
+	
+	/**
+	 * eatdeal_list_json.do : 공지사항 전체 리스트 Ajax로 호출
+	 */
+	@ResponseBody
+	@RequestMapping(value="/eatdeal_list_json.do", method=RequestMethod.GET, produces = "text/plain;charset=UTF-8")
+	public String eatdeal_list_json(String rpage) {
+		
+		MangoEatdealDAO dao = new MangoEatdealDAO();
+
+		//페이징 처리 - startCount, endCount 구하기
+			int startCount = 0;
+			int endCount = 0;
+			int pageSize = 3;	//한페이지당 게시물 수
+			int reqPage = 1;	//요청페이지	
+			int pageCount = 1;	//전체 페이지 수
+			int dbCount = dao.totalCount();	//DB에서 가져온 전체 행수
+			
+			//총 페이지 수 계산
+			if(dbCount % pageSize == 0){
+				pageCount = dbCount/pageSize;
+			}else{
+				pageCount = dbCount/pageSize+1;
+			}
+			
+			//요청 페이지 계산
+			if(rpage != null){ //게시판 딱 눌렀을때 repage가 없이 null이고 1페이지가 보여질때
+				reqPage = Integer.parseInt(rpage);
+				startCount = (reqPage-1) * pageSize+1;
+				endCount = reqPage *pageSize;
+			}else{
+				startCount = 1;
+				endCount = pageSize;
+			}
+		
+		ArrayList<MangoEatdealVO> list = dao.select();
+		//ArrayList<MangoEatdealVO> list = dao.select(startCount,endCount);
+		
+		JsonObject jobject = new JsonObject(); //MangoEatdealVO객체
+		JsonArray jarray = new JsonArray(); //ArrayList역할
+		Gson gson = new Gson(); //파싱
+		
+		for(MangoEatdealVO vo : list){
+			JsonObject jo = new JsonObject();
+			jo.addProperty("ename", vo.getEname());
+			jo.addProperty("region", vo.getRegion());
+			jo.addProperty("menu", vo.getMenu());
+			jo.addProperty("eimage1", vo.getEimage1());
+			jo.addProperty("esimage1", vo.getEsimage1());
+			
+			jarray.add(jo);
+		} 
+				
+		jobject.add("list",jarray); 
+		
+		jobject.addProperty("dbCount", dbCount);
+		jobject.addProperty("pageSize", pageSize);
+		jobject.addProperty("rpage", reqPage);
+		
+		return gson.toJson(jobject); //여기에 한글이 포함되어있으면 인코딩이 깨진다 produces 로직추가.
+	}
+	
+	
+	
 	
 	
 	
