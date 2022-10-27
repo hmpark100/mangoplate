@@ -1,23 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "com.mangoplate.vo.MangoRestVO" %>
-<%@ page import = "com.mangoplate.dao.MangoRestDAO" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
-<% 
-String kid = request.getParameter("kid");
-MangoRestDAO dao = new MangoRestDAO();
-MangoRestVO vo = new MangoRestVO();
-%>
 
-<%-- <%
-	String bid = request.getParameter("vid");
-	MangoRestDAO dao = new MangoRestDAO();
-	MangoRestVO vo = dao.select(bid);
-	if(vo != null){
-		dao.updateHits(bid);
-	}
-	
-%> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -169,7 +153,7 @@ MangoRestVO vo = new MangoRestVO();
 				</div>
 			</div>
 			<div>
-				<p><%= vo.getVcontent() %></p>
+				<%-- <p><%= vo.getVcontent() %></p> --%>
 			</div>
 			<div>
 				<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg">
