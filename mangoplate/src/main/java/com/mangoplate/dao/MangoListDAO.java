@@ -22,4 +22,12 @@ public class MangoListDAO extends DBConn{
 		List<MangoRestVO> list = sqlSession.selectList("mapper.list.listAll", rcategory);
 		return (ArrayList<MangoRestVO>)list;
 	}
+	
+	/**
+	 * select(String rid) : 식당 상세페이지 출력
+	 */
+	public MangoRestVO selectDetail(String rid) {
+		return sqlSession.selectOne("mapper.list.content", rid);
+	}
+	
 }

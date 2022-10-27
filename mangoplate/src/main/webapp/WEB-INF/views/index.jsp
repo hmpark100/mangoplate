@@ -53,6 +53,42 @@ $(document).ready(function() {
 .main-header {
 	margin-top: 61px;
 }
+
+/* 컨텐츠 css */
+.index_restaurant, .index_boardstory, .index_eatdeal {
+	border: 1px solid red;
+	margin: 50px;
+}
+	h3{
+	border: 1px solid red;
+	font-weight: bold;
+	color: coral;
+	display: inline-block;
+}
+	.index_restaurant p, .index_boardstory p, .index_eatdeal p {
+	border: 1px solid blue;
+	color: gray;
+	display: inline-block;
+	float: right;
+	clear:both;
+	padding: 5px;
+	text-decoration: underline;
+}
+
+table td {
+	border: 27px solid white;
+	width: 550px;
+	height: 265px;
+	margin: 0px;
+	padding: 0px;
+	font-size: 30px;
+	color: white;
+	text-align: center;
+	background-image:
+		url("http://localhost:9000/mangoplate/resources/images/test1.jpg");
+	font-weight: normal;
+}
+
 </style>
 
 </head>
@@ -120,13 +156,52 @@ $(document).ready(function() {
 		</article>
 	</main>
 
-	<!-- 메이페이지 컨텐츠  -->
-
+	<!-- 메인페이지 맛집리스트 컨텐츠  -->
+	<section>
+		<div class="index_restaurant">
+			<h3>믿고 보는 맛집 리스트</h3>
+			<a href="http://localhost:9000/mangoplate/restaurant_list.do">
+				<p>리스트 더보기</p>
+			</a>
+			<table class="art">
+			<tr>
+				<td><span>군자역 맛집 베스트 10곳</span><br> <span>"군자역 우리
+						동네 핫플 총정리"</span></td>
+				<td><span>군자역 맛집 베스트 10곳</span><br> <span>"군자역 우리
+						동네 핫플 총정리"</span></td>
+				<td><span>군자역 맛집 베스트 10곳</span><br> <span>"군자역 우리
+						동네 핫플 총정리"</span></td>
+			</tr>
+			
+		</table>
+		</div>
+	</section>
+	
+	<!-- 메인페이지 망고스토리 컨텐츠  -->
+	<section>
+		<div class="index_boardstory">
+			<h3>맛집 스토리</h3>
+			<a href="http://localhost:9000/mangoplate/boardstory_list.do">
+				<p>스토리 더보기</p>
+			</a>
+		</div>	
+	</section>
+	
+	<!-- 메인페이지 잇딜 컨텐츠  -->
+	<section>
+		<div class="index_eatdeal">
+			<h3>EAT딜을 판매중인 식당</h3>
+			<a href="http://localhost:9000/mangoplate/_list.do">
+				<p>메뉴 더보기</p>
+			</a>
+		</div>	
+	</section>
+	
+	
 	<!-- ------------------------------------------ -->
 	<!-- ------------ Content finish -------------- -->
 	<!-- ------------------------------------------ -->
-sid ===> ${sessionScope.sid}  <!-- el태그로 넘어온 sid를 출력하여 잘 넘어오는지 확인 -->
-svo ===> ${sessionScope.svo}  <!-- el태그로 넘어온 sid를 출력하여 잘 넘어오는지 확인 -->
+
 
 	<!-- footer Include -->
 	<iframe src="footer.do" width="100%" height="750px" scrolling="no"

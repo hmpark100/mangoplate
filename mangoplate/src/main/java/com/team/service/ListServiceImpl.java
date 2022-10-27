@@ -12,9 +12,14 @@ public class ListServiceImpl implements ListService{
 	@Autowired
 	private MangoListDAO listDao;
 	
-	public ArrayList<MangoRestVO> getContent(String rcategory){
+	public ArrayList<MangoRestVO> getList(String rcategory){
 		ArrayList<MangoRestVO> list = listDao.select(rcategory);
 		
 		return list;
 	}
-}
+	
+	public MangoRestVO getContent(String rid) {
+		return listDao.selectDetail(rid);
+	}
+	
+}//ListServiceImpl-end

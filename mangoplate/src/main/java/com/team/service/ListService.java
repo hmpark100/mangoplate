@@ -6,5 +6,6 @@ import com.mangoplate.vo.MangoRestVO;
 
 public interface ListService {
 
-	ArrayList<MangoRestVO> getContent(String rcategory);
+	ArrayList<MangoRestVO> getList(String rcategory);
+	MangoRestVO getContent(String rid);
 }
