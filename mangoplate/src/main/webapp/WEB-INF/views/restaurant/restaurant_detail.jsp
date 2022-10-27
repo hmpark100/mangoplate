@@ -147,7 +147,7 @@
 										<th>주소</th>
 										<td>${vo.raddr }<br> <span
 											class="Restaurant__InfoAddress--Rectangle">지번</span> <span
-											class="Restaurant__InfoAddress--Text">서울시 마포구 상암동 1597</span>
+											class="Restaurant__InfoAddress--Text">서울특별시 강남구 신사동 643-18</span>
 										</td>
 									</tr>
 
