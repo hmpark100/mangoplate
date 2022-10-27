@@ -1,17 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "com.mangoplate.vo.MangoReviewVO" %>    
-<%@ page import = "com.mangoplate.dao.MangoReviewDAO" %>   
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%
-	String bid = request.getParameter("bid");  
-	MangoReviewDAO dao = new MangoReviewDAO(); 
-	MangoReviewVO vo = dao.select(bid); 
-	if(vo != null){
-		//dao.조회수 업데이트(bid);
-		dao.updateHits(bid);
-	}
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,9 +41,9 @@
 	}
 	
 	.review_top span {
-		position : absolute;
+		/* position : absolute;
 		top : 14px;
-		left : 125px;
+		left : 125px; */
 		font-size : 16px;
 		color : #7f7f7f;
 	}
@@ -249,8 +238,8 @@ $(document).ready(function(){
 	<section class="review_top">
 		<div>
 			<!-- <h1>팔레드 신</h1> -->
-			<h1><%=vo.getKname() %></h1>
-			<span>에 대한 솔직한 리뷰를 써주세요.</span>
+			<h1>${vo.rname}<span>에 대한 솔직한 리뷰를 써주세요.</span></h1>
+			
 		</div>
 	</section>
 	<section class="review_content">

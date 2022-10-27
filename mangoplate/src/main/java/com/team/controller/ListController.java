@@ -49,7 +49,6 @@ public class ListController {
 	public ModelAndView restaurant_detail(String rid) {
 		ModelAndView mv = new ModelAndView();
 		MangoRestVO vo = listService.getContent(rid);
-		System.out.println(vo.getRname());
 		
 		mv.addObject("vo", vo);
 		mv.setViewName("/restaurant/restaurant_detail");
@@ -61,8 +60,16 @@ public class ListController {
 	 * review_write.do : 리뷰 작성 페이지 화면
 	 */
 	@RequestMapping(value="/review_write.do", method = RequestMethod.GET)
-	public String review_write() {
-		return "/restaurant/review_write";
+	public ModelAndView review_write(String rid) {
+		
+		/* System.out.println(rid); */
+		ModelAndView mv = new ModelAndView();
+		MangoRestVO vo = listService.getContent(rid);
+		
+		mv.addObject("vo", vo);
+		mv.setViewName("/restaurant/review_write");
+		
+		return mv;
 	}
 	
 	/**
