@@ -245,18 +245,23 @@ $(document).ready(function(){
 	<section class="review_content">
 		<article class="first">
 			<form name="reivewForm" action="review_write_check.do" method="post">
+				<input type="hidden" name="vname" value=${vo.rname }>
 				<div class="emotion">
 					<ul>
 						<li>
-							<input type="radio" name="krate" class="super-happy" id="super-happy" value="5" checked /><img src="http://localhost:9000/mangoplate/resources/images/delicious_checked.png">
+							<input type="radio" name="vrate" class="super-happy" id="super-happy" value="5" checked /><img src="http://localhost:9000/mangoplate/resources/images/delicious_checked.png">
 							<span>맛있다</span>
-							<input type="radio" name="krate" class="happy" id="happy" value="3" /><img src="http://localhost:9000/mangoplate/resources/images/NotBad_unchecked.png">
+							<input type="radio" name="vrate" class="happy" id="happy" value="3" /><img src="http://localhost:9000/mangoplate/resources/images/NotBad_unchecked.png">
 							<span>괜찮다</span>
-							<input type="radio" name="krate" class="sad" id="sad" value="1" /><img src="http://localhost:9000/mangoplate/resources/images/bad_unchecked.png">
+							<input type="radio" name="vrate" class="sad" id="sad" value="1" /><img src="http://localhost:9000/mangoplate/resources/images/bad_unchecked.png">
 							<span>별로</span>
 						</li>
 						<li>
-							<textarea name="kcontent" id="textBox" placeholder="김태형님, 주문하신 메뉴는 어떠셨나요? 식당의 서비스와 분위기도 궁금해요!"></textarea>
+							<textarea name="vcontent" id="textBox" placeholder="김태형님, 주문하신 메뉴는 어떠셨나요? 식당의 서비스와 분위기도 궁금해요!"></textarea>
+						</li>
+						<li>
+							<label>파일첨부</label>
+							<input type="file" name="file1">
 						</li>
 					</ul>
 				</div>

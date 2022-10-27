@@ -1,55 +1,64 @@
 package com.mangoplate.vo;
 
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
 public class MangoReviewVO {
-	String kid, kname, kcontent, kfile, ksfile, kdate;
-	int khits, krate;
+	String vid, vname, vcontent, vfile, vsfile, vdate;
+	int vrate, vhits;
+	CommonsMultipartFile file1;
+	public String getVid() {
+		return vid;
+	}
+	public void setVid(String vid) {
+		this.vid = vid;
+	}
+	public String getVname() {
+		return vname;
+	}
+	public void setVname(String vname) {
+		this.vname = vname;
+	}
+	public String getVcontent() {
+		return vcontent;
+	}
+	public void setVcontent(String vcontent) {
+		this.vcontent = vcontent;
+	}
+	public String getVfile() {
+		return vfile;
+	}
+	public void setVfile(String vfile) {
+		this.vfile = vfile;
+	}
+	public String getVsfile() {
+		return vsfile;
+	}
+	public void setVsfile(String vsfile) {
+		this.vsfile = vsfile;
+	}
+	public String getVdate() {
+		return vdate;
+	}
+	public void setVdate(String vdate) {
+		this.vdate = vdate;
+	}
+	public int getVrate() {
+		return vrate;
+	}
+	public void setVrate(int vrate) {
+		this.vrate = vrate;
+	}
+	public int getVhits() {
+		return vhits;
+	}
+	public void setVhits(int vhits) {
+		this.vhits = vhits;
+	}
+	public CommonsMultipartFile getFile1() {
+		return file1;
+	}
+	public void setFile1(CommonsMultipartFile file1) {
+		this.file1 = file1;
+	}
 	
-	public String getKid() {
-		return kid;
-	}
-	public void setKid(String kid) {
-		this.kid = kid;
-	}
-	public String getKname() {
-		return kname;
-	}
-	public void setKname(String kname) {
-		this.kname = kname;
-	}
-	public String getKcontent() {
-		return kcontent;
-	}
-	public void setKcontent(String kcontent) {
-		this.kcontent = kcontent;
-	}
-	public String getKfile() {
-		return kfile;
-	}
-	public void setKfile(String kfile) {
-		this.kfile = kfile;
-	}
-	public String getKsfile() {
-		return ksfile;
-	}
-	public void setKsfile(String ksfile) {
-		this.ksfile = ksfile;
-	}
-	public String getKdate() {
-		return kdate;
-	}
-	public void setKdate(String kdate) {
-		this.kdate = kdate;
-	}
-	public int getKhits() {
-		return khits;
-	}
-	public void setKhits(int khits) {
-		this.khits = khits;
-	}
-	public int getKrate() {
-		return krate;
-	}
-	public void setKrate(int krate) {
-		this.krate = krate;
-	}
 }
