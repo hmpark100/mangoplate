@@ -70,9 +70,62 @@ table td {
 	font-size: 30px;
 	color: white;
 	text-align: center;
-	background-image:
-		url("http://localhost:9000/mangoplate/resources/images/test1.jpg");
+	/* background-image:
+		url("http://localhost:9000/mangoplate/resources/images/test1.jpg"); */
 	font-weight: normal;
+}
+
+.art tr td a {
+	text-decoration : none;
+	color : white;
+}
+
+table tr:nth-child(1) td:nth-child(1) {
+	background-image:
+		url("http://localhost:9000/mangoplate/resources/images/test2.jpg");
+	background-size : 550px 265px;
+}
+
+table tr:nth-child(1) td:nth-child(2) {
+	background-image:
+		url("http://localhost:9000/mangoplate/resources/images/chinese_food.jpg");
+	background-size : 550px 265px;
+}
+
+table tr:nth-child(2) td:nth-child(1) {
+	background-image:
+		url("http://localhost:9000/mangoplate/resources/images/western_food.jpg");
+	background-size : 550px 265px;
+}
+
+table tr:nth-child(2) td:nth-child(2) {
+	background-image:
+		url("http://localhost:9000/mangoplate/resources/images/japanese_food.jpg");
+	background-size : 550px 265px;
+}
+
+table tr:nth-child(3) td:nth-child(1) {
+	background-image:
+		url("http://localhost:9000/mangoplate/resources/images/pizza.jpg");
+	background-size : 550px 265px;
+}
+
+table tr:nth-child(3) td:nth-child(2) {
+	background-image:
+		url("http://localhost:9000/mangoplate/resources/images/rice_noodle.jpg");
+	background-size : 550px 265px;
+}
+
+table tr:nth-child(4) td:nth-child(1) {
+	background-image:
+		url("http://localhost:9000/mangoplate/resources/images/ttokbokki.jpg");
+	background-size : 550px 265px;
+}
+
+table tr:nth-child(4) td:nth-child(2) {
+	background-image:
+		url("http://localhost:9000/mangoplate/resources/images/cafe.jpg");
+	background-size : 550px 265px;
 }
 
 /* 더보기 버튼 css */
@@ -102,7 +155,6 @@ article.more span {
 	width : 113px;
 	margin : auto;
  	margin-bottom : 30px;
- /* 	border : 1px solid blue; */
 }
 
 .more img {
@@ -143,66 +195,32 @@ article.more span {
 		</div>
 		<table class="art">
 			<tr>
-				<td><span>군자역 맛집 베스트 10곳</span><br> <span>"군자역 우리
-						동네 핫플 총정리"</span></td>
-				<td><span>군자역 맛집 베스트 10곳</span><br> <span>"군자역 우리
-						동네 핫플 총정리"</span></td>
+				<td>
+				<a href="http://localhost:9000/mangoplate/restaurant_content.do?rcategory=한식"><span>한식 맛집 베스트 10곳</span><br> <span>"한식 맛집 총정리"</span></a></td>
+				<td>
+				<a href="http://localhost:9000/mangoplate/restaurant_content.do?rcategory=중식"><span>중식 맛집 베스트 10곳</span><br> <span>"중식 맛집 총정리"</span></a></td>
 			</tr>
 			<tr>
-				<td>군자역 맛집 베스트 10곳</td>
-				<td>군자역 맛집 20곳</td>
+				<td>
+				<a href="http://localhost:9000/mangoplate/restaurant_content.do?rcategory=양식"><span>양식 맛집 베스트 10곳</span><br> <span>"양식 맛집 총정리"</span></a></td>
+				<td>
+				<a href="http://localhost:9000/mangoplate/restaurant_content.do?rcategory=일식"><span>일식 맛집 베스트 10곳</span><br> <span>"일식 맛집 총정리"</span></a></td>
 			</tr>
 			<tr>
-				<td>군자역 맛집 베스트 10곳</td>
-				<td>군자역 맛집 20곳</td>
+				<td>
+				<a href="http://localhost:9000/mangoplate/restaurant_content.do"><span>피자 맛집 베스트 10곳</span><br> <span>"피자 맛집 총정리"</span></a></td>
+				<td>
+				<a href="http://localhost:9000/mangoplate/restaurant_content.do?rcategory=아시안음식"><span>아시안음식 맛집 베스트 10곳</span><br> <span>"아시안음식 맛집 총정리"</span></a></td>
 			</tr>
 			<tr>
-				<td>군자역 맛집 베스트 10곳</td>
-				<td>군자역 맛집 20곳</td>
+				<td>
+				<a href="http://localhost:9000/mangoplate/restaurant_content.do"><span>떡볶이 맛집 베스트 10곳</span><br> <span>"떡볶이 맛집 총정리"</span></a></td>
+				<td>
+				<a href="http://localhost:9000/mangoplate/restaurant_content.do"><span>카페 베스트 10곳</span><br> <span>"분위기 좋은 카페 총정리"</span></a></td>
 			</tr>
 		</table>
-		<!-- <table class="art">
-		<tr>
-			<td>
-				<a href="#"><img src="http://localhost:9000/mangoplate/resources/images/test1.jpg"></a>
-			</td>
-			<td>
-			<a href="#"><img src="http://localhost:9000/mangoplate/resources/images/test1.jpg"></a>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<a href="#"><img src="http://localhost:9000/mangoplate/resources/images/test1.jpg"></a>
-			</td>
-			<td>
-			<a href="#"><img src="http://localhost:9000/mangoplate/resources/images/test1.jpg"></a>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<a href="#"><img src="http://localhost:9000/mangoplate/resources/images/test1.jpg"></a>
-			</td>
-			<td>
-			<a href="#"><img src="http://localhost:9000/mangoplate/resources/images/test1.jpg"></a>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<a href="#"><img src="http://localhost:9000/mangoplate/resources/images/test1.jpg"></a>
-			</td>
-			<td>
-			<a href="#"><img src="http://localhost:9000/mangoplate/resources/images/test1.jpg"></a>
-			</td>
-		</tr>
-	</table> -->
 		<article class="more">
 			<div>
-				<!-- <img
-					src="http://localhost:9000/mangoplate/resources/images/12323.png"
-					width="25px"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span>더보기</span>
-				<span>&nbsp;<img
-					src="http://localhost:9000/mangoplate/resources/images/12323.png"
-					width="25px"></span> -->
 				<img src="http://localhost:9000/mangoplate/resources/images/more.png">
 			</div>
 		</article>
