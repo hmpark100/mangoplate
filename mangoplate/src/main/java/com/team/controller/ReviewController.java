@@ -78,14 +78,14 @@ public class ReviewController {
 	/**
 	 * restaurant_detail.do : 식당 상세페이지에 리뷰 출력
 	 */
-	@RequestMapping(value="/restaurant_detail.do", method = RequestMethod.GET)
-	public ModelAndView restaurant_detail_review(String vname) {
-		ModelAndView mv = new ModelAndView();
-		ArrayList<MangoReviewVO> list = reviewService.getReviewList(vname);
-		
-		mv.addObject("list", list);
-		mv.setViewName("/restaurant/restaurant_content");
-		
-		return mv;
-	}
+	/*
+	 * @RequestMapping(value="/restaurant_detail.do", method = RequestMethod.GET)
+	 * public ModelAndView restaurant_detail_review(String vname) { ModelAndView mv
+	 * = new ModelAndView(); ArrayList<MangoReviewVO> list =
+	 * reviewService.getReviewList(vname);
+	 * 
+	 * mv.addObject("list", list); mv.setViewName("/restaurant/restaurant_content");
+	 * 
+	 * return mv; }
+	 */
 }

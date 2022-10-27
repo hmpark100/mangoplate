@@ -12,12 +12,16 @@ import com.mangoplate.dao.MangoReviewDAO;
 import com.mangoplate.vo.MangoRestVO;
 import com.mangoplate.vo.MangoReviewVO;
 import com.team.service.ListServiceImpl;
+import com.team.service.ReviewServiceImpl;
 
 @Controller
 public class ListController {
 
 	@Autowired
 	private ListServiceImpl listService;
+	
+	@Autowired
+	private ReviewServiceImpl reviewService;
 	
 	/**
 	 * restaurant_list.do : 맛집리스트 화면
@@ -49,8 +53,10 @@ public class ListController {
 	public ModelAndView restaurant_detail(String rid) {
 		ModelAndView mv = new ModelAndView();
 		MangoRestVO vo = listService.getContent(rid);
+		ArrayList<MangoReviewVO> list = reviewService.getReviewList(vo.getRname());
 		
 		mv.addObject("vo", vo);
+		mv.addObject("list",list);
 		mv.setViewName("/restaurant/restaurant_detail");
 		
 		return mv;

@@ -240,12 +240,19 @@
 
 										<div class="RestaurantReviewItem__ReviewContent">
 											<div class="RestaurantReviewItem__ReviewTextWrap">
-												<c:forEach var="vo2" items="${list}">
-												<p class="RestaurantReviewItem__ReviewText">
-													${vo2.content }
+												<c:forEach var="review" items="${list}">
+												<!-- <p class="RestaurantReviewItem__ReviewText">
+													주인 언니가 너무 친절하시고 곰탕칼국수에 밥도 내주는데 가격도 착하다! 나이드신 부모님과 아이들을 데리고
+													온 동네 주민들이 바글바글한 상암 맛집. 앉자마자 따뜻한 두부와 김치를 내오는데 따듯한 온도에 감동,
+													부드럽고 고소한 맛에 감동. <br>강원도에서 계약재배를 통해 수급한 콩으로 만든 콩 국물은
+													담백하다. 근처 옥합콩국수는 한달새 가격이 올랐는데 상암회관은 아직 9천원이라는 착한 가격을 유지하고
+													있다. <br>진주집은 가격보다 양이 더 부담됐는데 상암회관은 양도 적당하고, 테이블에 올려진
+													굵은 소금으로 간을 셀프로 조절할 수 있어서 좋다.
+												</p> -->
+												<p>
+													${review.vcontent }
 												</p>
 												</c:forEach>
-
 
 												<span class="RestaurantReviewItem__ReviewDate">2022-09-10</span>
 											</div>

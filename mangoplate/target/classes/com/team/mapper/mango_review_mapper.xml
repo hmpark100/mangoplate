@@ -14,6 +14,6 @@
 	<!-- review list -->
 	<select id="reviewAll" parameterType="java.lang.String" resultType="com.mangoplate.vo.MangoReviewVO" >
 		select rownum rno, vid, vname, vrate, vcontent, vfile, vsfile, 
-		vdate, vhits, from mg_review where vname = #{vname}
+		vdate, vhits from mg_review where vname = #{vname}
 	</select>
 </mapper>
