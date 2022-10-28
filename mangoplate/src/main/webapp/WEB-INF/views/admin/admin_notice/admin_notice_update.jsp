@@ -15,8 +15,8 @@
 	#upload_file {
 		/*border:1px solid red;*/
 		position:relative;
-		left:-665px; top:12px;
-		width:200px;  height:20px;
+		left:-713px; top:12px;
+		width:300px;  height:20px;
 		display:inline-block;	
 		background-color:white;	
 		font-size:12px;
