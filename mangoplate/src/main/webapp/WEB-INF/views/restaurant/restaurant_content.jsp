@@ -352,7 +352,7 @@
 					<ul class="restaurant_name">
 					<c:forEach var="vo" items="${list}">
 						<li class="first" style="color:rgb(85,85,85);">
-							<img src="http://localhost:9000/mangoplate/resources/images/test1.jpg" width="230px">
+							<img src="http://localhost:9000/mangoplate/resources/upload/${vo.rsimage }" width="300px" height="250px">
 							<div>
 								<label>${vo.rno}. ${vo.rname } </label>
 								<!-- <span style="color:coral;">4.7</span> -->

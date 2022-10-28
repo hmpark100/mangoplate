@@ -105,11 +105,11 @@
 				<li>
 					<label>음식종류</label>
 					<select name="rcategory">
-						<option value="10">양식</option>
-						<option value="20">한식</option>
-						<option value="30">중식</option>
-						<option value="40">일식</option>
-						<option value="50">아시안음식</option>
+						<option value="양식">양식</option>
+						<option value="한식">한식</option>
+						<option value="중식">중식</option>
+						<option value="일식">일식</option>
+						<option value="아시안음식">아시안음식</option>
 					</select>
 				</li>
 				<li>
